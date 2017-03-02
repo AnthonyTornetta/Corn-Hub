@@ -1,0 +1,71 @@
+/*004488*/
+*{
+  border:none;
+  margin:0;
+  padding:0;
+  background-color:#E5E5E5
+}
+
+html, body{
+  height:100%;
+}
+
+.sf{
+  width:64px;
+  height:64px;
+}
+
+.main{
+  background-color:#E5E5E5;
+  padding-left:10px;
+  padding-right:10px;
+  height:100%;
+}
+
+a {
+  text-decoration:none;
+  color:#048;
+}
+
+.main a:hover{
+  color:#038;
+}
+
+.wrapper{
+  font-family: Century Gothic, sans-serif;
+  width:100%;
+  height:100%;
+}
+
+h1{
+  color:#048;
+  text-align:center;
+  border-bottom:thick;
+  border-bottom:#E5E5E5;
+  border-bottom:solid;
+  font-size:50px;
+}
+
+h3{
+  margin-left:10px;
+  color:#058;
+  font-size:24px;
+}
+
+p{
+  color:#048;
+  font-size:18px;
+  margin-left:15px;
+}
+
+ul{
+  list-style-type:none;
+  margin-left:20px;
+}
+
+#contents{
+  margin-bottom:20px;
+}
+
+
+
