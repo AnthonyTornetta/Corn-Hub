@@ -1,4 +1,5 @@
-var API = "05a68069ca925ee5c7863e687d0d57d5";
+var trashAPI = "05a68069ca925ee5c7863e687d0d57d5";
+var API = "5fdb480cb7a8fb0e7aa41a71cebf1d07";
 var temp;
 var loc;
 var deg;
@@ -27,16 +28,17 @@ function updateByZip(zip) //Doesn't work :(
 {
 	var url = "http:api.openweathermap.org/data/2.5/weather?" + 
 	"zip=" + zip + 
-	"&APPID=" + API;
+	"&APPID=" + trashAPI;
 }
 
 function updateByGeo(lat, lon)
 {
-	var url = "http:api.openweathermap.org/data/2.5/weather?" + 
+	var url = "http:api.openweathermap.org/data/2.5/find?" + 
 	"lat=" + lat + 
 	"&lon=" + lon +
 	"&APPID=" + API;
 	sendRequest(url);
+	alert(url);
 }
 
 function sendRequest(url)
@@ -49,13 +51,13 @@ function sendRequest(url)
 			var data = JSON.parse(xmlhttp.responseText);
 			var weather = {};
 			weather.icon = data.weather[0].id;
-			weather.humid = data.main.humidity;
+			weather.humid = data.list.humidity;
 			weather.wind = mps2mph(data.wind.speed);
 			weather.dir = degreesTodir(data.wind.deg);
 			weather.loc = data.name + ", " + data.sys.country;
-			weather.temp = K2F(data.main.temp);
-			weather.min = K2F(data.main.temp_min);
-			weather.max = K2F(data.main.temp_max);
+			weather.temp = K2F(data.list.temp);
+			weather.min = K2F(data.list.temp_min);
+			weather.max = K2F(data.list.temp_max);
 			weather.desc = data.weather[0].description;
 			weather.day = weekdays[date.getDay()];
 			update(weather);

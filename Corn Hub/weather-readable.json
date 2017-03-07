@@ -1,0 +1,89 @@
+{  
+   "coord":{  
+      "lon":-76.4,
+      "lat":40.31
+   },
+   "weather":[  
+      {  
+         "id":300,
+         "main":"Drizzle",
+         "description":"light intensity drizzle",
+         "icon":"09d"
+      }
+   ],
+   "base":"stations",
+   "main":{  
+      "temp":273.45,
+      "pressure":1025,
+      "humidity":39,
+      "temp_min":273.15,
+      "temp_max":274.15
+   },
+   "visibility":16093,
+   "wind":{  
+      "speed":3.1,
+      "deg":280,
+      "gust":10.3
+   },
+   "clouds":{  
+      "all":20
+   },
+   "dt":1488556380,
+   "sys":{  
+      "type":1,
+      "id":2357,
+      "message":0.0037,
+      "country":"US",
+      "sunrise":1488540883,
+      "sunset":1488582027
+   },
+   "id":7258847,
+   "name":"Lebanon South",
+   "cod":200
+}
+
+---- PREVIOUS WEATHER PLUGIN ----
+
+{  
+   "coord":{  
+      "lon":-76.4,
+      "lat":40.31
+   },
+   "weather":[  
+      {  
+         "id":300,
+         "main":"Drizzle",
+         "description":"light intensity drizzle",
+         "icon":"09d"
+      }
+   ],
+   "base":"stations",
+   "main":{  
+      "temp":273.45,
+      "pressure":1025,
+      "humidity":39,
+      "temp_min":273.15,
+      "temp_max":274.15
+   },
+   "visibility":16093,
+   "wind":{  
+      "speed":3.1,
+      "deg":280,
+      "gust":10.3
+   },
+   "clouds":{  
+      "all":20
+   },
+   "dt":1488556380,
+   "sys":{  
+      "type":1,
+      "id":2357,
+      "message":0.5127,
+      "country":"US",
+      "sunrise":1488540883,
+      "sunset":1488582027
+   },
+   "id":7258847,
+   "name":"Lebanon South",
+   "cod":200
+}
