@@ -1,5 +1,5 @@
-var trashAPI = "05a68069ca925ee5c7863e687d0d57d5";
-var API = "5fdb480cb7a8fb0e7aa41a71cebf1d07";
+const var trashAPI = "05a68069ca925ee5c7863e687d0d57d5";
+const var API = "5fdb480cb7a8fb0e7aa41a71cebf1d07";
 var temp;
 var loc;
 var deg;

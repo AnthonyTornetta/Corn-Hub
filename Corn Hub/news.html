@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Corn Hub</title>
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script> <!-- Jquery -->
+		<script type="text/javascript" src="js/smooth.js"></script> <!-- Smooth Scroll -->
+        <script type="text/javascript" src="js/ticker.js"></script> <!-- Ticker -->
+        <script type="text/javascript" src="js/events.js"></script> <!-- Current Events -->
+		<link rel="stylesheet" media="all" href="styles/today.css">
+		<link rel="icon" href="images/icon.jpg">
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+	</head>
+
+	<body>
+        <div id="snowflakeContainer">
+			<p class="snowflake"></p>
+		</div>
+		<div class="wrapper">
+			<div class="nav">
+				<ul>
+					<li><a href="index.html">Home</a></li>
+					<li>/</li>
+					<li><a href="weather.html">Weather</a></li>
+                    <li>/</li>
+                    <li><a href="matrix.html">Matrix</a></li>
+					<li>/</li>
+                    <li><a href="today.html">History</a></li>
+					<li>/</li>
+					<li><a href="bee-movie.html">Bee Movie</a></li>
+					<li>/</li>
+					<li><a href="sean.html">Sean</a></li>
+					<li>/</li>
+					<li><a href="cornchip.html">A Giant Corn Chip</a></li>
+				</ul>
+			</div>
+
+			<div class="main">
+				
+                <h1>Corn Hub - This Day in History</h1>
+				<div class="blue-box">
+                    <h3>Events</h3>
+					<div id="ticker">
+						<ul id="events">
+							
+						</ul>
+					</div>
+                </div>
+                
+                <div class="blue-box">
+                    <h3>Births</h3>
+                    <div id="ticker">
+						<ul id="births">
+							
+						</ul>
+					</div>
+                </div>
+                
+                <div class="blue-box">
+                    <h3>Deaths</h3>
+                    <div id="ticker">
+						<ul id="deaths"></ul>
+					</div>
+                </div>
+                
+                <p>Powered by <a href="https://newsapi.org">newsapi.org</a></p>
+			</div>
+		</div>
+        <!--<script type="text/javascript" src="js/snow.js"></script> <!-- Works with anything, not just snow -->
+	</body>
+</html>
