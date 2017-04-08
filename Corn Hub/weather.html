@@ -1,7 +1,14 @@
+<!-- NOTICE ME!!
+  -- This page is a Work in Progress (WIP)
+  -- This means that Cornchip is doing stuff to it and that it will most likely undergo changes.
+  -- I am currently hoping to make this the new API: https://www.wunderground.com/weather/api/d/pricing.html
+  -- But ima keep looking to see if I can find anything better.
+  -- Happy code reading I guess.
+  -->
 <!DOCTYPE html>
 <html>
 	<head>
-		<title>Corn Hub : Weather</title>
+		<title>Corn Hub : Weather [WIP]</title>
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script> <!-- Jquery -->
 		<script type="text/javascript" src="js/smooth.js"></script> <!-- Smooth Scroll -->
 		<link rel="stylesheet" media="all" href="styles/weather.css">
@@ -11,17 +18,20 @@
 	</head>
 
 	<body>
+        <!--
 		<div id="snowflakeContainer">
 			<p class="snowflake"></p>
-		</div>
+		</div>-->
 		<div class="wrapper">
 			<div class="nav">
 				<ul>
 					<li><a href="index.html">Home</a></li>
 					<li>/</li>
-					<li><a href="matrix.html">Matrix</a></li>
-                    <li>/</li>
 					<li><a href="weather.html">Weather</a></li>
+                    <li>/</li>
+                    <li><a href="matrix.html">Matrix</a></li>
+					<li>/</li>
+                    <li><a href="today.html">History</a></li>
 					<li>/</li>
 					<li><a href="bee-movie.html">Bee Movie</a></li>
 					<li>/</li>
@@ -32,8 +42,8 @@
 			</div>
 
 			<div class="main">
-				<h1>Corn Hub Weather<span class="day" id="day"></span></h1>
-				<span class="loading" id="loading">Loading the forecast...</span>
+				<h1>Corn Hub Weather [WIP]<span class="day" id="day"></span></h1>
+				<span class="loading" id="loading">We are currently upgrading our weather api. Please be patient.</span>
 				<div class="weather">
 					<p class="weather">
 						<div class="temperature">

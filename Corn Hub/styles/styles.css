@@ -1,4 +1,7 @@
-/*004488*/
+/*
+ * 004488 is blue
+ * E5E5E5 is cream
+ */
 *{
     border:none;
     margin:0;
@@ -21,6 +24,11 @@ body
     max-height: 100%;
 }
 
+ul
+{
+    color: #048;
+}
+
 .sf
 {
     width:64px;
@@ -33,7 +41,7 @@ body
 	padding-left:10px;
 	padding-right:10px;
 	background-color:#E5E5E5;
-	-webkit-background-size: cover; /* For bground images (so they don't repeat) */
+	-webkit-background-size: cover; /* For bground images (so they don't repeat repeat repeat repeat) */
     -moz-background-size: cover;
     -o-background-size: cover;
     background-size: cover;
@@ -69,7 +77,7 @@ footer
     bottom: 0;
     width: 100%
 }
-
+/* This site actually used to be called 'Corny Falcons'. Corn Hub is better. */
 .rbar
 {
     float: right; 
@@ -103,6 +111,7 @@ footer
     z-index: 999;
 }
 
+/* Media screens make me want to die. */
 @media screen and (min-width:1050px){
     .main
 	{
@@ -131,7 +140,7 @@ footer
         padding-top:140px;
     }
 }
-
+/* So do nav bars. */
 .nav ul{
     list-style-type:none;
     display:inline;
@@ -169,6 +178,7 @@ a {
     height:100%;
 }
 
+/* Gatta make them elements look slick. */
 h1{
     color:#048;
     text-align:center;
@@ -199,7 +209,7 @@ ul{
 #contents{
     margin-bottom:20px;
 }
-
+/* That thing on the home page. With all the links and such. */
 .main-img-list ul{
     text-align:center;
 }
@@ -250,13 +260,14 @@ ul{
     position:absolute;
     margin-top:5%;
     margin-left: 63%;
-    /*12 25 .5 25 .5 25 12*/
+    /*12 25 .5 25 .5 25 12 <-- Look at these super snazzy mathulations! */
     text-align:center;
     width:25%;
     height:60%;
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
 }
 
+/* My footer that doesn't work. I would fix it but I just don't have the will-power. */
 .footer
 {
     text-align:center;
@@ -272,6 +283,7 @@ ul{
     background-color:#CECECE;
 }
 
+/* For my sexy highlighting colors */
 ::-moz-selection { /* Code for Firefox */
     color: #e5e5e5 !important;
     background: #048 !important;
@@ -284,6 +296,7 @@ ul{
 	opacity: 0.5;
 }
 
+/* For holidays! (The stupid ones at the bottom) */
 .holiday
 {
 	color: #048;
