@@ -4,11 +4,11 @@
 		<title>Corn Hub</title>
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script> <!-- Jquery -->
 		<script type="text/javascript" src="js/smooth.js"></script> <!-- Smooth Scroll -->
-        <script type="text/javascript" src="js/ticker.js"></script> <!-- Ticker -->
-        <script type="text/javascript" src="js/events.js"></script> <!-- Current Events -->
 		<link rel="stylesheet" media="all" href="styles/today.css">
 		<link rel="icon" href="images/icon.jpg">
 		<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+        
+        
 	</head>
 
 	<body>
@@ -37,34 +37,53 @@
 			<div class="main">
 				
                 <h1>Corn Hub - This Day in History</h1>
-				<div class="blue-box">
-                    <h3>Events</h3>
-					<div id="ticker">
-						<ul id="events">
-							
-						</ul>
-					</div>
-                </div>
-                
-                <div class="blue-box">
-                    <h3>Births</h3>
-                    <div id="ticker">
-						<ul id="births">
-							
-						</ul>
-					</div>
-                </div>
-                
-                <div class="blue-box">
-                    <h3>Deaths</h3>
-                    <div id="ticker">
-						<ul id="deaths"></ul>
-					</div>
-                </div>
-                
                 <p>Powered by <a href="https://newsapi.org">newsapi.org</a></p>
+                
+                <div id="animal-info">
+                    
+                </div>
 			</div>
 		</div>
         <!--<script type="text/javascript" src="js/snow.js"></script> <!-- Works with anything, not just snow -->
+        
+        <script>
+        var container = document.getElementById("animal-info");
+        var url = "https://learnwebcode.github.io/json-example/animals-1.json";
+        var request = new XMLHttpRequest();
+        request.open("GET", url);
+        request.onload = function ()
+        {
+            var data = JSON.parse(request.responseText);
+            console.log(data[0]);
+            for(i = 0; i < data.length; i++)
+            {
+                renderHTML(data, i);
+            }
+        };
+        request.send();
+        
+        function renderHTML(data, i)
+        {
+            var htmlString = '<p>' + data[i].name + ' is a ' + data[i].species + ' and likes ';
+            for(j = 0; j < data[i].foods.likes.length; j++)
+            {
+                if(j == 0)
+                    htmlString += data[i].foods.likes[j];
+                else
+                    htmlString += ' and ' + data[i].foods.likes[j];
+            }
+            
+            for(j = 0; j < data[i].foods.dislikes.length; j++)
+            {
+                if(j == 0)
+                    htmlString += data[i].foods.dislikes[j];
+                else
+                    htmlString += ' and ' + data[i].foods.dislikes[j];
+            }
+            htmlString + '.</p>';
+            
+            container.insertAdjacentHTML('beforeend', htmlString);
+        }
+        </script>
 	</body>
 </html>
