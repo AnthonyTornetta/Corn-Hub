@@ -1,8 +1,7 @@
-const var trashAPI = "05a68069ca925ee5c7863e687d0d57d5";
-const var API = "5fdb480cb7a8fb0e7aa41a71cebf1d07";
+// The weather js!
+var API = "05a68069ca925ee5c7863e687d0d57d5";
 var temp;
 var loc;
-var deg;
 var icon;
 var humid;
 var wind;
@@ -24,49 +23,44 @@ weekdays[5] = "Friday";
 weekdays[6] = "Saturday";
 weekdays[0] = "Sunday";
 
-function updateByZip(zip) //Doesn't work :(
-{
-	var url = "http:api.openweathermap.org/data/2.5/weather?" + 
-	"zip=" + zip + 
-	"&APPID=" + trashAPI;
-}
-
+// Get the weather JSON url
 function updateByGeo(lat, lon)
 {
-	var url = "http:api.openweathermap.org/data/2.5/find?" + 
+	var url = "http://api.openweathermap.org/data/2.5/find?" + 
 	"lat=" + lat + 
 	"&lon=" + lon +
 	"&APPID=" + API;
 	sendRequest(url);
-	alert(url);
 }
 
 function sendRequest(url)
 {
-	var xmlhttp = new XMLHttpRequest();
-	xmlhttp.onreadystatechange = function()
-	{
-		if(xmlhttp.readyState == 4 && xmlhttp.status == 200)
-		{
-			var data = JSON.parse(xmlhttp.responseText);
-			var weather = {};
-			weather.icon = data.weather[0].id;
-			weather.humid = data.list.humidity;
-			weather.wind = mps2mph(data.wind.speed);
-			weather.dir = degreesTodir(data.wind.deg);
-			weather.loc = data.name + ", " + data.sys.country;
-			weather.temp = K2F(data.list.temp);
-			weather.min = K2F(data.list.temp_min);
-			weather.max = K2F(data.list.temp_max);
-			weather.desc = data.weather[0].description;
-			weather.day = weekdays[date.getDay()];
-			update(weather);
-		}
-	};
-	xmlhttp.open("GET", url, true);
-	xmlhttp.send();
+    // To contact the server 
+	var request = new XMLHttpRequest();
+    request.open("GET", url);
+    request.onload = function ()
+    {
+        // Get the JSON and shove it in an object.
+        var data = JSON.parse(request.responseText);
+        
+        // Display everything
+        loading.innerHTML = '';
+        temp.innerHTML = K2F(data.list[0].main.temp) + '&deg';
+        loc.innerHTML = data.list[0].name;
+        humid.innerHTML = data.list[0].main.humidity + '% Humidity';
+        wind.innerHTML = mps2mph(data.list[0].wind.speed) + 'mph wind speeds';
+        dir.innerHTML = ' coming from the ' + degreesTodir(data.list[0].wind.deg);
+        min.innerHTML = K2F(data.list[0].main.temp_min) + '&deg - ';
+        max.innerHTML = K2F(data.list[0].main.temp_max) + '&deg';
+        desc.innerHTML = 'Description: ' + capitalizeFirstLetter(data.list[0].weather[0].description);
+        var date = new Date();
+        day.innerHTML = ' - ' + weekdays[date.getDay()];
+    };
+    // I was wondering why the weather wasn't loading. Then 30 min later i realized i forgot this ;(
+    request.send();
 }
 
+// Converting degrees to a direction
 function degreesTodir(degrees)
 {
 	var range = 360/8;
@@ -85,50 +79,43 @@ function degreesTodir(degrees)
 		}
 		low = (low + range) % 360;
 		high = (high + range) % 360;
+        // Super complex formula I googled
 	}
 }
 
+// Kelvin -> Celcius
 function K2C(K)
 {
 	return Math.round(K - 273.15);
 }
 
+// Kelvin -> Fahrenheit
 function K2F(K)
 {
 	return Math.round(K *(9/5) - 459.67);
 }
 
+// Meters Per Second -> Miles per Hour
 function mps2mph(mps)
 {
 	return Math.round(mps * 2.23694);
 }
 
-function update(weather)
-{
-	wind.innerHTML = weather.wind + " mph windspeeds from the ";
-	dir.innerHTML = weather.dir + ".";
-	humid.innerHTML = weather.humid + "% humidity";
-	temp.innerHTML = weather.temp + "&deg;";
-	min.innerHTML = weather.min + "&deg; - ";
-	max.innerHTML = weather.max + "&deg";
-	loc.innerHTML = weather.loc;
-	icon.src = "imgs/codes/" + weather.icon + ".png";
-	desc.innerHTML = "Weather right now: " + capitalizeFirstLetter(weather.desc);
-	day.innerHTML = " - " + weather.day;
-	loading.innerHTML = "";
-}
-
+// Gets the position
 function showPosition(position)
 {
 	updateByGeo(position.coords.latitude, position.coords.longitude);
 }
 
+// For displaying some JSON text nicely
 function capitalizeFirstLetter(string) {
     return string.charAt(0).toUpperCase() + string.slice(1);
 }
 
+// When the window loads...
 window.onload = function()
 {
+    // Assign everything
 	temp = document.getElementById("temperature");
 	min = document.getElementById("min");
 	max = document.getElementById("max");
@@ -141,14 +128,13 @@ window.onload = function()
 	desc = document.getElementById("description");
 	day = document.getElementById("day");
 	
+    // And get location
 	if(navigator.geolocation)
 	{
 		navigator.geolocation.getCurrentPosition(showPosition);
 	}
 	else
 	{
-		/*var zip = window.prompt("We could not discover your location. What is your zip code?");
-		updateByZip(zip);*/ /* This doesn't actually work */
 		alert("Could not discover your location :(");
 	}
 }

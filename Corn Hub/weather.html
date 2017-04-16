@@ -1,10 +1,4 @@
-<!-- NOTICE ME!!
-  -- This page is a Work in Progress (WIP)
-  -- This means that Cornchip is doing stuff to it and that it will most likely undergo changes.
-  -- I am currently hoping to make this the new API: https://www.wunderground.com/weather/api/d/pricing.html
-  -- But ima keep looking to see if I can find anything better.
-  -- Happy code reading I guess.
-  -->
+<!-- Gives you semi-accurate weather information! -->
 <!DOCTYPE html>
 <html>
 	<head>
@@ -38,13 +32,13 @@
 					<li>/</li>
 					<li><a href="sean.html">Sean</a></li>
 					<li>/</li>
-					<li><a href="info.html">Info Hub</a></li>
+					<li><a href="today.html">This Day in History</a></li>
 				</ul>
 			</div>
 
 			<div class="main">
-				<h1>Corn Hub Weather [WIP]<span class="day" id="day"></span></h1>
-				<span class="loading" id="loading">We are currently upgrading our weather api. Please be patient.</span>
+				<h1 class="rainbow-text">Corn Hub Weather<span class="day" id="day"></span></h1>
+				<span class="loading" id="loading">Loading Weather...</span>
 				<div class="weather">
 					<p class="weather">
 						<div class="temperature">

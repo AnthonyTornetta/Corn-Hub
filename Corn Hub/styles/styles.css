@@ -636,6 +636,11 @@ ul{
   animation: rainbow-text 5s infinite;
 }
 
+#title
+{
+    animation: rainbow-text 5s infinite;
+}
+
 .rb-bground
 {
 	animation: rb-bground 5s infinite;
