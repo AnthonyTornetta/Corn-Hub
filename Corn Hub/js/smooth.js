@@ -1,5 +1,3 @@
-/* For smooth scrolling with hrefs :) */
-
 /* Guide for: Smooth Scroll
  * ------------------------
  * Nothing special is needed;
