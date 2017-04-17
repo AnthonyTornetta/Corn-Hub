@@ -7,6 +7,7 @@ var request = new XMLHttpRequest();
 request.open("GET", url);
 request.onload = function ()
 {
+	container.innerHTML = '';
     var data = JSON.parse(request.responseText);
     console.log(data.articles[0].author);
     for(i = 0; i < data.articles.length; i++)
