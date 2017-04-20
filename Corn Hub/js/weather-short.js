@@ -2,10 +2,6 @@ var API = "05a68069ca925ee5c7863e687d0d57d5";
 var temp;
 var loc;
 var deg;
-//var icon;
-//var humid;
-//var wind;
-//var dir;
 
 function updateByZip(zip)
 {
@@ -15,13 +11,12 @@ function updateByZip(zip)
 	sendRequest(url);
 }
 
-function updateByGeo(lat, lon)
+function updateByGeo()
 {
 	var url = "http://api.openweathermap.org/data/2.5/weather?" + 
-	"lat=" + lat + 
-	"&lon=" + lon +
-	"&APPID=" + API;
+	"lat=40.2774321&lon=-76.3799947&APPID=" + API;
 	sendRequest(url);
+    //Lat: 40, Long: -76
 }
 
 function sendRequest(url)
@@ -33,10 +28,6 @@ function sendRequest(url)
 		{
 			var data = JSON.parse(xmlhttp.responseText);
 			var weather = {};
-			//weather.icon = data.weather[0].id;
-			//weather.humid = data.main.humidity;
-			//weather.wind = data.wind.speed;
-			//weather.dir = degreesTodir(data.wind.deg);
 			weather.loc = data.name;
 			weather.temp = K2F(data.main.temp);
 			update(weather);
@@ -75,35 +66,14 @@ function K2F(K)
 
 function update(weather)
 {
-	//wind.innerHTML = weather.//wind;
-	//dir.innerHTML = weather.//dir;
-	//humid.innerHTML = weather.//humid;
 	temp.innerHTML = "It's " + weather.temp + "&deg; in ";
 	loc.innerHTML = weather.loc;
-	//icon.src = "imgs/codes/" + weather.//icon + ".png";
-}
-
-function showPosition(position)
-{
-	updateByGeo(position.coords.latitude, position.coords.longitude)
 }
 
 window.onload = function()
 {
 	temp = document.getElementById("temperature");
 	loc = document.getElementById("location");
-	//icon = document.getElementById("//icon");
-	//humid = document.getElementById("//humidity");
-	//wind = document.getElementById("//wind");
-	//dir = document.getElementById("//direction");
 	
-	if(navigator.geolocation)
-	{
-		navigator.geolocation.getCurrentPosition(showPosition);
-	}
-	else
-	{
-		var zip = window.prompt("We could not discover your location. What is your zip code?");
-		updateByZip(zip);
-	}
+	updateByGeo()
 }
