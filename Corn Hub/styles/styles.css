@@ -188,7 +188,8 @@ a {
 }
 
 /* Gatta make them elements look slick. */
-h1{
+h1
+{
     color:#048;
     text-align:center;
     border-bottom:thick;
@@ -198,7 +199,16 @@ h1{
 	transition: all 0.5s ease-in-out;
 }
 
-h3{
+h2
+{
+    margin-left:20px;
+    color:#058;
+    font-size:24px;
+    margin-bottom: 20px;
+}
+
+h3
+{
     margin-left:10px;
     color:#058;
     font-size:24px;
@@ -211,14 +221,16 @@ h4
     color:#048;
 }
 
-p{
+p
+{
     color:#048;
     font-size:18px;
     margin-left:15px;
 }
 
 
-ul{
+ul
+{
     list-style-type:none;
     margin-left:20px;
 }

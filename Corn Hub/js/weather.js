@@ -1,5 +1,5 @@
-// The weather js!
-var API = "05a68069ca925ee5c7863e687d0d57d5";
+// The weather js (woot)!
+var API = "05a68069ca925ee5c7863e687d0d57d5"; // <-- Pls don't steal :(, I have limited api calls
 var temp;
 var loc;
 var icon;
@@ -15,15 +15,17 @@ var day;
 var weekdays = new Array(7);
 var date = new Date();
 
+// To display what day it is
 weekdays[1] = "Monday";
 weekdays[2] = "Tuesday";
 weekdays[3] = "Wednesday";
 weekdays[4] = "Thursday";
 weekdays[5] = "Friday";
 weekdays[6] = "Saturday";
-weekdays[0] = "Sunday";
+weekdays[0] = "Sunday"; // Whoever made Sunday the first day of the week is dumb.
 
-// Get the weather JSON url
+// Get the weather JSON url with the latitude and longitude
+// Note: Once I'm not lazy, I'll make it so it doesn't pester for your location every time. That day's not today.
 function updateByGeo(lat, lon)
 {
 	var url = "http://api.openweathermap.org/data/2.5/find?" + 
@@ -60,22 +62,19 @@ function sendRequest(url)
     request.send();
 }
 
-// Converting degrees to a direction
+// Converting degrees to a direction - Not sure if it's accurate though :/
 function degreesTodir(degrees)
 {
+    // 360/8 because... geometry!
 	var range = 360/8;
 	var low = 360 - range/2;
 	var high = (low + range) % 360;
-	var angles = [ "N", "NE", "E", "SE", "S", "SW", "NW", "W" ];
+	var angles = [ "North", "North East", "East", "South East", "South", "South West", "West", "North West"];
 	for(i in angles)
 	{
 		if(degrees >= low && degrees < high)
 		{
 			return angles[i];
-		}
-		else
-		{
-			return "NW";
 		}
 		low = (low + range) % 360;
 		high = (high + range) % 360;
@@ -101,14 +100,15 @@ function mps2mph(mps)
 	return Math.round(mps * 2.23694);
 }
 
-// Gets the position
+// Gets the position (while peskily asking user)
 function showPosition(position)
 {
 	updateByGeo(position.coords.latitude, position.coords.longitude);
 }
 
 // For displaying some JSON text nicely
-function capitalizeFirstLetter(string) {
+function capitalizeFirstLetter(string) 
+{
     return string.charAt(0).toUpperCase() + string.slice(1);
 }
 
@@ -135,6 +135,6 @@ window.onload = function()
 	}
 	else
 	{
-		alert("Could not discover your location :(");
+        loading.innerHTML = "Could not discover your location :(";
 	}
 }
