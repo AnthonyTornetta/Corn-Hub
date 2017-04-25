@@ -1,4 +1,4 @@
-// From https://static.checkiday.com/js/widget/min.js (with no comments)
+// From https://static.checkiday.com/js/widget/min.js (with a few edits)
 
 var dateFormat = function() {
     var a = /d{1,4}|m{1,4}|yy(?:yy)?|([HhMsTt])\1?|[LloSZ]|"[^"]*"|'[^']*'/g,
@@ -107,9 +107,10 @@ displayWidget = function() {
         if (d.readyState === 4) {
             if (d.status === 200) {
                 e = d.responseText;
-                e = e.replace('["', "");
-                e = e.replace('"]', "");
-				e = e.replace('\\u00e9', "é");
+                e = replaceAll(e, '["', "");
+                e = replaceAll(e, '"]', "");
+				e = replaceAll(e, '\\u00e9', "é");
+                e = replaceAll(e, '\\"', '');
                 f = e.split('","');
                 e = "";
 				e += '<div class="holiday-list">';
@@ -132,4 +133,15 @@ displayWidget = function() {
         }
     }
 };
+
+function replaceAll(str, find, replace) 
+{
+  return str.replace(new RegExp(escapeRegExp(find), 'g'), replace);
+}
+
+function escapeRegExp(str) 
+{
+    return str.replace(/([.*+?^=!:${}()|\[\]\/\\])/g, "\\$1");
+}
+
 setTimeout("displayWidget()", 1)

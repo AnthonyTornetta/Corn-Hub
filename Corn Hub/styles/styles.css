@@ -181,10 +181,14 @@ a {
     color:#038;
 }
 
-.wrapper{
+.wrapper
+{
     font-family: Century Gothic, sans-serif;
     width:100%;
     height:100%;
+	-moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
 }
 
 /* Gatta make them elements look slick. */
@@ -699,4 +703,30 @@ ul
   0% {background-position: 0px 0px, 0px 0px, 0px 0px;}
   50% {background-position: 500px 500px, 100px 200px, -100px 150px;}
   100% {background-position: 500px 1000px, 200px 400px, -100px 300px;}
-}	
+}
+
+.typed-cursor
+{
+    opacity: 1;
+    -webkit-animation: blink 0.7s infinite;
+    -moz-animation: blink 0.7s infinite;
+    animation: blink 0.7s infinite;
+}
+@keyframes blink
+{
+    0% { opacity:1; }
+    50% { opacity:0; }
+    100% { opacity:1; }
+}
+@-webkit-keyframes blink
+{
+    0% { opacity:1; }
+    50% { opacity:0; }
+    100% { opacity:1; }
+}
+@-moz-keyframes blink
+{
+    0% { opacity:1; }
+    50% { opacity:0; }
+    100% { opacity:1; }
+}
