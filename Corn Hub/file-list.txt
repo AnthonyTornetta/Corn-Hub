@@ -33,3 +33,4 @@ images/alex.png
 images/bsod.png
 images/compooter.png
 images/cornybground.jpg
+images/byte-club-logo.png
