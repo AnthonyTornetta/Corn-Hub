@@ -37,7 +37,7 @@ images/Dropbox.png
 images/falcon.png
 images/gdrive.png
 images/github.png
-images/icon.jpg
+images/favicon.jpg
 images/jackHotmanFace.png
 images/kahoot.png
 images/libblue.png
