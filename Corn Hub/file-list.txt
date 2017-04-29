@@ -1,6 +1,7 @@
 update.log
 index.html
 bee-movie.html
+byte-club.html
 bsod.html
 Rainbow Screensaver.scr
 info.html
