@@ -40,7 +40,6 @@ ul
 
 .main
 {
-	background-color:#222;
 	padding-left:10px;
 	padding-right:10px;
 	background-color:#E5E5E5;
@@ -729,4 +728,14 @@ ul
     0% { opacity:1; }
     50% { opacity:0; }
     100% { opacity:1; }
+}
+
+.bigger
+{
+	font-size: 30px;
+}
+
+.box-shadow-all
+{
+	box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
 }
