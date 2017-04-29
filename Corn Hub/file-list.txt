@@ -61,3 +61,4 @@ images/whitebox.png
 images/wired.jpg
 images/xmas.jpg
 images/youtube.png
+runme.txt
