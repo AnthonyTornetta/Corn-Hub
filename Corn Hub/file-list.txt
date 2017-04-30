@@ -1,6 +1,9 @@
 #If it begins with a # it's a comment!
+
+#
+# Corn Hub Directory
+#
 update.log
-Runme.exe
 index.html
 bee-movie.html
 byte-club.html
@@ -15,10 +18,16 @@ sean.html
 today.html
 weather.html
 xmas.html
+#
+# Styles Directory
+#
 styles/styles.css
 styles/xmas.css
 styles/weather.css
 styles/today.css
+#
+# Js Directory
+#
 js/events.js
 js/holiday.js
 js/holidayEffect.js
@@ -28,6 +37,9 @@ js/ticker.js
 js/today.js
 js/weather-short.js
 js/weather.js
+#
+# Images Directory
+#
 images/alex.png
 images/bsod.png
 images/byte-club-bg.jpg
@@ -62,4 +74,8 @@ images/whitebox.png
 images/wired.jpg
 images/xmas.jpg
 images/youtube.png
-runme.txt
+
+#
+# Misc
+#
+runme.exe
