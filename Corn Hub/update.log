@@ -1,3 +1,5 @@
+1.020 - 4/29/17
+Added an updater that relies on the update.log file (this one) to update Corn Hub automatically. So don't touch this file unless you want to update Corn Hub
+
 1.011b - 4/21/17
 Did many changes, including getting a new news api :( and making it now work on the school computers.  I upgraded some js and added comments in a lot of spots. I also added an update log.
-

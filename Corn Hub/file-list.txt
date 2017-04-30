@@ -1,14 +1,14 @@
+#If it begins with a # it's a comment!
 update.log
 index.html
 bee-movie.html
 byte-club.html
 bsod.html
 Rainbow Screensaver.scr
-info.html
+#info.html
 matrix.html
 lock.html
 news.html
-pranked-nodsk.exe
 rainbow.html
 sean.html
 today.html
