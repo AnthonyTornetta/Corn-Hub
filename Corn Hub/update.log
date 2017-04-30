@@ -1,4 +1,7 @@
-1.020 - 4/29/17
+1.012d - 4/30/17
+Added a runme.exe file for the updater so that the updater updates itself, and added comments to the file-list.txt
+
+1.012 - 4/29/17
 Added an updater that relies on the update.log file (this one) to update Corn Hub automatically. So don't touch this file unless you want to update Corn Hub
 
 1.011b - 4/21/17
