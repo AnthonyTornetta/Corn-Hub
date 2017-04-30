@@ -1,5 +1,6 @@
 #If it begins with a # it's a comment!
 update.log
+Runme.exe
 index.html
 bee-movie.html
 byte-club.html
