@@ -5,6 +5,7 @@
 #
 update.log
 index.html
+Sierra.html
 bee-movie.html
 byte-club.html
 bsod.html
