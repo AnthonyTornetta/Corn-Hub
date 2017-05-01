@@ -1,5 +1,3 @@
-#If it begins with a # it's a comment!
-
 #
 # Corn Hub Directory
 #
