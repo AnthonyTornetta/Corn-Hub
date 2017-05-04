@@ -73,7 +73,6 @@ images/whitebox.png
 images/wired.jpg
 images/xmas.jpg
 images/youtube.png
-images/may4.jpg
 
 #
 # Misc
