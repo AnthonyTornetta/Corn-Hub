@@ -78,4 +78,4 @@ images/youtube.png
 # Misc
 #
 runme.exe
-pranked-nodsk.exe
+scree melt.exe
