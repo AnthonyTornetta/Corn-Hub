@@ -90,7 +90,7 @@ footer
 {
     float: right; 
     width:20%;
-    height: calc(100% - 63px);
+    height: 100%;
     margin-top: 63px;
     -moz-box-sizing: border-box;
     -webkit-box-sizing: border-box;
@@ -149,17 +149,15 @@ footer
     }
 }
 /* So do nav bars. */
-.nav ul
-{
+.nav ul{
     list-style-type:none;
     display:inline;
+    background-color:#004488;
 }
 
-.nav ul li
-{
+.nav ul li{
     display:inline;
-    margin-left: 10px;
-    margin-right: 10px;
+    background-color:#004488;
 }
 
 a {
@@ -167,29 +165,32 @@ a {
     color:#048;
 }
 
-.nav a
-{
+.nav a{
     margin-left:5px;
     margin-right:5px;
     color:#E5E5E5;
     background-color:#004488;
 }
 
-.nav a:hover
-{
+.nav a:hover{
     color:#CECECE;
 }
 
-.main a:hover
-{
+.main a:hover{
     color:#038;
+}
+
+.bg-image
+{
+	width: 100%;
+	height: 100%;
 }
 
 .wrapper
 {
     font-family: Century Gothic, sans-serif;
     width:100%;
-    height:100%;
+    min-height:100%;
 	-moz-box-sizing: border-box;
     -webkit-box-sizing: border-box;
     box-sizing: border-box;
@@ -260,7 +261,6 @@ ul
     border-radius: 5px;
     transition: box-shadow 0.3s ease-in-out;
     transition: all 0.3s ease-in-out;
-    background-color: #e5e5e5;
 }
 
 .main ul li img:hover{
@@ -330,11 +330,6 @@ ul
 }
 
 /* For holidays! (The stupid ones at the bottom) */
-.holiday
-{
-	color: #048;
-}
-
 .holiday-list
 {
 	text-align: center;
@@ -349,301 +344,151 @@ ul
   0% {
     color: #e87d7d;
   }
-  1% {
-    color: #e87d7d;
-  }
   2% {
-    color: #e88a7d;
-  }
-  3% {
     color: #e88a7d;
   }
   4% {
     color: #e8977d;
   }
-  5% {
-    color: #e8977d;
-  }
   6% {
-    color: #e8a47d;
-  }
-  7% {
     color: #e8a47d;
   }
   8% {
     color: #e8b07d;
   }
-  9% {
-    color: #e8b07d;
-  }
   10% {
     color: #e8bd7d;
   }
-  11% {
-    color: #e8bd7d;
-  }
   12% {
-    color: #e8ca7d;
-  }
-  13% {
     color: #e8ca7d;
   }
   14% {
     color: #e8d77d;
   }
   16% {
-    color: #e8d77d;
-  }
-  17% {
-    color: #e8d77d;
+    color: #e8e47d;
   }
   18% {
-    color: #dfe87d;
-  }
-  19% {
     color: #dfe87d;
   }
   20% {
     color: #d3e87d;
   }
-  21% {
-    color: #d3e87d;
-  }
   22% {
     color: #c6e87d;
   }
-  23% {
-    color: #c6e87d;
-  }
   24% {
-    color: #c6e87d;
-  }
-  24% {
-    color: #b9e87d;
-  }
-  25% {
     color: #b9e87d;
   }
   26% {
     color: #ace87d;
   }
-  27% {
-    color: #ace87d;
-  }
   28% {
-    color: #9fe87d;
-  }
-  29% {
     color: #9fe87d;
   }
   30% {
     color: #92e87d;
   }
-  31% {
-    color: #92e87d;
-  }
   32% {
-    color: #86e87d;
-  }
-  33% {
     color: #86e87d;
   }
   34% {
     color: #7de881;
   }
-  35% {
-    color: #7de881;
-  }
   36% {
-    color: #7de88e;
-  }
-  37% {
     color: #7de88e;
   }
   38% {
     color: #7de89b;
   }
-  39% {
-    color: #7de89b;
-  }
   40% {
-    color: #7de8a8;
-  }
-  41% {
     color: #7de8a8;
   }
   42% {
     color: #7de8b5;
   }
-  43% {
-    color: #7de8b5;
-  }
   44% {
-    color: #7de8c1;
-  }
-  45% {
     color: #7de8c1;
   }
   46% {
     color: #7de8ce;
   }
-  47% {
-    color: #7de8ce;
-  }
   48% {
-    color: #7de8db;
-  }
-  49% {
     color: #7de8db;
   }
   50% {
     color: #7de8e8;
   }
-  51% {
-    color: #7de8e8;
-  }
   52% {
-    color: #7ddbe8;
-  }
-  53% {
     color: #7ddbe8;
   }
   54% {
     color: #7dcee8;
   }
-  55% {
-    color: #7dcee8;
-  }
   56% {
-    color: #7dc1e8;
-  }
-  57% {
     color: #7dc1e8;
   }
   58% {
     color: #7db5e8;
   }
-  59% {
-    color: #7db5e8;
-  }
   60% {
-    color: #7da8e8;
-  }
-  61% {
     color: #7da8e8;
   }
   62% {
     color: #7d9be8;
   }
-  63% {
-    color: #7d9be8;
-  }
   64% {
-    color: #7d8ee8;
-  }
-  65% {
     color: #7d8ee8;
   }
   66% {
     color: #7d81e8;
   }
-  67% {
-    color: #7d81e8;
-  }
   68% {
-    color: #867de8;
-  }
-  69% {
     color: #867de8;
   }
   70% {
     color: #927de8;
   }
-  71% {
-    color: #927de8;
-  }
   72% {
-    color: #9f7de8;
-  }
-  73% {
     color: #9f7de8;
   }
   74% {
     color: #ac7de8;
   }
-  75% {
-    color: #ac7de8;
-  }
   76% {
-    color: #b97de8;
-  }
-  77% {
     color: #b97de8;
   }
   78% {
     color: #c67de8;
   }
-  79% {
-    color: #c67de8;
-  }
   80% {
-    color: #d37de8;
-  }
-  81% {
     color: #d37de8;
   }
   82% {
     color: #df7de8;
   }
-  83% {
-    color: #df7de8;
-  }
   84% {
-    color: #e87de4;
-  }
-  85% {
     color: #e87de4;
   }
   86% {
     color: #e87dd7;
   }
-  87% {
-    color: #e87dd7;
-  }
   88% {
-    color: #e87dca;
-  }
-  89% {
     color: #e87dca;
   }
   90% {
     color: #e87dbd;
   }
-  91% {
-    color: #e87dbd;
-  }
   92% {
-    color: #e87db0;
-  }
-  93% {
     color: #e87db0;
   }
   94% {
     color: #e87da4;
   }
-  95% {
-    color: #e87da4;
-  }
   96% {
     color: #e87d97;
   }
-  97% {
-    color: #e87d97;
-  }
   98% {
-    color: #e87d8a;
-  }
-  99% {
     color: #e87d8a;
   }
   100% {
@@ -655,43 +500,22 @@ ul
   0% {
     background-color: #e87d7d;
   }
-  1% {
-    background-color: #e87d7d;
-  }
   2% {
-    background-color: #e88a7d;
-  }
-  3% {
     background-color: #e88a7d;
   }
   4% {
     background-color: #e8977d;
   }
-  5% {
-    background-color: #e8977d;
-  }
   6% {
-    background-color: #e8a47d;
-  }
-  7% {
     background-color: #e8a47d;
   }
   8% {
     background-color: #e8b07d;
   }
-  9% {
-    background-color: #e8b07d;
-  }
   10% {
     background-color: #e8bd7d;
   }
-  11% {
-    background-color: #e8bd7d;
-  }
   12% {
-    background-color: #e8ca7d;
-  }
-  13% {
     background-color: #e8ca7d;
   }
   14% {
@@ -700,256 +524,127 @@ ul
   16% {
     background-color: #e8d77d;
   }
-  17% {
-    background-color: #e8d77d;
-  }
   18% {
-    background-color: #dfe87d;
-  }
-  19% {
     background-color: #dfe87d;
   }
   20% {
     background-color: #d3e87d;
   }
-  21% {
-    background-color: #d3e87d;
-  }
   22% {
     background-color: #c6e87d;
   }
-  23% {
-    background-color: #c6e87d;
-  }
   24% {
-    background-color: #c6e87d;
-  }
-  24% {
-    background-color: #b9e87d;
-  }
-  25% {
     background-color: #b9e87d;
   }
   26% {
     background-color: #ace87d;
   }
-  27% {
-    background-color: #ace87d;
-  }
   28% {
-    background-color: #9fe87d;
-  }
-  29% {
     background-color: #9fe87d;
   }
   30% {
     background-color: #92e87d;
   }
-  31% {
-    background-color: #92e87d;
-  }
   32% {
-    background-color: #86e87d;
-  }
-  33% {
     background-color: #86e87d;
   }
   34% {
     background-color: #7de881;
   }
-  35% {
-    background-color: #7de881;
-  }
   36% {
-    background-color: #7de88e;
-  }
-  37% {
     background-color: #7de88e;
   }
   38% {
     background-color: #7de89b;
   }
-  39% {
-    background-color: #7de89b;
-  }
   40% {
-    background-color: #7de8a8;
-  }
-  41% {
     background-color: #7de8a8;
   }
   42% {
     background-color: #7de8b5;
   }
-  43% {
-    background-color: #7de8b5;
-  }
   44% {
-    background-color: #7de8c1;
-  }
-  45% {
     background-color: #7de8c1;
   }
   46% {
     background-color: #7de8ce;
   }
-  47% {
-    background-color: #7de8ce;
-  }
   48% {
-    background-color: #7de8db;
-  }
-  49% {
     background-color: #7de8db;
   }
   50% {
     background-color: #7de8e8;
   }
-  51% {
-    background-color: #7de8e8;
-  }
   52% {
-    background-color: #7ddbe8;
-  }
-  53% {
     background-color: #7ddbe8;
   }
   54% {
     background-color: #7dcee8;
   }
-  55% {
-    background-color: #7dcee8;
-  }
   56% {
-    background-color: #7dc1e8;
-  }
-  57% {
     background-color: #7dc1e8;
   }
   58% {
     background-color: #7db5e8;
   }
-  59% {
-    background-color: #7db5e8;
-  }
   60% {
-    background-color: #7da8e8;
-  }
-  61% {
     background-color: #7da8e8;
   }
   62% {
     background-color: #7d9be8;
   }
-  63% {
-    background-color: #7d9be8;
-  }
   64% {
-    background-color: #7d8ee8;
-  }
-  65% {
     background-color: #7d8ee8;
   }
   66% {
     background-color: #7d81e8;
   }
-  67% {
-    background-color: #7d81e8;
-  }
   68% {
-    background-color: #867de8;
-  }
-  69% {
     background-color: #867de8;
   }
   70% {
     background-color: #927de8;
   }
-  71% {
-    background-color: #927de8;
-  }
   72% {
-    background-color: #9f7de8;
-  }
-  73% {
     background-color: #9f7de8;
   }
   74% {
     background-color: #ac7de8;
   }
-  75% {
-    background-color: #ac7de8;
-  }
   76% {
-    background-color: #b97de8;
-  }
-  77% {
     background-color: #b97de8;
   }
   78% {
     background-color: #c67de8;
   }
-  79% {
-    background-color: #c67de8;
-  }
   80% {
-    background-color: #d37de8;
-  }
-  81% {
     background-color: #d37de8;
   }
   82% {
     background-color: #df7de8;
   }
-  83% {
-    background-color: #df7de8;
-  }
   84% {
-    background-color: #e87de4;
-  }
-  85% {
     background-color: #e87de4;
   }
   86% {
     background-color: #e87dd7;
   }
-  87% {
-    background-color: #e87dd7;
-  }
   88% {
-    background-color: #e87dca;
-  }
-  89% {
     background-color: #e87dca;
   }
   90% {
     background-color: #e87dbd;
   }
-  91% {
-    background-color: #e87dbd;
-  }
   92% {
-    background-color: #e87db0;
-  }
-  93% {
     background-color: #e87db0;
   }
   94% {
     background-color: #e87da4;
   }
-  95% {
-    background-color: #e87da4;
-  }
   96% {
     background-color: #e87d97;
   }
-  97% {
-    background-color: #e87d97;
-  }
   98% {
-    background-color: #e87d8a;
-  }
-  99% {
     background-color: #e87d8a;
   }
   100% {
@@ -958,17 +653,17 @@ ul
 }
 
 .rainbow-text {
-  animation: rainbow-text 10s infinite;
+  animation: rainbow-text 5s infinite;
 }
 
 #title
 {
-    animation: rainbow-text 10s infinite;
+    animation: rainbow-text 5s infinite !important;
 }
 
 .rb-bground
 {
-	animation: rb-bground 10s infinite;
+	animation: rb-bground 5s infinite !important;
 }
 
 
@@ -1045,3 +740,36 @@ ul
 {
 	box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
 }
+
+.holiday
+{
+    color: #048;
+}
+
+
+
+
+
+
+
+
+/*
+p, h1, h2, h3, h4, h5, h6, a, .holiday
+{
+	color: #e5e5e5;
+}
+
+.main, .wrapper, body
+{
+	background: transparent;
+}
+
+html 
+{ 
+	background: url('../images/may5.jpg') no-repeat center center fixed;
+	-webkit-background-size: cover;
+	-moz-background-size: cover;
+	-o-background-size: cover;
+	background-size: cover;
+}
+*/

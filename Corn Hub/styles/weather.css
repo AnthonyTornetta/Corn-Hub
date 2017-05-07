@@ -41,3 +41,9 @@
 	float: right;
 	margin-right: 10%;
 }
+
+.weather span { color: #048; }
+
+/*
+.weather span { color: #e5e5e5; }
+*/
