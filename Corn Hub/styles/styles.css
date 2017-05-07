@@ -658,12 +658,20 @@ ul
 
 #title
 {
+<<<<<<< HEAD
     animation: rainbow-text 5s infinite !important;
+=======
+    animation: rainbow-text 5s infinite;
+>>>>>>> origin/master
 }
 
 .rb-bground
 {
+<<<<<<< HEAD
 	animation: rb-bground 5s infinite !important;
+=======
+	animation: rb-bground 5s infinite;
+>>>>>>> origin/master
 }
 
 
@@ -741,10 +749,18 @@ ul
 	box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
 }
 
+<<<<<<< HEAD
 .holiday
 {
     color: #048;
 }
+=======
+
+
+
+
+
+>>>>>>> origin/master
 
 
 
@@ -771,5 +787,9 @@ html
 	-moz-background-size: cover;
 	-o-background-size: cover;
 	background-size: cover;
+<<<<<<< HEAD
 }
 */
+=======
+}*/
+>>>>>>> origin/master
