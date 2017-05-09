@@ -158,6 +158,8 @@ footer
 .nav ul li{
     display:inline;
     background-color:#004488;
+	margin-right: 8px;
+	margin-left: 8px;
 }
 
 a {
@@ -261,6 +263,8 @@ ul
     border-radius: 5px;
     transition: box-shadow 0.3s ease-in-out;
     transition: all 0.3s ease-in-out;
+	width: 64px;
+	height: 64px;
 }
 
 .main ul li img:hover{
@@ -658,20 +662,12 @@ ul
 
 #title
 {
-<<<<<<< HEAD
     animation: rainbow-text 5s infinite !important;
-=======
-    animation: rainbow-text 5s infinite;
->>>>>>> origin/master
 }
 
 .rb-bground
 {
-<<<<<<< HEAD
 	animation: rb-bground 5s infinite !important;
-=======
-	animation: rb-bground 5s infinite;
->>>>>>> origin/master
 }
 
 
@@ -749,18 +745,10 @@ ul
 	box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
 }
 
-<<<<<<< HEAD
 .holiday
 {
     color: #048;
 }
-=======
-
-
-
-
-
->>>>>>> origin/master
 
 
 
@@ -787,9 +775,5 @@ html
 	-moz-background-size: cover;
 	-o-background-size: cover;
 	background-size: cover;
-<<<<<<< HEAD
 }
 */
-=======
-}*/
->>>>>>> origin/master
