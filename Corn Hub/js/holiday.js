@@ -114,7 +114,23 @@ displayWidget = function() {
                 f = e.split('","');
                 e = "";
 				e += '<div class="holiday-list">';
-                for (var a = 0; a < f.length; a++) e += '<div class="holiday">'+ f[a] + '</div>';
+                for (var a = 0; a < f.length; a++)
+				{
+					e += '<div class="holiday">'+ f[a] + '</div>';
+				}
+				
+				// Custom Days!
+				
+				var today = new Date();
+				var dd = today.getDate();
+				var mm = today.getMonth() + 1; //January is 0!
+				
+				if(dd == 11 && mm == 5)
+				{
+					e += '<div class="rainbow-text"><b>National Goodbye Bishop Day</b></div>';
+				}
+				
+				// End Custom Days
 				e += "</div>";
                 document.getElementById("Checkiday_List").innerHTML = e;
                 document.getElementById("Checkiday_Date").innerHTML = c
