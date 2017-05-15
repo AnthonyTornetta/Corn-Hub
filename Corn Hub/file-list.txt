@@ -17,6 +17,7 @@ sean.html
 today.html
 weather.html
 xmas.html
+firefox.html
 #
 # Styles Directory
 #
@@ -75,9 +76,8 @@ images/xmas.jpg
 images/youtube.png
 images/may5.jpg
 images/google.jpg
-
 #
 # Misc
 #
 runme.exe
-scree melt.exe
+screen melt.exe
