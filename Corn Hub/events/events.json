@@ -2,10 +2,16 @@
 	"events":
 	[
 		{
-			"title": "Band band band"
+			"title": "Band band band is"
+			"day": 19
+			"month": 5
+			"year": 2017
 		},
 		{
-			"title": "Band2"
+			"title": "JSON is happening"
+			"day": 21
+			"month": 5
+			"year": 2017
 		}
 	]
 }
