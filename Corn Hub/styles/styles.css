@@ -24,7 +24,7 @@ html, body
 body
 {
     max-height: 100%;
-	font-family: Century Gothic, sans-serif;
+	font-family: 'Coffee', Century Gothic, sans-serif;
 }
 
 ul
@@ -119,6 +119,13 @@ footer
     z-index: 999;
 }
 
+@font-face
+{
+	font-family: 'Coffee';
+	src:	url('../fonts/banana.woff2') format('woff2'),
+			url('../fonts/banana.woff') format('woff');
+}
+
 /* Media screens make me want to die. */
 @media screen and (min-width:1050px){
     .main
@@ -190,7 +197,7 @@ a {
 
 .wrapper
 {
-    font-family: Century Gothic, sans-serif;
+    font-family: 'Coffee', Century Gothic, sans-serif;
     width:100%;
     min-height:100%;
 	-moz-box-sizing: border-box;
@@ -750,7 +757,12 @@ ul
     color: #048;
 }
 
-
+hr
+{
+	border: thin;
+	border-color: #048;
+	border-style: solid;
+}
 
 
 

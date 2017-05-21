@@ -56,7 +56,7 @@ requestUSA.onload = function ()
     requestTech.open("GET", url);
     requestTech.onload = function ()
     {
-        container.insertAdjacentHTML('beforeend', '<div class="tech"><h2><span style="color: #00d11f">Technology News<span class="typed-cursor">|</span></span></h2>');
+        container.insertAdjacentHTML('beforeend', '<div class="tech"><h2><span style="color: #00d11f">Technology News<span class="typed-cursor">_</span></span></h2>');
         data = JSON.parse(requestTech.responseText);
         for(i = 0; i < data.response.results.length; i++)
         {

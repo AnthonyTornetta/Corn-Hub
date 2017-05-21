@@ -77,6 +77,11 @@ images/youtube.png
 images/may5.jpg
 images/google.jpg
 #
+# Fonts
+#
+fonts/banana.woff
+fonts/banana.woff2
+#
 # Misc
 #
 runme.exe
