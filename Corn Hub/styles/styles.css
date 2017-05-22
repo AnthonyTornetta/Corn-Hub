@@ -764,10 +764,46 @@ hr
 	border-style: solid;
 }
 
+.popout
+{
+	/* 1 second looks really nice */
+	transition: all 1.0s ease-in-out; 
+	box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+	color: #e5e5e5;
+	z-index: 1000; /* It's more important than you. */
+	position: fixed;
+	margin-top: 20%;
+	margin-left: 99%;
+	overflow: hidden;
+	height: 20%;
+	width: 20%;
+	background-color: rgba(0, 68, 136, 0.6);
+	
+	-webkit-animation: blink 2s infinite;
+    -moz-animation: blink 2s infinite;
+    animation: blink 2s infinite;
+}
 
+.popout:hover
+{
+	margin-left: 80%;
+	
+	-webkit-animation: none;
+    -moz-animation: none;
+    animation: none;
+}
 
+/* The dont show thing is just the button that says dont show */
+.popout .dontShow
+{
+	position: absolute;
+	bottom: 0;
+}
 
-
+.popout p, .popout a
+{
+	color: #e5e5e5;
+}
 
 /*
 p, h1, h2, h3, h4, h5, h6, a, .holiday

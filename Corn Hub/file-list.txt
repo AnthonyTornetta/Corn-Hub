@@ -37,6 +37,7 @@ js/ticker.js
 js/today.js
 js/weather-short.js
 js/weather.js
+js/cookies.js
 #
 # Images Directory
 #
