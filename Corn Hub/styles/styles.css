@@ -777,11 +777,11 @@ hr
 	overflow: hidden;
 	height: 20%;
 	width: 20%;
-	background-color: rgba(0, 68, 136, 0.6);
+	background-color: rgba(0, 68, 136, 1);
 	
-	-webkit-animation: blink 2s infinite;
-    -moz-animation: blink 2s infinite;
-    animation: blink 2s infinite;
+	-webkit-animation: blink 1s infinite;
+    -moz-animation: blink 1s infinite;
+    animation: blink 1s infinite;
 }
 
 .popout:hover
