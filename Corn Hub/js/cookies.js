@@ -1,4 +1,5 @@
 var popout;
+var menu;
 
 function createCookie(cname, cvalue, exdays) 
 {
@@ -24,25 +25,19 @@ function getCookie(cname)
     return "";
 }
 
-window.onload = function()
+function popoutDialog()
 {
-	createCookie('notify', 'true', 14);
 	if(getCookie('notify').length == 0)
 	{
 		createCookie("notify", "true", 14);
-		popoutDialog();
 	}
 	else
 	{
-		if(getCookie('notify') == 'true')
+		if(getCookie('notify') == 'false')
 		{
-			popoutDialog();
-		}
+			return;
+		}			
 	}
-}
-
-function popoutDialog()
-{
 	popout = document.getElementById('popout');
 	popout.innerHTML = 
 	'<div id="po" class="popout">\

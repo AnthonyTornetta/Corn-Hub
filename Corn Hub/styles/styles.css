@@ -772,11 +772,11 @@ hr
 	color: #e5e5e5;
 	z-index: 1000; /* It's more important than you. */
 	position: fixed;
-	margin-top: 20%;
+	margin-top: 45vh;
 	margin-left: 99%;
 	overflow: hidden;
-	height: 20%;
-	width: 20%;
+	height: 120px;
+	width: 200px;
 	background-color: rgba(0, 68, 136, 1);
 	
 	-webkit-animation: blink 1s infinite;
@@ -786,7 +786,7 @@ hr
 
 .popout:hover
 {
-	margin-left: 80%;
+	margin-left: calc(100% - 200px);
 	
 	-webkit-animation: none;
     -moz-animation: none;
@@ -804,6 +804,37 @@ hr
 {
 	color: #e5e5e5;
 }
+
+
+
+.menu p, .menu a
+{
+	color: #e5e5e5;
+}
+
+.menu
+{
+	/* 1 second looks really nice */
+	transition: all 1.0s ease-in-out; 
+	box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+	color: #e5e5e5;
+	z-index: 1000; /* It's more important than you. */
+	position: fixed;
+	margin-top: calc(45vh + 150px);
+	margin-left: 99%;
+	overflow: hidden;
+	height: 120px;
+	width: 200px;
+	background-color: rgba(0, 68, 136, 0.6);
+}
+
+.menu:hover
+{
+	margin-left: calc(100% - 200px);
+	background-color: rgba(0, 68, 136, 1);
+}
+
+
 
 /*
 p, h1, h2, h3, h4, h5, h6, a, .holiday
