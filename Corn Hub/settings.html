@@ -11,6 +11,9 @@
 		<link rel="stylesheet" media="all" href="styles/styles.css">
 		<link rel="icon" href="images/favicon.jpg">
 		<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+		
+		
+		
 	</head>
 	
 	<body>
@@ -48,40 +51,43 @@
 				
 				
 				<h3><span style="cursor: pointer" onclick="apply()">Apply</span></h3>
-				
-				<script>
-					function updateValues()
-					{
-						var bgTest = document.getElementById("bgTest");
-						var txtBgRed = document.getElementById("spanBgRed");
-						var txtBgGreen = document.getElementById("spanBgGreen");
-						var txtBgBlue = document.getElementById("spanBgBlue");
-						
-						var bgRed = document.getElementById("bgRed").value;
-						var bgGreen = document.getElementById("bgGreen").value;
-						var bgBlue = document.getElementById("bgBlue").value;
-						
-						txtBgRed.innerHTML = bgRed;
-						txtBgGreen.innerHTML = bgGreen;
-						txtBgBlue.innerHTML = bgBlue;
-						
-						bgTest.style.backgroundColor = "rgba(" + bgRed + ", " + bgGreen + ", " + bgBlue + ", 1)";
-					}
-					
-					function apply()
-					{
-						/* Just so you know, you will die before this cookie expires. */
-						createCookie("bgRed", bgRed.value, 999999);
-						createCookie("bgBlue", bgBlue.value, 999999);
-						createCookie("bgGreen", bgGreen.value, 999999);
-												
-						// create more never dying cookies
-					}
-					
-					setInterval(updateValues, 10);
-				</script>
 			</div>
 		</div>
         <script type="text/javascript" src="js/snow.js"></script> <!-- Works with anything, not just snow -->
 	</body>
+	
+	<script>
+		var bgTest = document.getElementById("bgTest");
+		var txtBgRed = document.getElementById("spanBgRed");
+		var txtBgGreen = document.getElementById("spanBgGreen");
+		var txtBgBlue = document.getElementById("spanBgBlue");
+		
+		var bgRed = document.getElementById("bgRed").value;
+		var bgGreen = document.getElementById("bgGreen").value;
+		var bgBlue = document.getElementById("bgBlue").value;
+
+		function updateValues()
+		{
+			txtBgRed.innerHTML = bgRed;
+			txtBgGreen.innerHTML = bgGreen;
+			txtBgBlue.innerHTML = bgBlue;
+			
+			bgTest.style.backgroundColor = "rgba(" + bgRed + ", " + bgGreen + ", " + bgBlue + ", 1)";
+		}
+		
+		function apply()
+		{
+			/* Just so you know, you will die before this cookie expires. */
+			createCookie("bgRed", bgRed.value, 999999);
+			createCookie("bgBlue", bgBlue.value, 999999);
+			createCookie("bgGreen", bgGreen.value, 999999);
+									
+			// create more never dying cookies
+			createCookie("txtRed", cRed.value, 999999);
+			createCookie("txtGreen", cRed.value, 999999);
+			createCookie("txtBlue", cRed.value, 999999);
+		}
+		
+		setInterval(updateValues, 10);
+	</script>
 </html>
