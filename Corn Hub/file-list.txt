@@ -18,7 +18,6 @@ today.html
 weather.html
 xmas.html
 firefox.html
-test.exe
 #
 # Styles Directory
 #
