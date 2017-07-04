@@ -13,18 +13,22 @@ function getCookie(cname)
 {
 	var name = cname + "=";
     var ca = document.cookie.split(';');
-    for(var i = 0; i < ca.length; i++) {
+    for(var i = 0; i < ca.length; i++) 
+	{
         var cookie = ca[i];
-        while (cookie.charAt(0) == ' ') {
+        while (cookie.charAt(0) == ' ') 
+		{
             cookie = cookie.substring(1);
         }
-        if (cookie.indexOf(name) == 0) {
+        if (cookie.indexOf(name) == 0) 
+		{
             return cookie.substring(name.length, cookie.length);
         }
     }
     return "";
 }
 
+/*
 function popoutDialog()
 {
 	if(getCookie('notify').length == 0)
@@ -54,3 +58,4 @@ function closePopoutDialog(forever)
 		createCookie('notify', 'false', 14);
 	popout.innerHTML = "";
 }
+*/

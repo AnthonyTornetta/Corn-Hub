@@ -1,140 +1,171 @@
-// The weather js (woot)!
-var API = "05a68069ca925ee5c7863e687d0d57d5"; // <-- Pls don't steal :(, I have limited api calls
-var temp;
-var loc;
-var icon;
-var humid;
-var wind;
-var dir;
-var min;
-var max;
-var loading;
-var desc;
-var day;
 
-var weekdays = new Array(7);
-var date = new Date();
+$(function(){
+    var lat,
+        lon, 
+        city, 
+        url, 
+        tempC,
+        humid,
+        hpa,
+        country,
+        clouds,
+        counter = 0;
+    
+    // API key for getting weather data
+    var API_KEY = "05a68069ca925ee5c7863e687d0d57d5"; // Idk how to make final/const variables in js so i just made it all caps lol
+    url = "http://api.openweathermap.org/data/2.5/weather?lat="+lat+"&lon="+lon+"&units=metric&appid=" + API_KEY;
 
-// To display what day it is
-weekdays[1] = "Monday";
-weekdays[2] = "Tuesday";
-weekdays[3] = "Wednesday";
-weekdays[4] = "Thursday";
-weekdays[5] = "Friday";
-weekdays[6] = "Saturday";
-weekdays[0] = "Sunday"; // Whoever made Sunday the first day of the week is dumb.
-
-// Get the weather JSON url with the latitude and longitude
-// Note: Once I'm not lazy, I'll make it so it doesn't pester for your location every time. That day's not today.
-function updateByGeo(lat, lon)
-{
-	var url = "http://api.openweathermap.org/data/2.5/find?" + 
-	"lat=" + lat + 
-	"&lon=" + lon +
-	"&APPID=" + API;
-	sendRequest(url);
-}
-
-function sendRequest(url)
-{
-    // To contact the server 
-	var request = new XMLHttpRequest();
-    request.open("GET", url);
-    request.onload = function ()
-    {
-        // Get the JSON and shove it in an object.
-        var data = JSON.parse(request.responseText);
+    // Display current city on load, or at least city of your IP address provider
+    currentCity();
+    
+    // Main function for city search
+    searchCity();
+    
+    // Display current city
+    // It's gonna display a city of your IP address provider
+    // Although it may be wrong, but then you can just type in your city :)
+    // I replaced geolocation w/ this because it doesn't pester the user every time for permissions and works in the edge browser without perms
+    function currentCity(){
+        $.getJSON("https://ipinfo.io", function(data) {
+            lat = data.loc.split(',')[0];
+            lon = data.loc.split(',')[1];
+            url = "http://api.openweathermap.org/data/2.5/weather?lat="+lat+"&lon="+lon+"&units=metric&appid=" + API_KEY;
+            updateWeather(url);
+        }, 'jsonp');
+    }
+    
+    // Gets city based on your input
+    function yourCity() {
+        var city = $("#input-city").val();
         
-        // Display everything
-        loading.innerHTML = '';
-        temp.innerHTML = K2F(data.list[0].main.temp) + '&deg';
-        loc.innerHTML = data.list[0].name;
-        humid.innerHTML = data.list[0].main.humidity + '% Humidity';
-        wind.innerHTML = mps2mph(data.list[0].wind.speed) + 'mph wind speeds';
-        dir.innerHTML = ' coming from the ' + degreesTodir(data.list[0].wind.deg);
-        min.innerHTML = K2F(data.list[0].main.temp_min) + '&deg - ';
-        max.innerHTML = K2F(data.list[0].main.temp_max) + '&deg';
-        desc.innerHTML = 'Description: ' + capitalizeFirstLetter(data.list[0].weather[0].description);
-        var date = new Date();
-        day.innerHTML = ' - ' + weekdays[date.getDay()];
-    };
-    // I was wondering why the weather wasn't loading. Then 30 min later i realized i forgot this ;(
-    request.send();
-}
+        // If input is invalid, it shows weather in my city :)
+        if (!city) {
+            city="Split";
+        }
+        url = "https://cors-anywhere.herokuapp.com/http://api.openweathermap.org/data/2.5/weather?q="+city+"&units=metric&appid=" + API_KEY;
+        updateWeather(url);
+    }
 
-// Converting degrees to a direction - Not sure if it's accurate though :/
-function degreesTodir(degrees)
-{
-    // 360/8 because... geometry!
-	var range = 360/8;
-	var low = 360 - range/2;
-	var high = (low + range) % 360;
-	var angles = [ "North", "North East", "East", "South East", "South", "South West", "West", "North West"];
-	for(i in angles)
-	{
-		if(degrees >= low && degrees < high)
-		{
-			return angles[i];
-		}
-		low = (low + range) % 360;
-		high = (high + range) % 360;
-        // Super complex formula I googled
-	}
-}
+    // Main function for updating weather based on url which is generated based on city or current place
+    function updateWeather(url) {
+        
+        // WeatherData will hold all requested data(typically object or array) in JSON format
+        $.getJSON(url, function(weatherData){
 
-// Kelvin -> Celcius
-function K2C(K)
-{
-	return Math.round(K - 273.15);
-}
+                // I uploaded icons in a way that their name ends with appropriate weather condition from API documentation
+                // Each weather condition has it's own short name, for example condition Clear sky has icon name 01d
+                var icon = "http://i345.photobucket.com/albums/p389/domagojPuljic/Weather_Iconsss178/uelknvknjbbcbcdcbdjdcnun" + weatherData.weather[0].icon + ".png";
+                
+                // Based on an icon name, apply appropriate background image
+                $("body").css("background-image", "url(" + "http://i345.photobucket.com/albums/p389/domagojPuljic/Weather_Iconsss178/jnkfvnhuejcdferbvnd_" + weatherData.weather[0].icon + ".jpeg" + ")");
+                
+                city = weatherData.name;
+                country = weatherData.sys.country;
+                
+                windDir = degToCompass(weatherData.wind.deg % 360);
+                humid = weatherData.main.humidity;
+                
+                pressure = weatherData.main.pressure;
+                clouds = weatherData.clouds.all;
+                
+                $(".city").html(city + ", " + country);
+                $(".pressure").html(pressure + "hpa");
+                $(".humid").html(humid + "% humidity");
+                $(".condition-icon").attr("src", icon);
+                
+                
+                $(".weather-descr").html(firstLetterUpper(weatherData.weather[0].description) + "<br>(" + clouds + "% of clouds)");
+                
+                $(".container-fluid").fadeIn(800);
+                $(".spinner").hide();
+                
+                $(".compass").css({
+                    "transform":"rotate(" + weatherData.wind.deg + "deg)",
+                    "-webkit-transform":"rotate(" + weatherData.wind.deg + "deg)"
+                });
+                
+                unitTrigger(weatherData);
+        });
+    }
+    
+    // Every click on unit button increases counter and calls this function which converts data
+    // If the counter is odd number units are metric, else customary
+    function updateUnits(weatherData) {
+        
+        temp = weatherData.main.temp;
+        windSpeed = weatherData.wind.speed*3.6;
+        
+        if(counter % 2 == 0) {
+            // Unary + operator, converts operand to a number if it already isn't, this will also ditch any unnecessary zeros
+            temp = +(temp * (9/5) + 32).toFixed(1) +"°F";
+            windSpeed = +(windSpeed * 0.62137119223733).toFixed(2)+"mph"; // A fancy google formula
+            $("#change").val("°C");
+        }
+        else {
+            temp = +temp.toFixed(1) +"°C";
+            windSpeed = +windSpeed.toFixed(2)+"kph";
+            $("#change").val("°F");
+        }
+        
+        $(".temp").html(temp);
+        
+        // Sometimes there isn't info about wind direction, if that happens I put N as a direction
+        if(windDir) {
+            $(".wind").html(windDir + " " + windSpeed);
+        }
+        else {
+            $(".wind").html("N " + windSpeed);
+        }
+    }
+    
+    // Function for updating weather data on every API call and updating units on every click
+    function unitTrigger(data) {
+        updateUnits(data);
+        $("#change").off("click").on("click",function(){
+            counter++;
+            updateUnits(data);
+        });
+    }
 
-// Kelvin -> Fahrenheit
-function K2F(K)
-{
-	return Math.round(K *(9/5) - 459.67);
-}
-
-// Meters Per Second -> Miles per Hour
-function mps2mph(mps)
-{
-	return Math.round(mps * 2.23694);
-}
-
-// Gets the position (while peskily asking user)
-function showPosition(position)
-{
-	updateByGeo(position.coords.latitude, position.coords.longitude);
-}
-
-// For displaying some JSON text nicely
-function capitalizeFirstLetter(string) 
-{
-    return string.charAt(0).toUpperCase() + string.slice(1);
-}
-
-// When the window loads...
-window.onload = function()
-{
-    // Assign everything
-	temp = document.getElementById("temperature");
-	min = document.getElementById("min");
-	max = document.getElementById("max");
-	loc = document.getElementById("location");
-	icon = document.getElementById("icon");
-	humid = document.getElementById("humidity");
-	wind = document.getElementById("wind");
-	dir = document.getElementById("direction");
-	loading = document.getElementById("loading");
-	desc = document.getElementById("description");
-	day = document.getElementById("day");
-	
-    // And get location
-	if(navigator.geolocation)
-	{
-		navigator.geolocation.getCurrentPosition(showPosition);
-	}
-	else
-	{
-        loading.innerHTML = "Could not discover your location :(";
-	}
-}
+    // Turn degreess into wind direction name, StackOverflow thank you
+    function degToCompass(num) {
+        
+        // Divide angle by 22.5 because 360/16 = 22.5deg per direction change
+        // Add 0.5 so that when we divide the value we can break the 'tie' between the direction change threshold
+        // 'tie' means, for example if its 11.25 degress we don't know if it's "N" or "NNE", because it's on the threshold
+        var val = Math.floor((num / 22.5) + 0.5);
+        
+        // 16 directions which are going clockwise starting from North
+        var arr = ["N", "NNE", "NE", "ENE", "E", "ESE", "SE", "SSE", "S", "SSW", "SW", "WSW", "W", "WNW", "NW", "NNW"];
+        
+        // Return the value from array at the index of (mod 16)
+        return arr[(val % 16)];
+    }
+    
+    // Monitors if the enter was pressed while typing in input field, if it's pressed, fire up click event
+    function onEnterSearch() {
+        $("#input-city").keyup(function(event) {
+            if (event.keyCode == 13) {
+                $("#submit").click();
+            }
+        });
+    }
+    
+    // Searches for a city's weather data
+    function searchCity() {
+        onEnterSearch();
+        
+        $("#submit").off('click').on('click',function() {
+            $(".container-fluid").fadeOut(200);
+            $(".spinner").show();
+            yourCity();
+            $("#input-city").val('').blur();
+        });
+    }
+    
+    // Weather description comes with first letter lowercase, I like it uppercase, so that's this
+    function firstLetterUpper(string) {
+      return string.charAt(0).toUpperCase() + string.slice(1);
+    }
+  
+});

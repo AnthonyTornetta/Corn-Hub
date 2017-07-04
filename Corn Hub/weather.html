@@ -1,64 +1,49 @@
-<!-- Gives you semi-accurate weather information! -->
+<!-- Improved weather page (Thanks domagoj for the help) -->
 <!DOCTYPE html>
 <html>
-	<head>
-		<title>Corn Hub : Weather</title>
+    <head>
+        <title>Corn Hub : Weather</title>
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script> <!-- Jquery -->
-		<script type="text/javascript" src="js/smooth.js"></script> <!-- Smooth Scroll -->
-        <link rel="stylesheet" media="all" href="styles/styles.css">
-		<link rel="stylesheet" media="all" href="styles/weather.css">
+        <meta charset="utf-8">
 		<link rel="icon" href="images/favicon.jpg">
-		<script type="text/javascript" src="js/weather.js"></script> <!-- Weather Stuff -->
-		<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-	</head>
-
-	<body>
-		<div id="snowflakeContainer">
-			<p class="snowflake"></p>
-		</div>
-		<div class="wrapper">
-			<div class="nav">
-				<ul>
-					<li><a href="index.html">Home</a></li>
-					<li><a href="weather.html">Weather</a></li>
-                    <li><a href="matrix.html">Matrix</a></li>
-                    <li><a href="news.html">News</a></li>
-					<li><a href="byte-club.html">Byte Club</a></li>
-					<li><a href="sean.html">Sean</a></li>
-					<li><a href="today.html">This Day in History</a></li>
-				</ul>
-			</div>
-
-			<div class="main">
-				<span id="title"><h1>Corn Hub Weather<span class="day" id="day"></span></h1></span>
-				<span class="loading" id="loading">Loading Weather...</span>
-				<div class="weather">
-					<p class="weather">
-						<div class="temperature">
-							<span id="temperature"></span>
-						</div>
-						<div class="minmax">
-							<span id="min"></span><span id="max"></span>
-						</div>
-						<div class="location">
-							<span id="location"></span>
-						</div>
-						<div class="icon">
-							<span id="icon"></span>
-						</div>
-						<div class="humidity">
-							<span id="humidity"></span>
-						</div>
-						<div class="wind">
-							<span id="wind"></span><span id="direction"></span>
-						</div>
-						<div class="description">
-							<span id="description"></span>
-						</div>
-					</p>
-				</div>
-			</div>
-		</div>
-		<script type="text/javascript" src="js/snow.js"></script> <!-- Works with anything, not just snow -->
-	</body>
+		<script src="js/weather.js"></script>
+		<link rel="stylesheet" media="all" href="styles/styles.css">
+		<link rel="stylesheet" media="all" href="styles/weather.css">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    </head>
+    <body>
+        <span class="col-xs-12 spinner"><img src="images/loader.png" width="50" height="50"></span>
+        
+        <div class="container-fluid text-center">
+            <span class="city text-center"></span>
+            <div class="col-xs-12">
+                <input type="submit" id="change" class="btn btn-primary" value="&deg;F">
+                <input type="text" id="input-city" placeholder="Enter City">
+                <input type="submit" id="submit" class="btn btn-primary" value="Go">
+            </div>
+            <div class="row text-center">
+                <div class="col-xs-6">
+                  <img class="condition-icon img-responsive center-block" src="">
+                  <span class="weather-descr"></span>
+                </div>
+                <div class="col-xs-6 tdiv">
+                    <span class="temp"></span>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-xs-4">
+                    <img src="images/humidity.png" class="img-responsive center-block img-rad"style="max-width:30%;min-width:50px;">
+                    <span class="humid"></span>
+                </div>
+                <div class="col-xs-4">
+                    <img src="http://image.flaticon.com/icons/png/512/10/10442.png" class="compass img-responsive center-block img-rad" style="max-width:30%;min-width:50px;">
+                    <span class="wind center-block"></span>
+                </div>
+                <div class="col-xs-4">
+                    <img src="images/pressure-gage.png" class="img-responsive center-block img-rad" style="max-width:30%;min-width:50px;">
+                    <span class="pressure"></span>
+                </div>
+            </div>
+        </div>
+    </body>
 </html>

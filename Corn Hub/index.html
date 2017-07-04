@@ -1,6 +1,7 @@
 <!-- Developed by Cornchip -->
 <!--
     Developed while listening to: https://www.youtube.com/watch?v=fr6KVNt-1Ek
+	If you are seeing this: Have a fantastic summer!
  -->
 <!DOCTYPE html>
 <html>
@@ -10,18 +11,20 @@
 		<script type="text/javascript" src="js/smooth.js"></script> <!-- Smooth Scroll -->
 		<link rel="stylesheet" media="all" href="styles/styles.css">
 		<link rel="icon" href="images/favicon.jpg">
+		<script type="text/javascript" src="js/cookies.js"></script> <!-- Cooookieeees (yum ) -->
 		<script type="text/javascript" src="js/weather-short.js"></script> <!-- Weather Stuff -->
+		<script type="text/javascript" src="js/settings.js"></script> <!-- Settings stuffs -->
 		<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 	</head>
 	
 	<body>
 		<div id="snowContainer">
-			<p class="snowflake"></p>
+			<p class="snowflake" id="precipitation"></p>
 		</div>
 		<div class="wrapper">
 			<script src="js/cookies.js"></script>
 			<div class="nav">
-				<ul>
+				<ul color="color-secondary">
 					<li><a href="index.html">Home</a></li>
 					<li><a href="weather.html">Weather</a></li>
 					<li><a href="matrix.html">Matrix</a></li>
@@ -32,15 +35,15 @@
 				</ul>
 			</div>
 			
-			<div id="popout">
+			<div id="popout" color="color-secondary">
 			
 			</div>
 			
-			<div class="main">
+			<div class="main color-primary">
 				<div class="rbar">
 					<h3>Nice Things</h3>
 					<ul>
-						<li><a href="firefox.html">Firefox not working? Click here!</a></li>
+						<li><a href="firefox.html"><b>Firefox not working? Click here!</b></a></li>
 						<!-- Not broken :D -->
 						<li><a href="http://www.englishbanana.com/games/" target="_blank">English Banana</a></li>
 						<li><a href="http://www.coolmath-games.com/" target="_blank">Coolmath</a></li> <!-- Ol' Faithful -->
@@ -49,48 +52,52 @@
 						<li><a href="bsod.html">Fake BSOD</a></li> <!-- :> -->
 						<li><a href="bee-movie.html">Bee Movie in Binary</a></li>
 					</ul>
-					<!--<hr>
-					<h3>Events</h3>
-					<ul id="events-list">
-					<script src="js/ownEvents.js"></script>
-					</ul>-->
 				</div>
 				
-				<div class="main-content">
+				<div class="main-content color-primary">
 					<h1 id="title">Corn Hub</h1>
 					<p><!-- Weather -->
-						<span class="temperature"><span id="temperature">&star; Have a great summer! &star;<!--Made with &hearts; by Cornchip!--></span><span>
+						<span class="temperature"><span id="temperature">Have a fantastic summer! &hearts;<!--Made with &hearts; by Cornchip!--></span></span>
 						<span class="location"><span id="location"></span></span>
 					</p>
 					<!-- Where it all began -->
 					<div class="main-img-list">
 						<ul>
-							<li title="School Home Page"><a href="http://journaling.clsd.net/hsfalcons/" target="_blank"><img src="images/falcon.png" alt="CLSD"></a></li>
-							<li title="Skyward"><a href="https://skyward.clsd.net/scripts/wsisa.dll/WService=wsSky/seplog01.w" target="_blank"><img src="images/skyward.png" alt="Skyward"></a></li>
-							<li title="Whitebox Learning - FCY4"><a href="http://www.whiteboxlearning.com/" target="_blank"><img src="images/whitebox.png" alt="Whitebox Learning"/></a></li>
-							<li title="Turnitin"><a href="http://www.turnitin.com/" target="_blank"><img src="images/turnitin.png" alt="turnitin"></a></li>
-							<li title="1:1 Student Hub"><a href="http://stud-sccm.hsonetone.clsd.net/CMApplicationCatalog/#/SoftwareLibrary/ApplistPageView.xaml" target="_blank"><img src="images/compooter.png" alt="1:1 Software"></a></li>
-							<li title="HS Library"><a href="http://journaling.clsd.net/hs_library/" target="_blank"><img src="images/libWhite.png" alt="CCHS Library"></a></li>
-							<li title="Mastery Connect"><a href="https://www.masteryconnect.com/" target="_blank"><img src="images/masteryB.jpg" alt="Mastery Connect Green"></a></li>
-							<li title="Mastery Connect Bubble Sheet"><a href="https://app.masteryconnect.com/bubblesheet/" target="_blank"><img src="images/masteryS.png" alt="MasteryConnect"></a></li>
-							<li title="Moodle"><a href="https://moodle.clsd.k12.pa.us/" target="_blank"><img src="images/moodle.png" alt="The moodle noodle"></a></li>
-							<li title="USA Test Prep"><a href="http://www.usatestprep.com/member-login" target="_blank"><img src="images/usatp.png" alt="USA Test Prep"></a>
-							<li title="One Drive"><a href="https://onedrive.live.com/about/en-us/" target="_blank"><img src="images/onedrive.jpg" alt="One Drive"></a></li>
-							<li title="Office 365"><a href="https://login.microsoftonline.com/login.srf?wa=wsignin1.0&rpsnv=4&ct=1473620100&rver=6.7.6640.0&wp=MCMBI&wreply=https%3a%2f%2fportal.office.com%2flanding.aspx%3ftarget%3d%252fdefault.aspx&lc=1033&id=501392&msafed=0&client-request-id=7a651b3a-e515-4e06-b623-a5a85e0f24c1" target="_blank"><img src="images/Office.png" alt="Office 365"></a></li>
-							<li title="Dropbox"><a href="https://www.dropbox.com/home" target="_blank"><img src="images/Dropbox.png" alt="Dropbox"></a></li>
-							<li title="Google Drive"><a href="https://drive.google.com/drive/my-drive" target="_blank"><img src="images/gDrive.png" alt="Google Drive"></a></li>
-							<li title="Wired"><a href="https://www.wired.com/" target="_blank"><img src="images/wired.jpg" alt="Wired"></a></li>
-							<li title="Kahoot"><a href="https://kahoot.it/#/" target="_blank"><img src="images/kahoot.png" alt="Kahoot!"></a></li>
-							<li title="Poety Out Loud"><a href="http://www.poetryoutloud.org/" target="_blank"><img src="images/pol.jpg" alt="Poetry Out Loud"></a></li>
-							<li title="Quizlet"><a href="https://www.quizlet.com/" target="_blank"><img src="images/quizlet.png" alt="Quizlet"></a></li>
-							<li title="Youtube"><a href="https://www.youtube.com/" target="_blank"><img src="images/youtube.png" alt="Youtube"></a></li>
-							<li title="No Fear Shalespeare"><a href="http://nfs.sparknotes.com/romeojuliet/" target="_blank"><img src="images/nsf.jpg" alt="NFS"></a></li>
-							<li title="GitHub"><a href="https://github.com/Cornchipss/Corn-Hub" target="_blank"><img src="images/github.png"></a></li>
-							<li title="Ludum Dare"><a href="https://ldjam.com/" target="_blank"><img src="images/ludumdare.gif" alt="Ludum Dare"></a></li>
-							<li title="Google"><a href="https://www.google.com/" target="_blank"><img src="images/google.jpg" alt="Google"></a></li>
+							<div id="img-list">
+								<!-- Customization and all that jazz! -->
+								<script src="js/load-img-list.js"></script>
+							</div>
 						</ul>
+						
+						<!-- If js is disabled, we still want the main feature of Corn Hub to show up ;) -->
+						<noscript>
+							<ul>
+								<li id="main-list-img" title="School Home Page"><a href="http://journaling.clsd.net/hsfalcons/" target="_blank"><img src="images/falcon.png" alt="CLSD"></a></li>
+								<li id="main-list-img" title="Skyward"><a href="https://skyward.clsd.net/scripts/wsisa.dll/WService=wsSky/seplog01.w" target="_blank"><img src="images/skyward.png" alt="Skyward"></a></li>
+								<li id="main-list-img" title="Whitebox Learning - FCY4"><a href="http://www.whiteboxlearning.com/" target="_blank"><img src="images/whitebox.png" alt="Whitebox Learning"/></a></li>
+								<li id="main-list-img" title="Turnitin"><a href="http://www.turnitin.com/" target="_blank"><img src="images/turnitin.png" alt="turnitin"></a></li>
+								<li id="main-list-img" title="1:1 Student Hub"><a href="http://stud-sccm.hsonetone.clsd.net/CMApplicationCatalog/#/SoftwareLibrary/ApplistPageView.xaml" target="_blank"><img src="images/compooter.png" alt="1:1 Software"></a></li>
+								<li id="main-list-img" title="HS Library"><a href="http://journaling.clsd.net/hs_library/" target="_blank"><img src="images/libWhite.png" alt="CCHS Library"></a></li>
+								<li id="main-list-img" title="Mastery Connect"><a href="https://www.masteryconnect.com/" target="_blank"><img src="images/masteryB.jpg" alt="Mastery Connect Green"></a></li>
+								<li id="main-list-img" title="Mastery Connect Bubble Sheet"><a href="https://app.masteryconnect.com/bubblesheet/" target="_blank"><img src="images/masteryS.png" alt="MasteryConnect"></a></li>
+								<li id="main-list-img" title="Moodle"><a href="https://moodle.clsd.k12.pa.us/" target="_blank"><img src="images/moodle.png" alt="The moodle noodle"></a></li>
+								<li id="main-list-img" title="USA Test Prep"><a href="http://www.usatestprep.com/member-login" target="_blank"><img src="images/usatp.png" alt="USA Test Prep"></a>
+								<li id="main-list-img" title="One Drive"><a href="https://onedrive.live.com/about/en-us/" target="_blank"><img src="images/onedrive.jpg" alt="One Drive"></a></li>
+								<li id="main-list-img" title="Office 365"><a href="https://login.microsoftonline.com/login.srf?wa=wsignin1.0&rpsnv=4&ct=1473620100&rver=6.7.6640.0&wp=MCMBI&wreply=https%3a%2f%2fportal.office.com%2flanding.aspx%3ftarget%3d%252fdefault.aspx&lc=1033&id=501392&msafed=0&client-request-id=7a651b3a-e515-4e06-b623-a5a85e0f24c1" target="_blank"><img src="images/Office.png" alt="Office 365"></a></li>
+								<li id="main-list-img" title="Dropbox"><a href="https://www.dropbox.com/home" target="_blank"><img src="images/Dropbox.png" alt="Dropbox"></a></li>
+								<li id="main-list-img" title="Google Drive"><a href="https://drive.google.com/drive/my-drive" target="_blank"><img src="images/gDrive.png" alt="Google Drive"></a></li>
+								<li id="main-list-img" title="Wired"><a href="https://www.wired.com/" target="_blank"><img src="images/wired.jpg" alt="Wired"></a></li>
+								<li id="main-list-img" title="Kahoot"><a href="https://kahoot.it/#/" target="_blank"><img src="images/kahoot.png" alt="Kahoot!"></a></li>
+								<li id="main-list-img" title="Poety Out Loud"><a href="http://www.poetryoutloud.org/" target="_blank"><img src="images/pol.jpg" alt="Poetry Out Loud"></a></li>
+								<li id="main-list-img" title="Quizlet"><a href="https://www.quizlet.com/" target="_blank"><img src="images/quizlet.png" alt="Quizlet"></a></li>
+								<li id="main-list-img" title="Youtube"><a href="https://www.youtube.com/" target="_blank"><img src="images/youtube.png" alt="Youtube"></a></li>
+								<li id="main-list-img" title="No Fear Shalespeare"><a href="http://nfs.sparknotes.com/romeojuliet/" target="_blank"><img src="images/nsf.jpg" alt="NFS"></a></li>
+								<li id="main-list-img" title="GitHub"><a href="https://github.com/Cornchipss/Corn-Hub" target="_blank"><img src="images/github.png" alt="Github"></a></li>
+								<li id="main-list-img" title="Ludum Dare"><a href="https://ldjam.com/" target="_blank"><img src="images/ludumdare.gif" alt="Ludum Dare"></a></li>
+								<li id="main-list-img" title="Google"><a href="https://www.google.com/" target="_blank"><img src="images/google.jpg" alt="Google"></a></li>
+							</ul>
+						</noscript>
 					</div>
-					<script src="js/holiday.js" type="text/javascript"></script>
 					<div id="Checkiday">
 						<div id="Checkiday_Footer" class="Checkiday">
 							Holidays not loading ;(. Check them out at <a href="https://www.checkiday.com/" target="_blank">Checkiday.com</a>.
@@ -100,9 +107,19 @@
 					<div style="text-align: center;">
 						<p style="font-size: 14px;">Powered By <a href="https://www.checkiday.com/" target="_blank">Checkiday.com</a>.</p>
 					</div>
+					
+					<div class="gear">
+						<img src="images/gear.png" alt="Settings" id="gear">
+					</div>
+					<div class="settings-bar" id="settings-bar">
+						<!-- <span><input class="jscolor {onFineChange:'setTextColor(this)'}" value="e5e5e5"> - Color 1</span><br> -->
+						<!-- <span><input class="jscolor {onFineChange:'setTextColor(this)'}" value="004488"> - Color 2</span> -->
+					</div>
 				</div>
 			</div>
 		</div>
-        <script type="text/javascript" src="js/snow.js"></script> <!-- Works with anything, not just snow -->
+        <script type="text/javascript" src="js/snow.js"></script> <!-- Works with anything, not just snow (Puzzah) -->
+		<script src="js/holiday.js" type="text/javascript"></script>
+		
 	</body>
 </html>

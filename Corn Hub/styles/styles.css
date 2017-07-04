@@ -1,6 +1,6 @@
 /*
  * Roses are red
- * Violets are violet
+ * Violets are purple
  * #004488 is blue
  * #E5E5E5 is cream
  */
@@ -13,7 +13,7 @@
 html, body
 {
     height:100%;
-	background-color: #e5e5e5;
+	/*background-color: #e5e5e5;*/
     -webkit-background-size: cover; /* For bground images (so they don't repeat) */
     -moz-background-size: cover;
     -o-background-size: cover;
@@ -21,15 +21,32 @@ html, body
 	height: 100%; /* eg the one on cornchip.html */
 }
 
+a
+{
+	color: #048;
+}
+
+.nav
+{
+	background-color: #048;
+}
+
+.nav ul li a
+{
+	color: #e5e5e5;
+}
+
+.main
+{
+	background-color: #e5e5e5;
+}
+
 body
 {
     max-height: 100%;
-	font-family: 'Coffee', Century Gothic, sans-serif;
-}
-
-ul
-{
-    color: #048;
+	font-family: 'Banana', Century Gothic, sans-serif;
+	color: #048;
+	background-color: #e5e5e5;
 }
 
 .sf
@@ -42,7 +59,7 @@ ul
 {
 	padding-left:10px;
 	padding-right:10px;
-	background-color:#E5E5E5;
+	/*background-color:#E5E5E5; /* e5 color here */
 	-webkit-background-size: cover; /* For bground images (so they don't repeat repeat repeat repeat) */
     -moz-background-size: cover;
     -o-background-size: cover;
@@ -60,31 +77,20 @@ ul
     top: 0px;
 }
 
-.snowflake {
+.snowflake 
+{
     padding-left: 15px;
     font-family: Cambria, Georgia, serif;
     font-size: 14px;
     line-height: 24px;
     position: fixed;
 	background-color:transparent;
-    color: #e5e5e5;
+    color: #fff;
     user-select: none;
     z-index: 1000;
+	cursor: default;
 }
 
-.snowflake:hover {
-    cursor: default;
-}
-
-footer
-{
-	text-align:center;
-	margin-top: 25px;
-	margin-bottom: 25px;
-    position: absolute;
-    bottom: 0;
-    width: 100%
-}
 /* This site actually used to be called 'Corny Falcons'. Corn Hub is better. */
 .rbar
 {
@@ -112,16 +118,28 @@ footer
     top:0px;
     width:100%;
     position:fixed;
-    background-color:#004488;
-    color:#E5E5E5;
+    /*background-color:#004488; /* 048 color here */
+    /*color:#E5E5E5; /* e5 color here */
     text-align:center;
     font-size:25px;
     z-index: 999;
 }
 
+::-moz-selection
+{
+	color: #e5e5e5;
+	background-color: #048;
+}
+
+::selection
+{
+	color: #e5e5e5;
+	background-color: #048;
+}
+
 @font-face
 {
-	font-family: 'Coffee';
+	font-family: 'Banana';
 	src:	url('../fonts/banana.woff2') format('woff2'),
 			url('../fonts/banana.woff') format('woff');
 }
@@ -156,37 +174,41 @@ footer
     }
 }
 /* So do nav bars. */
-.nav ul{
+.nav ul
+{
     list-style-type:none;
     display:inline;
-    background-color:#004488;
 }
 
-.nav ul li{
+.nav ul li
+{
     display:inline;
-    background-color:#004488;
 	margin-right: 8px;
 	margin-left: 8px;
 }
 
-a {
+a
+{
     text-decoration:none;
-    color:#048;
+    /*color:#048; /* 048 color here */
 }
 
-.nav a{
+.nav a
+{
     margin-left:5px;
     margin-right:5px;
-    color:#E5E5E5;
-    background-color:#004488;
+    /*color:#E5E5E5; /* e5 color here */
+    /*background-/*color:#048; /* 048 color here */
 }
 
-.nav a:hover{
-    color:#CECECE;
+.nav a:hover
+{
+    /*color:#CECECE;  dark e5 color here */
 }
 
-.main a:hover{
-    color:#038;
+.main a:hover
+{
+    /*color:#038; /* dark 048 here */
 }
 
 .bg-image
@@ -197,7 +219,7 @@ a {
 
 .wrapper
 {
-    font-family: 'Coffee', Century Gothic, sans-serif;
+    font-family: 'Banana', Century Gothic, sans-serif;
     width:100%;
     min-height:100%;
 	-moz-box-sizing: border-box;
@@ -208,7 +230,7 @@ a {
 /* Gatta make them elements look slick. */
 h1
 {
-    color:#048;
+    /*color:#048; /* 048 color here */
     text-align:center;
     border-bottom:thick;
     border-bottom:#E5E5E5;
@@ -220,7 +242,7 @@ h1
 h2
 {
     margin-left:20px;
-    color:#058;
+    /*color:#058; /* lighter 048 color here */
     font-size:24px;
     margin-bottom: 20px;
 }
@@ -228,7 +250,7 @@ h2
 h3
 {
     margin-left:10px;
-    color:#058;
+    /*color:#058; /* Lighter 048 color here */
     font-size:24px;
 }
 
@@ -236,12 +258,12 @@ h4
 {
     font-size: 30px;
     margin-left:10px;
-    color:#048;
+    /*color:#048; /*  048 color here */
 }
 
 p
 {
-    color:#048;
+    /*color:#048; /* 048 color here */
     font-size:18px;
     margin-left:15px;
 }
@@ -253,20 +275,24 @@ ul
     margin-left:20px;
 }
 
-#contents{
+#contents
+{
     margin-bottom:20px;
 }
 /* That thing on the home page. With all the links and such. */
-.main-img-list ul{
+.main-img-list ul
+{
     text-align:center;
 }
 
-.main-img-list ul li{
+.main-img-list ul li
+{
     display:inline-block;
     margin:10px;
 }
 
-.main ul li img{
+.main ul li img
+{
     border-radius: 5px;
     transition: box-shadow 0.3s ease-in-out;
     transition: all 0.3s ease-in-out;
@@ -274,13 +300,15 @@ ul
 	height: 64px;
 }
 
-.main ul li img:hover{
+.main ul li img:hover
+{
     -webkit-transform: scale(1.25, 1.25);
     transform: scale(1.25, 1.25);
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
 }
 
-.box-left{
+.box-left
+{
     position:absolute;
     margin-top:5%;
     margin-left: 12%;
@@ -290,7 +318,8 @@ ul
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
 }
 
-.box-mid{
+.box-mid
+{
     position:absolute;
     margin-top:5%;
     margin-left:37.5%;
@@ -300,7 +329,8 @@ ul
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
 }
 
-.box-right{
+.box-right
+{
     position:absolute;
     margin-top:5%;
     margin-left: 63%;
@@ -327,17 +357,59 @@ ul
     background-color:#CECECE;
 }
 
-/* For my sexy highlighting colors */
-::-moz-selection { /* Code for Firefox */
-    color: #e5e5e5 !important;
-    background: #048 !important;
-	opacity: 0.5;
+.gear img
+{
+	position: fixed;
+	z-index: 99;
+	width: 64px;
+	height: 64px;
+	bottom: 0;
+	right: 0;
+	cursor: pointer;
+	-moz-transition: all 2s ease-in-out;
+	-webkit-transition: all 2s ease-in-out;
+	transition: all 2s ease-in-out;
 }
 
-::selection {
-    color: #e5e5e5 !important;
-    background: #048 !important;
-	opacity: 0.5;
+.settings-bar
+{
+	position: fixed;
+	width: 0%;
+	height: 128px;
+	background-color: #048;
+	transition: width 2s ease-in-out;
+	box-shadow: 0 -5px 5px -5px #333;
+	
+	bottom: 0;
+	right: 0;
+}
+
+.settings-bar input
+{
+	margin-top: 10px;
+	margin-left: 10px;
+	width: 200px;
+	height: 40px;
+	font-size: 20px;
+	text-align: center;
+}
+
+.settings-bar *
+{
+	color: #e5e5e5;
+	font-size: 20px;
+}
+
+.settings-expanded
+{
+	width: 100%;
+}
+
+.gear-pressed
+{
+	-ms-transform: rotate(-360deg); /* IE 9 */
+    -webkit-transform: rotate(-360deg); /* Chrome, Safari, Opera */
+    transform: rotate(-360deg);
 }
 
 /* For holidays! (The stupid ones at the bottom) */
@@ -663,7 +735,8 @@ ul
   }
 }
 
-.rainbow-text {
+.rainbow-text 
+{
   animation: rainbow-text 5s infinite;
 }
 
@@ -680,7 +753,8 @@ ul
 
 
 /* SUPER EPIC SNOW! (from https://codepen.io/NickyCDK/pen/AIonk) */
-#snow{
+#snow
+{
 	background: none;
 	font-family: Androgyne;
 	background-image: url('http://www.wearewebstars.dk/codepen/img/s1.png'), url('http://www.wearewebstars.dk/codepen/img//s2.png'), url('http://www.wearewebstars.dk/codepen/img//s3.png');
@@ -695,22 +769,26 @@ ul
 	-ms-animation: snow 20s linear infinite;
 	animation: snow 20s linear infinite;
 }
-@keyframes snow {
+@keyframes snow 
+{
   0% {background-position: 0px 0px, 0px 0px, 0px 0px;}
   50% {background-position: 500px 500px, 100px 200px, -100px 150px;}
   100% {background-position: 500px 1000px, 200px 400px, -100px 300px;}
 }
-@-moz-keyframes snow {
+@-moz-keyframes snow 
+{
   0% {background-position: 0px 0px, 0px 0px, 0px 0px;}
   50% {background-position: 500px 500px, 100px 200px, -100px 150px;}
   100% {background-position: 400px 1000px, 200px 400px, 100px 300px;}
 }
-@-webkit-keyframes snow {
+@-webkit-keyframes snow 
+{
   0% {background-position: 0px 0px, 0px 0px, 0px 0px;}
   50% {background-position: 500px 500px, 100px 200px, -100px 150px;}
   100% {background-position: 500px 1000px, 200px 400px, -100px 300px;}
 }
-@-ms-keyframes snow {
+@-ms-keyframes snow 
+{
   0% {background-position: 0px 0px, 0px 0px, 0px 0px;}
   50% {background-position: 500px 500px, 100px 200px, -100px 150px;}
   100% {background-position: 500px 1000px, 200px 400px, -100px 300px;}
@@ -752,25 +830,28 @@ ul
 	box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
 }
 
+/* 048 color here */
 .holiday
 {
-    color: #048;
+    /*color: #048;*/
 }
 
+/* 048 color here */
 hr
 {
 	border: thin;
-	border-color: #048;
+	/*border-color: #048;*/
 	border-style: solid;
 }
 
+/* 048 color here */
 .popout
 {
-	/* 1 second looks really nice */
+	/* 1 second looks really nice *//*
 	transition: all 1.0s ease-in-out; 
 	box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
 	color: #e5e5e5;
-	z-index: 1000; /* It's more important than you. */
+	z-index: 1000; /* It's more important than you. *
 	position: fixed;
 	margin-top: 45vh;
 	margin-left: 99%;
@@ -793,7 +874,7 @@ hr
     animation: none;
 }
 
-/* The dont show thing is just the button that says dont show */
+/* The dont show thing is just the button that says dont show *//*
 .popout .dontShow
 {
 	position: absolute;
@@ -805,8 +886,6 @@ hr
 	color: #e5e5e5;
 }
 
-
-
 .menu p, .menu a
 {
 	color: #e5e5e5;
@@ -814,11 +893,11 @@ hr
 
 .menu
 {
-	/* 1 second looks really nice */
+	/* 1 second looks really nice 
 	transition: all 1.0s ease-in-out; 
 	box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
-	color: #e5e5e5;
-	z-index: 1000; /* It's more important than you. */
+	color: #e5e5e5; /* e5 color here */
+	z-index: 1000; /* It's more important than you. 
 	position: fixed;
 	margin-top: calc(45vh + 150px);
 	margin-left: 99%;
@@ -833,8 +912,10 @@ hr
 	margin-left: calc(100% - 200px);
 	background-color: rgba(0, 68, 136, 1);
 }
-
-
+*/
+@-moz-keyframes spin { 100% { -moz-transform: rotate(-360deg); } }
+@-webkit-keyframes spin { 100% { -webkit-transform: rotate(-360deg); } }
+@keyframes spin { 100% { -webkit-transform: rotate(-360deg); transform:rotate(-360deg); } }
 
 /*
 p, h1, h2, h3, h4, h5, h6, a, .holiday

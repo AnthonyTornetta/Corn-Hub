@@ -2,14 +2,7 @@ var API = "05a68069ca925ee5c7863e687d0d57d5";
 var temp;
 var loc;
 var deg;
-
-function updateByZip(zip)
-{
-	var url = "http://api.openweathermap.org/data/2.5/weather?" + 
-	"zip=" + zip + 
-	"&APPID=" + API;
-	sendRequest(url);
-}
+var precipitation;
 
 function updateByGeo()
 {
@@ -68,12 +61,14 @@ function update(weather)
 {
 	temp.innerHTML = "It's " + weather.temp + "&deg; in ";
 	loc.innerHTML = weather.loc;
+	
+		
 }
 
 window.onload = function()
 {
 	temp = document.getElementById("temperature");
 	loc = document.getElementById("location");
-	
+	precipitation = document.getElementById("snowContainer");
 	updateByGeo()
 }
