@@ -8,7 +8,7 @@ bee-movie.html
 byte-club.html
 bsod.html
 Rainbow Screensaver.scr
-#info.html
+neutrality.html
 matrix.html
 lock.html
 news.html
@@ -26,6 +26,7 @@ styles/styles.css
 styles/xmas.css
 styles/weather.css
 styles/today.css
+styles/nav.css
 #
 # Js Directory
 #

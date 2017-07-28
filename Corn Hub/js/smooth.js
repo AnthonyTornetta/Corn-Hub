@@ -1,10 +1,10 @@
 /* Guide for: Smooth Scroll
  * ------------------------
  * Nothing special is needed;
- * Just add the a href="#..." and make sure it has an id="#..." to link to.
+ * Just add the a href="#..." and make sure it has an id="..." to link to.
  * Simple.
  */
- 
+
 $(function() {
 	$('a[href*="#"]:not([href="#"])').click(function() {
 	  if (location.pathname.replace(/^\//,'') == this.pathname.replace(/^\//,'') && location.hostname == this.hostname) {

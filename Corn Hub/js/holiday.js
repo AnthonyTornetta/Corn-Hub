@@ -111,6 +111,8 @@ displayWidget = function() {
                 e = replaceAll(e, '"]', "");
 				e = replaceAll(e, '\\u00e9', "é");
                 e = replaceAll(e, '\\"', '');
+				e = replaceAll(e, '\\u00e8', 'è');
+				e = replaceAll(e, '\\u00fb', 'û');
                 f = e.split('","');
                 e = "";
 				e += '<div class="holiday-list">';

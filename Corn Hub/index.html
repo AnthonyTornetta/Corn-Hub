@@ -1,19 +1,24 @@
 <!-- Developed by Cornchip -->
 <!--
     Developed while listening to: https://www.youtube.com/watch?v=fr6KVNt-1Ek
-	If you are seeing this: Have a fantastic summer!
+	Hello fellow nerd :)
  -->
 <!DOCTYPE html>
 <html>
 	<head>
 		<title>Corn Hub</title>
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script> <!-- Jquery -->
-		<script type="text/javascript" src="js/smooth.js"></script> <!-- Smooth Scroll -->
+		<link rel="stylesheet" media="all" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"> <!-- Bootstrap -->
 		<link rel="stylesheet" media="all" href="styles/styles.css">
+		<link rel="stylesheet" media="all" href="styles/main-page.css">
+		<link rel="stylesheet" media="all" href="styles/nav.css">
 		<link rel="icon" href="images/favicon.jpg">
-		<script type="text/javascript" src="js/cookies.js"></script> <!-- Cooookieeees (yum ) -->
+		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script> <!-- Bootstrap -->
+		<script type="text/javascript" src="js/cookies.js"></script> <!-- Cooookieeees (yum) - Make sure to add me first - -->
+		<script type="text/javascript" src="js/smooth.js"></script> <!-- Smooth Scroll -->
 		<script type="text/javascript" src="js/weather-short.js"></script> <!-- Weather Stuff -->
 		<script type="text/javascript" src="js/settings.js"></script> <!-- Settings stuffs -->
+		<script type="text/javascript" src="js/holiday.js" ></script>  <!-- For displaying the holidays -->
 		<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 	</head>
 	
@@ -22,9 +27,8 @@
 			<p class="snowflake" id="precipitation"></p>
 		</div>
 		<div class="wrapper">
-			<script src="js/cookies.js"></script>
 			<div class="nav">
-				<ul color="color-secondary">
+				<ul>
 					<li><a href="index.html">Home</a></li>
 					<li><a href="weather.html">Weather</a></li>
 					<li><a href="matrix.html">Matrix</a></li>
@@ -35,32 +39,15 @@
 				</ul>
 			</div>
 			
-			<div id="popout" color="color-secondary">
-			
-			</div>
-			
-			<div class="main color-primary">
-				<div class="rbar">
-					<h3>Nice Things</h3>
-					<ul>
-						<li><a href="firefox.html"><b>Firefox not working? Click here!</b></a></li>
-						<!-- Not broken :D -->
-						<li><a href="http://www.englishbanana.com/games/" target="_blank">English Banana</a></li>
-						<li><a href="http://www.coolmath-games.com/" target="_blank">Coolmath</a></li> <!-- Ol' Faithful -->
-						<li><a href="http://www.omfgdogs.com/" target="_blank">Doggo</a></li> <!-- So... many... doggos... -->
-						<li><a href="lock.html">Fake Lock Screen</a></li> <!-- Stupid -->
-						<li><a href="bsod.html">Fake BSOD</a></li> <!-- :> -->
-						<li><a href="bee-movie.html">Bee Movie in Binary</a></li>
-					</ul>
-				</div>
-				
-				<div class="main-content color-primary">
+			<div class="main">
+				<div class="col-sm-9">
 					<h1 id="title">Corn Hub</h1>
 					<p><!-- Weather -->
 						<span class="temperature"><span id="temperature">Have a fantastic summer! &hearts;<!--Made with &hearts; by Cornchip!--></span></span>
 						<span class="location"><span id="location"></span></span>
 					</p>
 					<!-- Where it all began -->
+					<a href="#test">Murca</a>
 					<div class="main-img-list">
 						<ul>
 							<div id="img-list">
@@ -68,14 +55,13 @@
 								<script src="js/load-img-list.js"></script>
 							</div>
 						</ul>
-						
 						<!-- If js is disabled, we still want the main feature of Corn Hub to show up ;) -->
 						<noscript>
 							<ul>
 								<li id="main-list-img" title="School Home Page"><a href="http://journaling.clsd.net/hsfalcons/" target="_blank"><img src="images/falcon.png" alt="CLSD"></a></li>
 								<li id="main-list-img" title="Skyward"><a href="https://skyward.clsd.net/scripts/wsisa.dll/WService=wsSky/seplog01.w" target="_blank"><img src="images/skyward.png" alt="Skyward"></a></li>
 								<li id="main-list-img" title="Whitebox Learning - FCY4"><a href="http://www.whiteboxlearning.com/" target="_blank"><img src="images/whitebox.png" alt="Whitebox Learning"/></a></li>
-								<li id="main-list-img" title="Turnitin"><a href="http://www.turnitin.com/" target="_blank"><img src="images/turnitin.png" alt="turnitin"></a></li>
+								<li id="main-list-img" title="Turnitin"><a href="http://www.turnitin.com/" target="_blank"><img src="https://wiki.ucl.ac.uk/download/attachments/27656802/turnitin%20logo.jpg?version=1&modificationDate=1354723809000&api=v2" alt="turnitin"></a></li>
 								<li id="main-list-img" title="1:1 Student Hub"><a href="http://stud-sccm.hsonetone.clsd.net/CMApplicationCatalog/#/SoftwareLibrary/ApplistPageView.xaml" target="_blank"><img src="images/compooter.png" alt="1:1 Software"></a></li>
 								<li id="main-list-img" title="HS Library"><a href="http://journaling.clsd.net/hs_library/" target="_blank"><img src="images/libWhite.png" alt="CCHS Library"></a></li>
 								<li id="main-list-img" title="Mastery Connect"><a href="https://www.masteryconnect.com/" target="_blank"><img src="images/masteryB.jpg" alt="Mastery Connect Green"></a></li>
@@ -98,16 +84,23 @@
 							</ul>
 						</noscript>
 					</div>
-					<div id="Checkiday">
-						<div id="Checkiday_Footer" class="Checkiday">
-							Holidays not loading ;(. Check them out at <a href="https://www.checkiday.com/" target="_blank">Checkiday.com</a>.
+					<div class="center">
+						<div id="Checkiday">
+							<div id="Checkiday_Footer" class="checkiday">
+								Holidays not loading ;(. Check them out at <a href="https://www.checkiday.com/" target="_blank">Checkiday.com</a>.
+							</div>
 						</div>
 					</div>
 					<br>
 					<div style="text-align: center;">
 						<p style="font-size: 14px;">Powered By <a href="https://www.checkiday.com/" target="_blank">Checkiday.com</a>.</p>
 					</div>
-					
+					<br>
+					<div class="notice urgent center">
+						<h2 style="margin-bottom: 2px;">Net Neutrality</h2>
+						<p>What's all the hubbub?</p>
+						<p><a href="neutrality.html" title="Learn more about Net Neutrality">- Learn More -</a></p>
+					</div>
 					<div class="gear">
 						<img src="images/gear.png" alt="Settings" id="gear">
 					</div>
@@ -116,10 +109,22 @@
 						<!-- <span><input class="jscolor {onFineChange:'setTextColor(this)'}" value="004488"> - Color 2</span> -->
 					</div>
 				</div>
+				
+				<div class="col-sm-3">
+					<h3>Nice Things</h3>
+					<ul>
+						<li><a href="firefox.html"><b>Firefox not working? Click here!</b></a></li>
+						<!-- Not broken :D -->
+						<li><a href="http://www.englishbanana.com/games/" target="_blank">English Banana</a></li>
+						<li><a href="http://www.coolmath-games.com/" target="_blank">Coolmath</a></li> <!-- Ol' Faithful -->
+						<li><a href="http://www.omfgdogs.com/" target="_blank">Doggo</a></li> <!-- So... many... doggos... -->
+						<li><a href="lock.html">Fake Lock Screen</a></li> <!-- Stupid -->
+						<li><a href="bsod.html">Fake BSOD</a></li> <!-- :> -->
+						<li><a href="bee-movie.html">Bee Movie in Binary</a></li>
+					</ul>
+				</div>
 			</div>
 		</div>
         <script type="text/javascript" src="js/snow.js"></script> <!-- Works with anything, not just snow (Puzzah) -->
-		<script src="js/holiday.js" type="text/javascript"></script>
-		
 	</body>
 </html>

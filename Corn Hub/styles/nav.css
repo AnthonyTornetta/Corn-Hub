@@ -1,0 +1,75 @@
+.nav
+{
+	background-color  : #048;
+	text-align        : center;
+	font-size         : 25px;
+	position          : fixed;
+	z-index           : 999;
+	width             : 100%;
+    top               : 0px;
+}
+
+.nav ul
+{
+    list-style-type   : none;
+    display           : inline;
+}
+
+.nav ul li
+{
+    display           : inline;
+	margin-right      : 8px;
+	margin-left       : 8px;
+}
+
+.nav ul li a
+{
+	text-decoration   : none;
+	margin-right      : 5px;
+    margin-left       : 5px;
+}
+
+.nav a:hover
+{
+    color             : #e5e5e5;
+}
+
+.nav ul li a
+{
+	color             : #fff;
+}
+
+/* Responsive things because of the way I designed the nav bar */
+
+/* Media screens make me want to die. */
+@media screen and (min-width:1050px)
+{
+    .main
+    {
+        padding-top: 24px;
+    }
+}
+
+@media screen and (min-width:400px) and (max-width: 1050px)
+{
+    .main
+    {
+        padding-top: 80px;
+    }
+}
+
+@media screen and (min-width:400px) and (max-width: 532px)
+{
+    .main
+    {
+        padding-top: 120px;
+    }
+}
+
+@media screen and (min-width:0px) and (max-width: 400px)
+{
+    .main
+    {
+        padding-top: 140px;
+    }
+}
