@@ -10,7 +10,7 @@ var defaultVal =
 <li id="main-list-img" title="School Home Page"><a href="http://journaling.clsd.net/hsfalcons/" target="_blank"><img src="images/falcon.png" alt="CLSD"></a></li>\
 <li id="main-list-img" title="Skyward"><a href="https://skyward.clsd.net/scripts/wsisa.dll/WService=wsSky/seplog01.w" target="_blank"><img src="images/skyward.png" alt="Skyward"></a></li>\
 <li id="main-list-img" title="Whitebox Learning - FCY4"><a href="http://www.whiteboxlearning.com/" target="_blank"><img src="images/whitebox.png" alt="Whitebox Learning"/></a></li>\
-<li id="main-list-img" title="Turnitin"><a href="http://www.turnitin.com/" target="_blank"><img src="images/turnitin.png" alt="turnitin"></a></li>\
+<li id="main-list-img" title="Turnitin"><a href="http://www.turnitin.com/" target="_blank"><img src="images/turnitin.jpg" alt="turnitin"></a></li>\
 <li id="main-list-img" title="1:1 Student Hub"><a href="http://stud-sccm.hsonetone.clsd.net/CMApplicationCatalog/#/SoftwareLibrary/ApplistPageView.xaml" target="_blank"><img src="images/compooter.png" alt="1:1 Software"></a></li>\
 <li id="main-list-img" title="HS Library"><a href="http://journaling.clsd.net/hs_library/" target="_blank"><img src="images/libWhite.png" alt="CCHS Library"></a></li>\
 <li id="main-list-img" title="Mastery Connect"><a href="https://www.masteryconnect.com/" target="_blank"><img src="images/masteryB.jpg" alt="Mastery Connect Green"></a></li>\
