@@ -57,7 +57,7 @@ $(function(){
                 var icon = "http://i345.photobucket.com/albums/p389/domagojPuljic/Weather_Iconsss178/uelknvknjbbcbcdcbdjdcnun" + weatherData.weather[0].icon + ".png";
                 
                 // Based on an icon name, apply appropriate background image
-                $("body").css("background-image", "url(" + "http://i345.photobucket.com/albums/p389/domagojPuljic/Weather_Iconsss178/jnkfvnhuejcdferbvnd_" + weatherData.weather[0].icon + ".jpeg" + ")");
+                $("body").css("background-image", "url(../images/awe-backgrounds/" + weatherData.weather[0].icon + ".jpg" + ")");
                 
                 city = weatherData.name;
                 country = weatherData.sys.country;
@@ -167,5 +167,4 @@ $(function(){
     function firstLetterUpper(string) {
       return string.charAt(0).toUpperCase() + string.slice(1);
     }
-  
 });
