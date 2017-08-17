@@ -18,7 +18,7 @@ today.html
 weather.html
 xmas.html
 firefox.html
-test.exe
+spacesim.html
 #
 # Styles Directory
 #
@@ -27,19 +27,21 @@ styles/xmas.css
 styles/weather.css
 styles/today.css
 styles/nav.css
+styles/main-page.css
 #
 # Js Directory
 #
+js/cookies.js
 js/events.js
 js/holiday.js
 js/holidayEffect.js
 js/smooth.js
 js/snow.js
+js/spacesim.js
 js/ticker.js
 js/today.js
-js/weather-short.js
 js/weather.js
-js/cookies.js
+js/weather-short.js
 #
 # Images Directory
 #

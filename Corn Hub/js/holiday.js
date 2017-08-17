@@ -129,7 +129,7 @@ displayWidget = function() {
 				
 				if(dd == 11 && mm == 5)
 				{
-					e += '<div class="rainbow-text"><b>National Goodbye Bishop Day</b></div>';
+					e += '<div class="rainbow-text"><b>Good Luck Bishop Day</b></div>';
 				}
 				
 				// End Custom Days

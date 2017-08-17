@@ -31,7 +31,11 @@ function setup()
 	window.addEventListener("DOMContentLoaded", generateSnowflakes, false);
 	window.addEventListener("resize", setResetFlag, false);
 }
-setup();
+
+window.onload = function()
+{
+	setup();
+}
 
 // Getting supported styles (e.g. if it begins with moz or webkit or others)
 function getSupportedPropertyName(properties) 
@@ -98,7 +102,8 @@ function generateSnowflakes()
 	
 	// Get the snowflake element from the DOM and store it
     var originalSnowflake = document.querySelector(".snowflake");
-    
+    //if(originalSnowflake == '')
+		//return; // There is no snowflake
     // Access the snowflake element's parent container
     var snowflakeContainer = originalSnowflake.parentNode;
     
