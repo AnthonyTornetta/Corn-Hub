@@ -92,7 +92,6 @@ js/holiday.js
 js/holidayEffect.js
 js/load-img-list.js
 js/ownEvents.js
-js/scattered-clouds.png
 js/settings.js
 js/smooth.js
 js/snow.js
@@ -106,7 +105,6 @@ js/weather.js
 #
 styles/main-page.css
 styles/nav.css
-styles/scattered-clouds.png
 styles/styles.css
 styles/today.css
 styles/weather.css
