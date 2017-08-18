@@ -1,49 +1,43 @@
 #
-# Corn Hub Directory
+# \fonts
 #
-update.log
-index.html
-Sierra.html
-bee-movie.html
-byte-club.html
-bsod.html
-Rainbow Screensaver.scr
-neutrality.html
-matrix.html
-lock.html
-news.html
-rainbow.html
-sean.html
-today.html
-weather.html
-xmas.html
-firefox.html
-spacesim.html
+fonts/banana.otf
+fonts/banana.woff
+fonts/banana.woff2
 #
-# Styles Directory
+# \images\awe-backgrounds
 #
-styles/styles.css
-styles/xmas.css
-styles/weather.css
-styles/today.css
-styles/nav.css
-styles/main-page.css
+images/awe-backgrounds/atmosphere.jpg
+images/awe-backgrounds/breeze.jpg
+images/awe-backgrounds/broken clouds.jpg
+images/awe-backgrounds/calm.jpg
+images/awe-backgrounds/clear sky.jpg
+images/awe-backgrounds/cloudy-night.jpg
+images/awe-backgrounds/drizzle.jpg
+images/awe-backgrounds/dust.jpg
+images/awe-backgrounds/few clouds.JPG
+images/awe-backgrounds/fog.jpg
+images/awe-backgrounds/hail.jpg
+images/awe-backgrounds/haze.jpg
+images/awe-backgrounds/hurricane.jpg
+images/awe-backgrounds/light rain.jpg
+images/awe-backgrounds/mist.jpg
+images/awe-backgrounds/moderate rain.jpg
+images/awe-backgrounds/overcast clouds.jpg
+images/awe-backgrounds/rain mix.jpg
+images/awe-backgrounds/scattered clouds.jpg
+images/awe-backgrounds/shower rain.jpg
+images/awe-backgrounds/sleet.jpg
+images/awe-backgrounds/smog.jpg
+images/awe-backgrounds/snow.jpg
+images/awe-backgrounds/snowflake cold.jpg
+images/awe-backgrounds/storm showers.jpg
+images/awe-backgrounds/sunny.jpg
+images/awe-backgrounds/thunderstorm.jpg
+images/awe-backgrounds/tornado.jpg
+images/awe-backgrounds/windy.jpg
 #
-# Js Directory
-#
-js/cookies.js
-js/events.js
-js/holiday.js
-js/holidayEffect.js
-js/smooth.js
-js/snow.js
-js/spacesim.js
-js/ticker.js
-js/today.js
-js/weather.js
-js/weather-short.js
-#
-# Images Directory
+# \images
 #
 images/alex.png
 images/bsod.png
@@ -53,25 +47,35 @@ images/compooter.png
 images/cornybground.jpg
 images/Dropbox.png
 images/falcon.png
-images/gdrive.png
-images/github.png
 images/favicon.jpg
+images/gdrive.png
+images/gear.png
+images/github.png
+images/google.jpg
+images/humidity.png
 images/jackHotmanFace.png
 images/kahoot.png
 images/libblue.png
 images/libwhite.png
+images/loader.png
 images/lock.png
 images/ludumdare.gif
 images/masteryB.jpg
 images/masteryS.png
+images/may4.jpg
+images/may44.jpg
+images/may444.jpg
+images/may5.jpg
 images/moodle.png
 images/nsf.jpg
 images/Office.png
 images/onedrive.jpg
 images/pol.jpg
+images/pressure-gage.png
 images/quizlet.png
 images/skyward.png
 images/socrative.png
+images/starblast.jpg
 images/sunchip.JPG
 images/turnitin.jpg
 images/usatp.png
@@ -79,15 +83,54 @@ images/whitebox.png
 images/wired.jpg
 images/xmas.jpg
 images/youtube.png
-images/may5.jpg
-images/google.jpg
 #
-# Fonts
+# \js
 #
-fonts/banana.woff
-fonts/banana.woff2
+js/cookies.js
+js/events.js
+js/holiday.js
+js/holidayEffect.js
+js/load-img-list.js
+js/ownEvents.js
+js/scattered-clouds.png
+js/settings.js
+js/smooth.js
+js/snow.js
+js/spacesim.js
+js/ticker.js
+js/today.js
+js/weather-short.js
+js/weather.js
 #
-# Misc
+# \styles
 #
+styles/main-page.css
+styles/nav.css
+styles/scattered-clouds.png
+styles/styles.css
+styles/today.css
+styles/weather.css
+styles/xmas.css
+bee-movie.html
+bsod.html
+byte-club.html
+file-list.txt
+firefox.html
+index.html
+info.html
+lock.html
+matrix.html
+neutrality.html
+news.html
+Rainbow Screensaver.scr
 runme.exe
 screen melt.exe
+sean.html
+settings.html
+sierra.html
+space.html
+test.html
+today.html
+update.log
+weather.html
+xmas.html
