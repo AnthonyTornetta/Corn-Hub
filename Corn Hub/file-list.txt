@@ -73,7 +73,7 @@ images/quizlet.png
 images/skyward.png
 images/socrative.png
 images/sunchip.JPG
-images/turnitin.png
+images/turnitin.jpg
 images/usatp.png
 images/whitebox.png
 images/wired.jpg
