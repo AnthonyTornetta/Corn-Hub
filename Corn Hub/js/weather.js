@@ -34,15 +34,20 @@ $(function(){
         }, 'jsonp');
     }
     
-    // Gets city based on your input
+    // Gets city based on  input
     function yourCity() {
         var city = $("#input-city").val();
-        
-        // If input is invalid, it shows weather in my city :)
+        if(city.toLowerCase() == "sand monkey" || city.toLowerCase() == "sand monkeys") // I'm a horrible person.
+			city = "Afghanistan";
+			
+		if(city.toLowerCase() == "cedar crest")
+			city = "Lebanon";
+		
+        // If input is invalid, it shows the school's weather :)
         if (!city) {
-            city="Split";
+            city="Lebanon";
         }
-        url = "https://cors-anywhere.herokuapp.com/http://api.openweathermap.org/data/2.5/weather?q="+city+"&units=metric&appid=" + API_KEY;
+        url = "http://api.openweathermap.org/data/2.5/weather?q="+city+"&units=metric&appid=" + API_KEY;
         updateWeather(url);
     }
 
@@ -51,14 +56,14 @@ $(function(){
         
         // WeatherData will hold all requested data(typically object or array) in JSON format
         $.getJSON(url, function(weatherData){
-
                 // I uploaded icons in a way that their name ends with appropriate weather condition from API documentation
                 // Each weather condition has it's own short name, for example condition Clear sky has icon name 01d
-                var icon = "http://i345.photobucket.com/albums/p389/domagojPuljic/Weather_Iconsss178/uelknvknjbbcbcdcbdjdcnun" + weatherData.weather[0].icon + ".png";
+                var icon = "http://openweathermap.org/img/w/" + weatherData.weather[0].icon + ".png";
                 
                 // Based on an icon name, apply appropriate background image
-                $("body").css("background-image", "url(../images/awe-backgrounds/" + weatherData.weather[0].icon + ".jpg" + ")");
-                
+				var wd = weatherData.weather[0].description;
+                $("body").css("background-image", "url('images/awe-backgrounds/" + wd + ".jpg')");
+				
                 city = weatherData.name;
                 country = weatherData.sys.country;
                 
@@ -74,7 +79,7 @@ $(function(){
                 $(".condition-icon").attr("src", icon);
                 
                 
-                $(".weather-descr").html(firstLetterUpper(weatherData.weather[0].description) + "<br>(" + clouds + "% of clouds)");
+                $(".weather-descr").html(firstLetterUpper(weatherData.weather[0].description).replace('Haze', 'John Haze') + "<br>(" + clouds + "% of clouds)");
                 
                 $(".container-fluid").fadeIn(800);
                 $(".spinner").hide();
