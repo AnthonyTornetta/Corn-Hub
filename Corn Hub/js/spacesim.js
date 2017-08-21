@@ -116,5 +116,5 @@ function Body(x, y, velocity, angle, mass, radius, name)
 		// Draw the name above the body and center it
 		ctx.fillText(name, this.x - ctx.measureText(name).width / 2, this.y - radius - 2);
 		ctx.stroke();
-	}
+	};
 }

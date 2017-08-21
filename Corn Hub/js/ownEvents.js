@@ -1,4 +1,4 @@
-// The events js (woot)!
+// 
 var url = "https://raw.githubusercontent.com/Cornchipss/Corn-Hub/master/Corn%20Hub/events/events.json";
 var list = document.getElementById('events-list');
 

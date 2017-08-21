@@ -147,7 +147,8 @@ displayWidget = function() {
         if (document.getElementById("Checkiday_Footer") == null) {
             var j = document.createElement("div");
             j.innerHTML = '';
-            document.getElementById("Checkiday").appendChild(j.firstChild)
+			if(j.firstChild instanceof Node) // One of them isn't and used to always throw an error
+				document.getElementById("Checkiday").appendChild(j.firstChild)
         }
     }
 };
