@@ -75,6 +75,7 @@ images/pressure-gage.png
 images/quizlet.png
 images/skyward.png
 images/socrative.png
+images/sololearn.jpg
 images/starblast.jpg
 images/sunchip.JPG
 images/turnitin.jpg
@@ -86,6 +87,7 @@ images/youtube.png
 #
 # \js
 #
+js/actual-holidays.js
 js/cookies.js
 js/events.js
 js/holiday.js
