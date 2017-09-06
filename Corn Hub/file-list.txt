@@ -1,7 +1,6 @@
 #
 # \fonts
 #
-fonts/banana.otf
 fonts/banana.woff
 fonts/banana.woff2
 #
@@ -118,7 +117,6 @@ styles/xmas.css
 bee-movie.html
 bsod.html
 byte-club.html
-file-list.txt
 firefox.html
 index.html
 info.html
