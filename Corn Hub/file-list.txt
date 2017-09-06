@@ -46,6 +46,7 @@ images/byte-club-logo.png
 images/compooter.png
 images/cornybground.jpg
 images/Dropbox.png
+images/edpuzzle.png
 images/falcon.png
 images/favicon.jpg
 images/gdrive.png
