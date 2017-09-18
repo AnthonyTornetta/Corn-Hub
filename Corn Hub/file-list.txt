@@ -74,6 +74,7 @@ images/onedrive.jpg
 images/pol.jpg
 images/pressure-gage.png
 images/quizlet.png
+images/skewlogy.png
 images/skyward.png
 images/socrative.png
 images/sololearn.jpg
