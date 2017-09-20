@@ -1,6 +1,7 @@
 #
 # \fonts
 #
+fonts/banana.otf
 fonts/banana.woff
 fonts/banana.woff2
 #
@@ -73,6 +74,7 @@ images/onedrive.jpg
 images/pol.jpg
 images/pressure-gage.png
 images/quizlet.png
+images/skewlogy.png
 images/skyward.png
 images/socrative.png
 images/sololearn.jpg
@@ -88,6 +90,7 @@ images/youtube.png
 # \js
 #
 js/actual-holidays.js
+js/bitcoin.js
 js/cookies.js
 js/events.js
 js/holiday.js
@@ -115,8 +118,10 @@ styles/xmas.css
 # \
 #
 bee-movie.html
+blackmarket.html
 bsod.html
 byte-club.html
+file-list.txt
 firefox.html
 index.html
 info.html

@@ -91,7 +91,7 @@ ul { margin-left: 20px; list-style-type: none; }
 ::-moz-selection { background-color: #048; color: #fff; }
 ::selection { background-color: #048; color: #fff; }
 
-
+.premium { color: #ffbf00; cursor: pointer; }
 
 .wrapper
 {
@@ -182,6 +182,20 @@ hr
     border                  : thin;
     border-color            : #048;
     border-style            : solid;
+}
+
+.neon
+{
+	color: black;
+	transition: all 1.5s ease-in-out;
+	font-family: Futura,Trebuchet MS,Arial,sans-serif;
+	cursor: hidden;
+}
+
+.neon:hover
+{
+	color: #fff;
+	text-shadow: 0 0 5px #fff, 0 0 10px #fff, 0 0 20px #048, 0 0 30px #048, 0 0 40px #048, 0 0 55px #048, 0 0 75px #048;
 }
 
 /* Holiday stuff */

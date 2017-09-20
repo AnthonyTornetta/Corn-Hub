@@ -116,21 +116,29 @@ displayWidget = function() {
                 f = e.split('","');
                 e = "";
 				e += '<div class="holiday-list">';
-                for (var a = 0; a < f.length; a++)
-				{
-					e += '<div class="holiday">'+ f[a] + '</div>';
-				}
 				
 				// Custom Days!
 				
 				var today = new Date();
 				var dd = today.getDate();
 				var mm = today.getMonth() + 1; //January is 0!
-				
+								
 				if(dd == 11 && mm == 5)
 				{
 					e += '<div class="rainbow-text"><b>Good Luck Bishop Day</b></div>';
 				}
+				
+				/*if(dd == 11 && mm == 9)
+				{
+					e += '9/11';
+				}*/
+				
+                for (var a = 0; a < f.length; a++)
+				{
+					e += '<div class="holiday">'+ f[a] + '</div>';
+				}
+				
+				
 				
 				// End Custom Days
 				e += "</div>";
