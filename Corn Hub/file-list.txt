@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 #
 # \fonts
 #
@@ -141,3 +142,148 @@ today.html
 update.log
 weather.html
 xmas.html
+=======
+#
+# \fonts
+#
+fonts/banana.otf
+fonts/banana.woff
+fonts/banana.woff2
+#
+# \images\awe-backgrounds
+#
+images/awe-backgrounds/atmosphere.jpg
+images/awe-backgrounds/breeze.jpg
+images/awe-backgrounds/broken clouds.jpg
+images/awe-backgrounds/calm.jpg
+images/awe-backgrounds/clear sky.jpg
+images/awe-backgrounds/cloudy-night.jpg
+images/awe-backgrounds/drizzle.jpg
+images/awe-backgrounds/dust.jpg
+images/awe-backgrounds/few clouds.JPG
+images/awe-backgrounds/fog.jpg
+images/awe-backgrounds/hail.jpg
+images/awe-backgrounds/haze.jpg
+images/awe-backgrounds/hurricane.jpg
+images/awe-backgrounds/light rain.jpg
+images/awe-backgrounds/mist.jpg
+images/awe-backgrounds/moderate rain.jpg
+images/awe-backgrounds/overcast clouds.jpg
+images/awe-backgrounds/rain mix.jpg
+images/awe-backgrounds/scattered clouds.jpg
+images/awe-backgrounds/shower rain.jpg
+images/awe-backgrounds/sleet.jpg
+images/awe-backgrounds/smog.jpg
+images/awe-backgrounds/snow.jpg
+images/awe-backgrounds/snowflake cold.jpg
+images/awe-backgrounds/storm showers.jpg
+images/awe-backgrounds/sunny.jpg
+images/awe-backgrounds/thunderstorm.jpg
+images/awe-backgrounds/tornado.jpg
+images/awe-backgrounds/windy.jpg
+#
+# \images
+#
+images/alex.png
+images/bsod.png
+images/byte-club-bg.jpg
+images/byte-club-logo.png
+images/compooter.png
+images/cornybground.jpg
+images/Dropbox.png
+images/edpuzzle.png
+images/falcon.png
+images/favicon.jpg
+images/gdrive.png
+images/gear.png
+images/github.png
+images/google.jpg
+images/humidity.png
+images/jackHotmanFace.png
+images/kahoot.png
+images/libblue.png
+images/libwhite.png
+images/loader.png
+images/lock.png
+images/ludumdare.gif
+images/masteryB.jpg
+images/masteryS.png
+images/may4.jpg
+images/may44.jpg
+images/may444.jpg
+images/may5.jpg
+images/moodle.png
+images/nsf.jpg
+images/Office.png
+images/onedrive.jpg
+images/pol.jpg
+images/pressure-gage.png
+images/quizlet.png
+images/skewlogy.png
+images/skyward.png
+images/socrative.png
+images/sololearn.jpg
+images/starblast.jpg
+images/sunchip.JPG
+images/turnitin.jpg
+images/usatp.png
+images/whitebox.png
+images/wired.jpg
+images/xmas.jpg
+images/youtube.png
+#
+# \js
+#
+js/actual-holidays.js
+js/bitcoin.js
+js/cookies.js
+js/events.js
+js/holiday.js
+js/holidayEffect.js
+js/load-img-list.js
+js/ownEvents.js
+js/settings.js
+js/smooth.js
+js/snow.js
+js/spacesim.js
+js/ticker.js
+js/today.js
+js/weather-short.js
+js/weather.js
+#
+# \styles
+#
+styles/main-page.css
+styles/nav.css
+styles/styles.css
+styles/today.css
+styles/weather.css
+styles/xmas.css
+#
+# \
+#
+bee-movie.html
+blackmarket.html
+bsod.html
+byte-club.html
+file-list.txt
+firefox.html
+index.html
+info.html
+lock.html
+matrix.html
+neutrality.html
+news.html
+Rainbow Screensaver.scr
+runme.exe
+screen melt.exe
+sean.html
+settings.html
+sierra.html
+space.html
+test.html
+today.html
+update.log
+weather.html
+xmas.html
+>>>>>>> 6eaa964051c96cc6597de4b15b0d92299d9b687c

@@ -1,6 +1,5 @@
-
 $(function(){
-    url = "https://api.coindesk.com/v1/bpi/currentprice.json";
+    var url = "https://api.coindesk.com/v1/bpi/currentprice.json";
     
 	updateBitcoin(url);
 
