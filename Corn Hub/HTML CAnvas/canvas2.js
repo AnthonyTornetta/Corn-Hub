@@ -1,3 +1,7 @@
+var inverted = false;
+
+
+
 var 
 	canvas,
 	w, h,
@@ -7,11 +11,11 @@ var
 	hue = 0;
 
 canvas = document.getElementById('main-canvas');
-	ctx = canvas.getContext("2d");
-	w = canvas.width  = window.innerWidth;
-	h = canvas.height = window.innerHeight;
-	
-	logo.src = "test.png";
+ctx = canvas.getContext("2d");
+w = canvas.width  = window.innerWidth;
+h = canvas.height = window.innerHeight;
+
+logo.src = "img.png";
 
 logo.onload = function()
 {
@@ -27,11 +31,24 @@ logo.onload = function()
 	{
 		for(var y = 0; y < imgData.height; y+=3)
 		{
-			var a = pixels[((imgData.width * y) + x) * 4 + 3];		
+			var a = pixels[((imgData.width * y) + x) * 4 + 3];
+			var b = pixels[((imgData.width * y) + x) * 4 + 2];
+			var g = pixels[((imgData.width * y) + x) * 4 + 1];
+			var r = pixels[((imgData.width * y) + x) * 4];			
 			
-			if(a > 0)
+			if(!inverted)
 			{
-				logoParticles.push(new Particle(x, y));
+				if(a > 0 && (b != 0 || g != 0 || b != 0))
+				{
+					logoParticles.push(new Particle(x, y));
+				}
+			}
+			else
+			{
+				if(a > 0 && (b != 255 || g != 255 || b != 255))
+				{
+					logoParticles.push(new Particle(x, y));
+				}
 			}
 		}
 	}
