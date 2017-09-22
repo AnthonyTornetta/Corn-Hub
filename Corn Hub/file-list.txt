@@ -6,13 +6,12 @@ fonts/banana.woff
 fonts/banana.woff2
 #
 # \HTML Canvas
-# This is for the falcon fair!
+# For Falcon Fair!
 #
 HTML Canvas/canvas notes.txt
 HTML Canvas/canvas.html
 HTML Canvas/canvas.js
 HTML Canvas/canvas2.js
-HTML Canvas/img.jpg
 HTML Canvas/img.png
 #
 # \images\awe-backgrounds
