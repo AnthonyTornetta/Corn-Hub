@@ -6,13 +6,15 @@ fonts/banana.woff
 fonts/banana.woff2
 #
 # \HTML Canvas
-# For Falcon Fair!
 #
 HTML Canvas/canvas notes.txt
 HTML Canvas/canvas.html
 HTML Canvas/canvas.js
 HTML Canvas/canvas2.js
+HTML Canvas/img.jpg
 HTML Canvas/img.png
+HTML Canvas/pngimg.bat
+HTML Canvas/WhiteClear.jar
 #
 # \images\awe-backgrounds
 #
@@ -129,7 +131,6 @@ styles/xmas.css
 #
 # \
 #
-blackmarket.html
 bsod.html
 byte-club.html
 canvas.html
@@ -147,9 +148,7 @@ runme.exe
 screen melt.exe
 sean.html
 settings.html
-sierra.html
 space.html
-test.html
 today.html
 update.log
 weather.html
