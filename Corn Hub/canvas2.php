@@ -1,8 +1,7 @@
 <!DOCTYPE html>
 <html>
 	<head>
-		<meta charset="UTF-8">
-		<title>The canvas :D</title>
+		<?php global $title; $title = 'Cool thing #2'; require('headinfo.php'); ?>
 		<style>
 			*
 			{
@@ -29,6 +28,6 @@
 		<div class="canvas">
 			<canvas id="main-canvas"></canvas>
 		</div>
-		<script type="text/javascript" src="js/canvas.js"></script>
+		<script type="text/javascript" src="js/canvas2.js"></script>
 	</body>
 </html>

@@ -47,11 +47,9 @@
 })(jQuery);
 
 // random array sort from
-// http://javascript.about.com/library/blsort2.htm
 function randOrd() { return(Math.round(Math.random())-0.5); }
 
 $(document).ready(function() {
-    //historyData.host = "http://localhost:8001/";
     historyData.load(function(d) {
 
         // randomly sort our data just for variety

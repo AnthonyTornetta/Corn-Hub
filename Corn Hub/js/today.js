@@ -1,6 +1,6 @@
 /*
  * For some reason I was getting this error when custom coding it: 
- * Cross-Origin Request Blocked: The Same Origin Policy disallows reading the remote resource at http://history.muffinlabs.com/date. (Reason: CORS header ‘Access-Control-Allow-Origin’ missing).
+ * Cross-Origin Request Blocked: The Same Origin Policy disallows reading the remote resource at https://history.muffinlabs.com/date. (Reason: CORS header ‘Access-Control-Allow-Origin’ missing).
  * The site provided this code to use and apparently it's the only way it works. I don't know why though.
  * Plus it works well with the ticker sooooo win-win?
  */

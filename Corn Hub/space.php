@@ -1,9 +1,7 @@
 <!DOCTYPE html>
 <html>
 	<head>
-		<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-		<title>Corn Hub : Space Sim</title>
-		<link rel="icon" href="images/favicon.jpg">
+		<?php global $title; $title = 'Space Simulator'; require('headinfo.php'); ?>
 		<script src="js/spacesim.js"></script>
 		
 		<style>

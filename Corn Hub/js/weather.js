@@ -13,7 +13,7 @@ $(function(){
     
     // API key for getting weather data
     var API_KEY = "05a68069ca925ee5c7863e687d0d57d5"; // Idk how to make final/const variables in js so i just made it all caps lol
-    url = "http://api.openweathermap.org/data/2.5/weather?lat="+lat+"&lon="+lon+"&units=metric&appid=" + API_KEY;
+    url = "https://api.openweathermap.org/data/2.5/weather?lat="+lat+"&lon="+lon+"&units=metric&appid=" + API_KEY;
 
     // Display current city on load, or at least city of your IP address provider
     currentCity();
@@ -29,7 +29,7 @@ $(function(){
         $.getJSON("https://ipinfo.io", function(data) {
             lat = data.loc.split(',')[0];
             lon = data.loc.split(',')[1];
-            url = "http://api.openweathermap.org/data/2.5/weather?lat="+lat+"&lon="+lon+"&units=metric&appid=" + API_KEY;
+            url = "https://api.openweathermap.org/data/2.5/weather?lat="+lat+"&lon="+lon+"&units=metric&appid=" + API_KEY;
             updateWeather(url);
         }, 'jsonp');
     }
@@ -47,7 +47,7 @@ $(function(){
         if (!city) {
             city="Lebanon";
         }
-        url = "http://api.openweathermap.org/data/2.5/weather?q="+city+"&units=metric&appid=" + API_KEY;
+        url = "https://api.openweathermap.org/data/2.5/weather?q="+city+"&units=metric&appid=" + API_KEY;
         updateWeather(url);
     }
 
@@ -58,7 +58,7 @@ $(function(){
         $.getJSON(url, function(weatherData){
                 // I uploaded icons in a way that their name ends with appropriate weather condition from API documentation
                 // Each weather condition has it's own short name, for example condition Clear sky has icon name 01d
-                var icon = "http://openweathermap.org/img/w/" + weatherData.weather[0].icon + ".png";
+                var icon = "https://openweathermap.org/img/w/" + weatherData.weather[0].icon + ".png";
                 
                 // Based on an icon name, apply appropriate background image
 				var wd = weatherData.weather[0].description;

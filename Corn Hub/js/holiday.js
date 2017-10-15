@@ -128,6 +128,11 @@ displayWidget = function() {
 					e += '<div class="rainbow-text"><b>Good Luck Bishop Day</b></div>';
 				}
 				
+				if(dd == 11 && mm == 10)
+				{
+					e += '<div class="rainbow-text">Corn Hub Online Day</div>';
+				}
+				
 				/*if(dd == 11 && mm == 9)
 				{
 					e += '9/11';
