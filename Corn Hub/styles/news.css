@@ -1,0 +1,6 @@
+'<div class="news-box col-sm-6 col-md-4">\
+	<a href="' + url + '" target="_blank">\
+	<h4 class="news-title">' + title + '</h4>\
+	</a>' + '<p class="byline">' + author + '</p>\
+	<p class="description">' + description + '</p>\
+	</div>');

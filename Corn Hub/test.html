@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>   <!-- Jquery -->
+
+<head>
+	<link rel="stylesheet" media="all" href="styles/login.css">
+	<script src="js/login.js"></script>
+</head>
+
+<body>
+
+<h2>Modal Login Form</h2>
+
+<button onclick="loginShow()" style="width:auto;">Login</button>
+
+<section class="login">
+	<div id="loginBox" class="modal">
+		<form class="modal-content animate" action="/login.php">
+			<div class="imgcontainer">
+				<span onclick="loginHide()" class="close" title="Close Modal">&times;</span>
+				<img src="images/avatar.jpg" alt="Avatar" class="avatar">
+			</div>
+
+			<div class="container">
+				<label><b>Username</b></label>
+				<input type="text" placeholder="Enter Username" name="uname" required>
+			    <label><b>Password</b></label>
+			    <input type="password" placeholder="Enter Password" name="psw" required>
+				<input type="checkbox" onclick="registerToggle()"> Register
+			    <button type="submit" id="loginBtn">Login</button>
+			    <input type="checkbox" checked="checked"> Remember me
+			</div>
+
+			<div class="container" style="background-color:#f1f1f1">
+			    <button type="button" onclick="loginHide()" class="cancelbtn">Cancel</button>
+  			    <span class="psw">Forgot <a href="#">password?</a></span>
+			</div>
+		</form>
+	</div>
+</section>
+<script>
+
+</script>
+
+</body>
+</html>

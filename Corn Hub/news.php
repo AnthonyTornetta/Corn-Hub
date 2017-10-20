@@ -13,7 +13,7 @@
 
 			<div class="main">
                 <h1 id="title">Corn Hub - News</h1>        
-                <p>Probably not fake news!</p>
+                <p>Less depressing news :D</p>
                 <br>
                 <div id="news"><h3>Loading News...</h3></div>
                 <script src="js/events.js"></script>

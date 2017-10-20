@@ -5,12 +5,35 @@
  -->
  
 <?php
-/*
+
 session_start();
 $_SESSION['message'] = '';
+$mysql = new mysqli('localhost', 'id3229446_cornchip', 'SuperWhaleKickOfDeath', 'id3229446_profiles') or alert('asdf');
 
-$mysql = new mysqli('databases.000webhost.com', 'Cornchip', 'SuperWhaleKickOfDeath', 'id3229446_profiles');
-*/
+if($_SERVER['REQUEST_METHOD'] == 'POST')
+{
+	if($_POST['reg'] == 'on')
+	{
+		$uname = $mysqli->real_escape_string($_POST['uname']);
+		$email = md5($_POST['pword']); // md5 hashes the pword for security
+		$avatar_path = $mysqli->real_escape_string('images/' . $_FILES['avatar']['name']);
+		
+		// Make sure the file type is an image2wbmp
+		if(preg_match("!image!", $_FILES['avatar']['type']))
+		{
+			// Copy the image to the images folder
+			if(cpoy($_FILES['avatar']['tmp_name'], $avatar_path))
+			{
+				$_SESSION['uname'] = $uname;
+				$_SESSION['avatar'] = $avatar_path;
+				
+				$sql = "INSERT INTO users (uname, pword, avatar) " .
+							"VALUES ('$uname', '$pword', '$avatar_path')";
+			}
+		}
+	}
+}
+
 ?>
 
 <!DOCTYPE html>
