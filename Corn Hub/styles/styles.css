@@ -10,7 +10,7 @@
     margin                  : 0;
     padding                 : 0;
     box-sizing              : border-box;
-	
+
 	/*outline: 1px red solid;*/
 }
 
@@ -70,20 +70,20 @@ ul { margin-left: 20px; list-style-type: none; }
 
 .main
 {
-	height                  : 100%;
-    background-color        : #fff;
-    
-    padding-left            : 10px;
-    padding-right           : 10px;
-    /* For bground images (so they don't repeat repeat repeat repeat) */
-    -webkit-background-size : cover;
-    -moz-background-size    : cover;
-    -o-background-size      : cover;
-    background-size         : cover;
-    /* So the margins and padding don't make tulinehe page longer */
-    -moz-box-sizing         : border-box;
-    -webkit-box-sizing      : border-box;
-    box-sizing              : border-box;
+	height                    : 100%;
+  background-color          : #fff;
+
+  padding-left              : 10px;
+  padding-right             : 10px;
+  /* For bground images (so they don't repeat repeat repeat repeat) */
+  -webkit-background-size   : cover;
+  -moz-background-size      : cover;
+  -o-background-size        : cover;
+  background-size           : cover;
+  /* So the margins and padding don't make tulinehe page longer */
+  -moz-box-sizing           : border-box;
+  -webkit-box-sizing        : border-box;
+  box-sizing                : border-box;
 }
 
 .sf { width:64px; height:64px; } /* Makes something 64px*64px */
@@ -193,7 +193,7 @@ hr
 
 .switch input { display:none; }
 
-.slider 
+.slider
 {
     position                : absolute;
     cursor                  : pointer;
@@ -218,17 +218,17 @@ hr
     transition              : .4s;
 }
 
-input:checked + .slider 
+input:checked + .slider
 {
     background-color        : #048;
 }
 
-input:focus + .slider 
+input:focus + .slider
 {
     box-shadow              : 0 0 1px #048;
 }
 
-input:checked + .slider:before 
+input:checked + .slider:before
 {
    -webkit-transform        : translateX(26px);
    -ms-transform            : translateX(26px);
@@ -236,12 +236,12 @@ input:checked + .slider:before
 }
 
 /* Rounded sliders */
-.slider.round 
+.slider.round
 {
     border-radius           : 34px;
 }
 
-.slider.round:before 
+.slider.round:before
 {
 	border-radius           : 50%;
 }
@@ -257,38 +257,38 @@ input:checked + .slider:before
 .neon:hover
 {
 	color                   : #fff;
-	text-shadow             : 0 0 5px #fff, 
-	                          0 0 10px #fff, 
-							  0 0 20px #048, 
-							  0 0 30px #048, 
-							  0 0 40px #048, 
-							  0 0 55px #048, 
+	text-shadow             : 0 0 5px #fff,
+	                          0 0 10px #fff,
+							  0 0 20px #048,
+							  0 0 30px #048,
+							  0 0 40px #048,
+							  0 0 55px #048,
 							  0 0 75px #048;
 }
 
 /* Holiday stuff */
-#snowflakeContainer 
+#snowflakeContainer
 {
     position                : absolute;
     left                    : 0px;
     top                     : 0px;
 }
 
-.snowflake 
+.snowflake
 {
     position                : fixed;
     font-family             : Cambria, Georgia, serif;
     font-size               : 14px;
-    
+
     padding-left            : 15px;
     line-height             : 24px;
-    
+
     color                   : #fff;
     background-color        : transparent;
-    
+
     user-select             : none;
     cursor                  : default;
-    
+
     z-index                 : 999;
 }
 
@@ -297,10 +297,10 @@ input:checked + .slider:before
 {
     background: none;
     font-family: Androgyne;
-    background-image        : url('http://www.wearewebstars.dk/codepen/img/s1.png'), 
-	                          url('http://www.wearewebstars.dk/codepen/img//s2.png'), 
+    background-image        : url('http://www.wearewebstars.dk/codepen/img/s1.png'),
+	                          url('http://www.wearewebstars.dk/codepen/img//s2.png'),
 							  url('http://www.wearewebstars.dk/codepen/img//s3.png');
-    
+
 	width                   : 100%;
     height                  : 100%;
 	position                : absolute;
@@ -322,9 +322,9 @@ input:checked + .slider:before
 }
 
 /* Uncomment when you want to change the bground image for something special
-p, h1, h2, h3, h4, h5, h6, a, .holiday
+p, h1, h2, h3, h4, h5, h6, a, .holiday, .checkiday
 {
-    color                   : #fff;
+    color                   : rgba(255, 145, 0, 1);
 }
 
 .main, .wrapper, body
@@ -332,15 +332,15 @@ p, h1, h2, h3, h4, h5, h6, a, .holiday
     background              : transparent;
 }
 
-html 
-{ 
-    background              : url('../images/may5.jpg') no-repeat center center fixed;
+html
+{
+    background              : url('../images/spoopy.jpg') no-repeat center center fixed;
     -webkit-background-size : cover;
     -moz-background-size    : cover;
     -o-background-size      : cover;
     background-size         : cover;
 }
-*/
+/**/
 
 
 /* Fancy animations */
@@ -374,25 +374,25 @@ html
     100% { opacity:1; }
 }
 
-@keyframes snow 
+@keyframes snow
 {
   0% {background-position: 0px 0px, 0px 0px, 0px 0px;}
   50% {background-position: 500px 500px, 100px 200px, -100px 150px;}
   100% {background-position: 500px 1000px, 200px 400px, -100px 300px;}
 }
-@-moz-keyframes snow 
+@-moz-keyframes snow
 {
   0% {background-position: 0px 0px, 0px 0px, 0px 0px;}
   50% {background-position: 500px 500px, 100px 200px, -100px 150px;}
   100% {background-position: 400px 1000px, 200px 400px, 100px 300px;}
 }
-@-webkit-keyframes snow 
+@-webkit-keyframes snow
 {
   0% {background-position: 0px 0px, 0px 0px, 0px 0px;}
   50% {background-position: 500px 500px, 100px 200px, -100px 150px;}
   100% {background-position: 500px 1000px, 200px 400px, -100px 300px;}
 }
-@-ms-keyframes snow 
+@-ms-keyframes snow
 {
   0% {background-position: 0px 0px, 0px 0px, 0px 0px;}
   50% {background-position: 500px 500px, 100px 200px, -100px 150px;}

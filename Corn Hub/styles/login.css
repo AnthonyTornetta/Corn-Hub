@@ -97,24 +97,24 @@
 }
 
 @-webkit-keyframes animatezoom {
-    from {-webkit-transform: scale(0)} 
+    from {-webkit-transform: scale(0)}
     to {-webkit-transform: scale(1)}
 }
-    
+
 @keyframes animatezoom {
-    from {transform: scale(0)} 
+    from {transform: scale(0)}
     to {transform: scale(1)}
 }
 
 /* Change styles for span and cancel button on extra small screens */
 @media screen and (max-width: 300px) {
-    .login span.psw 
-	{
+    .login span.psw
+  {
        display: block;
        float  : none;
     }
-    .login .cancelbtn 
-	{
+    .login .cancelbtn
+  {
        width  : 100%;
     }
 }

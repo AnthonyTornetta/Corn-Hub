@@ -3,14 +3,14 @@
 <html>
     <head>
 		<?php global $title; $title = 'This Day in History'; require('headinfo.php'); ?>
-		
+
 		<link rel="icon" href="images/favicon.jpg">
 		<script src="js/weather.js"></script>
 		<link rel="stylesheet" media="all" href="styles/weather.css">
     </head>
     <body>
         <span class="col-xs-12 spinner"><img src="images/loader.png" width="50" height="50"></span>
-        
+
         <div class="container-fluid text-center">
             <span class="city text-center"></span>
             <div class="col-xs-12">

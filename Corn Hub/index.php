@@ -3,38 +3,34 @@
     Developed while listening to: https://www.youtube.com/watch?v=fr6KVNt-1Ek
 	Hello fellow nerd :)
  -->
- 
-<?php
-/*
-session_start();
-$_SESSION['message'] = '';
 
-$mysql = new mysqli('databases.000webhost.com', 'Cornchip', 'SuperWhaleKickOfDeath', 'id3229446_profiles');
-*/
+<?php
+require('account.php'); // TODO: Make this
 ?>
 
 <!DOCTYPE html>
 <html>
 	<head>
 		<?php global $title; $title = ''; require('headinfo.php'); ?>
-		
+
 		<link rel="stylesheet" media="all" href="styles/main-page.css">
-		
+
 		<script type="text/javascript" src="js/holiday.js"></script>  <!-- For displaying the holidays -->
-		<script type="text/javascript" src="js/bitcoin.js"></script>
+		<!--<script type="text/javascript" src="js/bitcoin.js"></script>-->
+		<script type="text/javascript" src="js/xmas.js"></script>
 	</head>
-	
+
 	<body>
 		<?php include('holiday.php') ?>
-		
+
 		<div class="wrapper">
 			<?php include('nav.php'); ?>
-			
+
 			<div class="main">
 				<div class="col-sm-9">
 					<h1 id="title">Corn Hub</h1>
 					<p><!-- TODO: Customize w/ settings -->
-						<span id="bitcoin">And they said free web hosting wasn't a thing!</span>
+						<span id="countdown"></span> <a href="info.php" title="Extra Cool Things">[...]</a>
 					</p>
 					<!-- Where it all began -->
 					<div class="main-img-list">
@@ -64,24 +60,26 @@ $mysql = new mysqli('databases.000webhost.com', 'Cornchip', 'SuperWhaleKickOfDea
 							<li id="main-list-img" title="Google"><a href="https://www.google.com/" target="_blank"><img src="images/google.jpg" alt="Google"></a></li>
 							<li id="main-list-img" title="Sololearn"><a href="https://www.sololearn.com/" target="_blank"><img src="images/sololearn.jpg" alt="Sololearn"></a></li>
 							<li id="main-list-img" title="Ed Puzzle"><a href="https://edpuzzle.com/" target="_blank"><img src="images/edpuzzle.png" alt="Ed Puzzle"></a></li>
-							<li id="main-list-img" title="Skewlogy"><a href="https://app.schoology.com/login" target="_blank"><img src="images/skewlogy.png" alt="Skewlogy"></a></li>
+							<li id="main-list-img" title="Skewlogy"><a href="https://clsd.schoology.com/login" target="_blank"><img src="images/skewlogy.png" alt="Skewlogy"></a></li>
+							<li id="main-list-img" title="Gmail"><a href="https://mail.google.com/mail/u/0/" target="_blank"><img src="images/gmail.png" alt="Gmail"></a></li>
 						</ul>
 					</div>
-					
+
 					<div class="center">
-						<div id="Checkiday">
-							<div id="Checkiday_Footer" class="checkiday">
-								Holidays not loading ;(. Try reloading the page
+						<h3>Today's Holidays</h3>
+						<div id="checkiday" class="checkiday">
+							<div id="checkiday-footer">
+								Loading holidays...
 							</div>
 						</div>
 					</div>
-					
+
 					<br>
 					<div style="text-align: center;">
 						<p style="font-size: 14px;">Powered By <a href="https://www.checkiday.com/" target="_blank">Checkiday.com</a>.</p>
 					</div>
 				</div>
-				
+
 				<div class="col-sm-3">
 					<h3>Nice Things</h3>
 					<ul>

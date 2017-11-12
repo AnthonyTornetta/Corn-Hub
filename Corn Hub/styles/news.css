@@ -1,6 +1,31 @@
-'<div class="news-box col-sm-6 col-md-4">\
-	<a href="' + url + '" target="_blank">\
-	<h4 class="news-title">' + title + '</h4>\
-	</a>' + '<p class="byline">' + author + '</p>\
-	<p class="description">' + description + '</p>\
-	</div>');
+/*'<div class="news-box col-sm-6 col-md-4">\
+<a href="' + url + '" target="_blank">\
+<h4 class="news-title">' + title + '</h4>\
+</a>' + '<p class="byline">' + author + '</p>\
+<p class="description">' + description + '</p>\
+</div>');
+*/
+
+.news
+{
+  display: grid;
+  grid-template-columns: repeat(3, 30%);
+  grid-auto-rows: minmax(200px, auto);
+  grid-column-gap: 3%;
+  grid-row-gap: 3%;
+}
+
+.news-box
+{
+  -moz-box-shadow: 0px 0px 10px #888888;
+  -webkit-box-shadow: 0px 0px 10px #888888;
+  box-shadow: 0px 0px 10px #888888;
+}
+
+@media screen and (max-width: 480px)
+{
+    .news
+    {
+      grid-template-columns: 100%;
+    }
+}

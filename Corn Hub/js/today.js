@@ -1,111 +1,59 @@
-/*
- * For some reason I was getting this error when custom coding it: 
- * Cross-Origin Request Blocked: The Same Origin Policy disallows reading the remote resource at https://history.muffinlabs.com/date. (Reason: CORS header ‘Access-Control-Allow-Origin’ missing).
- * The site provided this code to use and apparently it's the only way it works. I don't know why though.
- * Plus it works well with the ticker sooooo win-win?
- */
+$(function()
+{
+  var monthNames = [ "January", "February", "March", "April", "May", "June",
+  "July", "August", "September", "October", "November", "December" ];
 
-historyData = {
-    host: "http://history.muffinlabs.com/",
+  let d = new Date();
 
-    /*
-     * Lightweight JSONP fetcher
-     * Copyright 2010-2012 Erik Karlsson. All rights reserved.
-     * BSD licensed
-     */
+  let month = monthNames[d.getMonth()];
+  let day = d.getDate();
 
-    /*
-     * Usage:
-     * 
-     * JSONP.get( 'someUrl.php', {param1:'123', param2:'456'}, function(data){
-     *   //do something with data, which is the JSON object you should retrieve from someUrl.php
-     * });
-     */
-    jsonP: (function(){
-	      var counter = 0, head, window = this, config = {};
-	      function load(url, pfnError) {
-		        var script = document.createElement('script'),
-			          done = false;
-		        script.src = url;
-		        script.async = true;
-            
-		        var errorHandler = pfnError || config.error;
-		        if ( typeof errorHandler === 'function' ) {
-			          script.onerror = function(ex){
-				            errorHandler({url: url, event: ex});
-			          };
-		        }
-		        
-		        script.onload = script.onreadystatechange = function() {
-			          if ( !done && (!this.readyState || this.readyState === "loaded" || this.readyState === "complete") ) {
-				            done = true;
-				            script.onload = script.onreadystatechange = null;
-				            if ( script && script.parentNode ) {
-					              script.parentNode.removeChild( script );
-				            }
-			          }
-		        };
-		        
-		        if ( !head ) {
-			          head = document.getElementsByTagName('head')[0];
-		        }
-		        head.appendChild( script );
-	      }
-	      function encode(str) {
-		        return encodeURIComponent(str);
-	      }
-	      function jsonp(url, params, callback, callbackName) {
-		        var query = (url||'').indexOf('?') === -1 ? '?' : '&', key;
-				    
-		        callbackName = (callbackName||config['callbackName']||'callback');
-		        var uniqueName = callbackName + "_json" + (++counter);
-		        
-		        params = params || {};
-		        for ( key in params ) {
-			          if ( params.hasOwnProperty(key) ) {
-				            query += encode(key) + "=" + encode(params[key]) + "&";
-			          }
-		        }	
-		        
-		        window[ uniqueName ] = function(data){
-			          callback(data);
-			          try {
-				            delete window[ uniqueName ];
-			          } catch (e) {}
-			          window[ uniqueName ] = null;
-		        };
-            
-		        load(url + query + callbackName + '=' + uniqueName);
-		        return uniqueName;
-	      }
-	      function setDefaults(obj){
-		        config = obj;
-	      }
-	      return {
-		        get:jsonp,
-		        init:setDefaults
-	      };
-    }()),
-	  load : function(options) {
-		    var callback, month, day, host;
- 
-		    if ( typeof(options) == "function" ) {
-			      callback = options;
-		    }
-		    else if ( typeof(options) == "object" ) {
-			      callback = options.callback;
-			      month = options.month;
-			      day = options.day;
-	      }
-        
-		    this.jsonP.get(this.host + '/date', {}, function(tmp) {
-				    historyData.data = tmp.data;
-				    historyData.url = tmp.url;
-				    historyData.date = tmp.date;
+  let url = `https://en.wikipedia.org/w/api.php?action=parse&page=${month}_${day}&format=json&origin=*`;
 
-				    if ( typeof(callback) == "function" ) {
-					      callback(historyData.data);
-				    }
-			  });
-	  }
+	updateEvents(url);
+
+  // Main function for updating data based on url which is generated based on city or current place
+  function updateEvents(url)
+  {
+    // Data will hold all requested data(typically object or array) in JSON format
+    $.getJSON(url, function(data)
+    {
+
+	    var wallOfText = data.parse.text['*'];
+      wallOfText = replaceAll(wallOfText, '/wiki', 'https://www.wikipedia.org/wiki')
+      wallOfText = replaceAll(wallOfText, '<a', '<a target="_blank"');
+      let findText = 'title="Edit section: Events">edit</a><span class="mw-editsection-bracket">]</span></span></h2>';
+      let pStart = wallOfText.indexOf(findText) + findText.length;
+      wallOfText = wallOfText.slice(pStart);
+
+      let h2Index = wallOfText.indexOf('<h2>');
+      let births = wallOfText;
+      wallOfText = wallOfText.slice(0, h2Index);
+
+      findText = '</h2>';
+      births = births.substring(wallOfText.length);
+      births = births.substring(births.indexOf(findText) + findText.length);
+      let deaths = births;
+
+      findText = '<h2>';
+      let deathsIndex = births.indexOf(findText);
+      births = births.slice(0, deathsIndex);
+
+      deaths = deaths.substring(deathsIndex + findText.length);
+      findText = ']</span></span>';
+      deaths = deaths.substring(deaths.indexOf(findText) + findText.length);
+
+      deaths = deaths.slice(0, deaths.indexOf('<h2>'));
+
+      document.getElementById('events').innerHTML = wallOfText;
+      document.getElementById('births').innerHTML = births;
+      document.getElementById('deaths').innerHTML = deaths;
+    });
+  }
+});
+
+// https://stackoverflow.com/questions/1144783/how-to-replace-all-occurrences-of-a-string-in-javascript - Sean Bright's Answer
+function replaceAll(str, find, replace)
+{
+  return str.replace(new RegExp(find, 'g'), replace);
 }

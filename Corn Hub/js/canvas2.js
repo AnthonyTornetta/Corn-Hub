@@ -1,4 +1,4 @@
-var 
+var
 	canvas,
 	w, h,
 	logoParticles = [],
@@ -10,31 +10,31 @@ canvas = document.getElementById('main-canvas');
 	ctx = canvas.getContext("2d");
 	w = canvas.width  = window.innerWidth;
 	h = canvas.height = window.innerHeight;
-	
-	logo.src = "js/test.png";
+
+	logo.src = "images/particleImage.png";
 
 logo.onload = function()
 {
 	var posX = (w - this.width) / 2;
 	var posY = (h - this.height) / 2;
 	ctx.drawImage(this, posX, posY);
-	
+
 	var imgData = ctx.getImageData(0, 0, w, h);
 	pixels = imgData.data;
-	
+
 	for(var x = 0; x < imgData.width; x+=3)
 	{
 		for(var y = 0; y < imgData.height; y+=3)
 		{
-			var a = pixels[((imgData.width * y) + x) * 4 + 3];		
-			
+			var a = pixels[((imgData.width * y) + x) * 4 + 3];
+
 			if(a > 0)
 			{
 				logoParticles.push(new Particle(x, y));
 			}
 		}
 	}
-	
+
 	setTimeout(function()
 	{
 		animate();
@@ -49,7 +49,7 @@ function animate()
 	{
 		logoParticles[i].draw();
 	}
-	
+
 	hue += 1;
 	window.requestAnimationFrame(animate);
 }
@@ -69,17 +69,17 @@ function Particle(x, y)
 	particleIndex++;
 }
 
-Particle.prototype = 
+Particle.prototype =
 {
 	constructor: Particle,
-	
+
 	draw: function()
 	{
 		ctx.fillStyle = this.color;
 		ctx.fillRect(this.x, this.y, 2, 2);
 		this.update();
 	},
-	
+
 	update: function()
 	{
 		if(this.life >= this.maxLife)
@@ -91,7 +91,7 @@ Particle.prototype =
 		this.velY += this.grav;
 		this.life++;
 	},
-	
+
 	reset: function()
 	{
 		this.x = this.origX;
@@ -101,7 +101,7 @@ Particle.prototype =
 		this.velX = this.random(-1, 1);
 		this.velY = this.random(-1, 1);
 	},
-	
+
 	random: function()
 	{
 		min = arguments.length == 1 ? 0 : arguments[0],

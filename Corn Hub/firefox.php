@@ -6,13 +6,13 @@
 	</head>
 
 	<body>
-        <?php include('holiday.php'); ?>
-		
+    <?php include('holiday.php'); ?>
+
 		<div class="wrapper">
 			<?php require('nav.php'); ?>
 
 			<div class="main">
-                <h1 id="title">Corn Hub - Fix Firefox</h1>
+        <h1 id="title">Corn Hub - Fix Firefox</h1>
 				<p><strong>Note: Do the following steps in the Firefox browser!</strong></p>
 				<h3>9/10 times this is the problem:</h3>
 				<p>If your firefox is not loading sites such as google or youtube, this is most likely a certificate error (thanks Cedar Crest).</p>
