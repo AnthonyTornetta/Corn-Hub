@@ -11,7 +11,8 @@
 		<li><a href="news.php">News</a></li>
 		<li><a href="projects.php">Stupid Stuff</a></li>
 		<li><a href="sean.php">Sean</a></li>
-		<li><a href="today.php">This Day in History</a></li>
+		<li><a href="today.php">TDIH</a></li>
+		<li><a href="apush.php">APUSH</a></li>
 		<!--<li onclick='loginShow()'>Login</li>-->
 	</ul>
 </div>

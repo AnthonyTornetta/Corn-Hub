@@ -30,8 +30,8 @@ require('account.php'); // TODO: Make this
 				<div class="col-sm-9">
 					<h1 id="title">Corn Hub</h1>
 					<p><!-- TODO: Customize w/ settings -->
-						<span id="countdown"></span> <a href="info.php" title="Extra Cool Things">[...]</a>
-					</p>
+					<!--<span id="countdown"></span> <a href="info.php" title="Extra Cool Things">[...]</a>-->The School Play (See How They Run) is this Thursday, Friday [7pm], &amp; Saturday!</p><p>
+					Tickets: $4 for Students, $6 for Adults. Located in the Cedar Crest Auditorium.
 					<!-- Where it all began -->
 					<div class="main-img-list">
 						<ul>
@@ -88,7 +88,6 @@ require('account.php'); // TODO: Make this
 						<li><a href="http://www.englishbanana.com/games/" target="_blank">English Banana</a></li>
 						<li><a href="http://www.coolmath-games.com/" target="_blank">Coolmath</a></li> <!-- Ol' Faithful -->
 						<li><a href="http://www.omfgdogs.com/" target="_blank">Doggo</a></li> <!-- So... many... doggos... -->
-						<li><a href="lock.php">Fake Lock Screen</a></li> <!-- Stupid -->
 						<li><a href="bsod.php">Fake BSOD</a></li> <!-- :> -->
 						<li><a href="canvas.php">Cool Thing #1</a></li>
 						<li><a href="canvas2.php">Cool Thing #2</a></li>
