@@ -1,29 +1,27 @@
-var selectedPiece =
-{
-  x: -1,
-  y: -1
-};
+"use strict";
 
 class Board
 {
   constructor()
   {
     this.board = new Array(BOARD_HEIGHT);
-    this.overlay = new Array(BOARD_HEIGHT);
+
+    this.selectedPiece =
+    {
+      x: -1,
+      y: -1
+    };
 
     for(let x = 0; x < BOARD_WIDTH; x++)
     {
       this.board[x] = new Array(BOARD_HEIGHT);
-      this.overlay[x] = new Array(BOARD_HEIGHT);
       for(let y = 0; y < BOARD_WIDTH; y++)
       {
-        this.board[x][y] = new Piece(x * tileWidth, y * tileHeight);
-        this.overlay[x][y] = MARKER_NONE;
+        this.board[x][y] = new Tile(x, y, new Piece(x, y));
       }
     }
 
-    this.board[3][4] = new Pawn(3, 4, TEAM_BLACK);
-    console.log(this.board[3][4].movePattern());
+    this.board[3][4].piece = new Knight(3, 4, TEAM_BLACK);
   }
 
   highlightTile(x, y, hl, obj)
@@ -36,19 +34,23 @@ class Board
       return;
     }
 
-    if(hl)
-      obj.overlay[x][y] = MARKER_HIGHLIGHTED;
-    else
-      obj.overlay[x][y] = MARKER_NONE;
+    obj.board[x][y].highlighted = hl;
   }
 
   isHighlighted(x, y)
   {
-    if(this.overlay[x][y] == MARKER_HIGHLIGHTED)
+    return board[x][y].highlighted;
+  }
+
+  clearAllHighlights()
+  {
+    for(let x = 0; x < BOARD_WIDTH; x++)
     {
-      console.log(`${x}, ${y}`);
+      for(let y = 0; y < BOARD_HEIGHT; y++)
+      {
+        this.highlightTile(x, y, false);
+      }
     }
-    return this.overlay[x][y] == MARKER_HIGHLIGHTED;
   }
 
   showAttackTile(x, y, at, obj)
@@ -56,28 +58,35 @@ class Board
     if(obj === undefined)
       obj = this;
     if(!obj.within(x, y))
-    {
-      console.log(`${x}, ${y} not within!`);
       return;
-    }
-
-    if(at)
-      obj.overlay[x][y] = MARKER_ATTACK;
-    else
-      obj.overlay[x][y] = MARKER_NONE;
+    obj.board[x][y].attackShown = at;
   }
 
-  isAttackShown(x, y)
+  clearAllAttacks()
   {
-    return this.overlay[x][y] == MARKER_ATTACK;
+    for(let x = 0; x < BOARD_WIDTH; x++)
+    {
+      for(let y = 0; y < BOARD_HEIGHT; y++)
+      {
+        this.showAttackTile(x, y, false);
+      }
+    }
   }
 
   selectTile(x, y, sel)
   {
     if(sel)
-      this.overlay[x][y] = MARKER_SELECTED;
+    {
+      this.board[x][y].selected = true;
+      this.selectedPiece.x = x;
+      this.selectedPiece.y = y;
+    }
     else
-      this.overlay[x][y] = MARKER_NONE;
+    {
+      this.board[x][y].selected = false;
+      this.selectedPiece.x = -1;
+      this.selectedPiece.y = -1;
+    }
   }
 
   isSelected(x, y)
@@ -85,16 +94,19 @@ class Board
     return this.overlay[x][y] == MARKER_SELECTED;
   }
 
-  placePiece(x, y, piece, team)
+  hasSelectedPiece()
   {
-    this.board[x][y] = piece * team;
+    return !(this.selectedPiece.x == -1 && this.selectedPiece.y == -1)
+  }
+
+  getPiece(x, y)
+  {
+    return this.board[x][y].piece;
   }
 
   getTeam(x, y)
   {
-    let piece = this.getPiece(x, y);
-
-    return piece.getTeam();
+    return this.getPiece(x, y).team;
   }
 
   within(x, y)
@@ -105,18 +117,56 @@ class Board
     return false;
   }
 
-  getPiece(x, y)
+  inMoveRange(x, y)
   {
-    return this.board[x][y];
+    return this.board[x][y].highlighted;
   }
 
-  clickEvent(x, y)
+  selectedPieceMove(x, y)
   {
-    if(selectedPiece.x == -1)
-    {
-      togglePiece(x, y);
-      return;
-    }
+    if(!this.within(x, y))
+      return false;
+
+    if(x == this.selectedPiece.x && y == this.selectedPiece.y)
+      return true;
+
+    this.getPiece(this.selectedPiece.x, this.selectedPiece.y).x = x;
+    this.getPiece(this.selectedPiece.x, this.selectedPiece.y).y = y;
+
+    let prev = this.board[x][y];
+    prev.x = this.selectedPiece.x;
+    prev.y = this.selectedPiece.y;
+    prev.piece.x = this.selectedPiece.x;
+    prev.piece.y = this.selectedPiece.x;
+
+    this.board[x][y] = this.board[this.selectedPiece.x][this.selectedPiece.y];
+    this.board[x][y].x = x;
+    this.board[x][y].y = y;
+    this.board[x][y].piece.x = x;
+    this.board[x][y].piece.y = y;
+    this.board[x][y].selected = false;
+
+    this.board[this.selectedPiece.x][this.selectedPiece.y] = prev;
+
+    this.selectedPiece.x = -1;
+    this.selectedPiece.y = -1;
+
+    this.clearAllHighlights();
+    this.clearAllAttacks();
+    return true;
+  }
+
+  inAttackRange(x, y)
+  {
+    return this.board[x][y].attackShown;
+  }
+
+  selectedPieceAttack(x, y)
+  {
+    if(!this.within(x, y))
+      return false;
+
+
   }
 
   togglePiece(x, y)
@@ -124,16 +174,26 @@ class Board
     if(!this.within(x, y))
       return;
 
+    let cleared = false;
+    if(this.hasSelectedPiece())
+    {
+      this.selectTile(this.selectedPiece.x, this.selectedPiece.y, false);
+      this.clearAllHighlights();
+      this.clearAllAttacks();
+      cleared = true;
+    }
+
     if(this.getTeam(x, y) == TEAM_NONE)
       return; // There is no piece there
 
-    let selected = this.isSelected(x, y);
-    let movementPattern = this.getPiece(x, y).movePattern();
-    let attackPattern = this.getPiece(x, y).attackPattern();
-    this.applyFunctionToTile(x, y, movementPattern, !selected, this.highlightTile);
-    this.applyFunctionToTile(x, y, attackPattern, !selected, this.showAttackTile);
-
-    this.selectTile(x, y, !selected);
+    if(!this.hasSelectedPiece() && !cleared)
+    {
+      let movementPattern = this.getPiece(x, y).movePattern();
+      let attackPattern   = this.getPiece(x, y).attackPattern();
+      this.applyFunctionToTile(x, y, movementPattern, true, this.highlightTile);
+      this.applyFunctionToTile(x, y, attackPattern  , true, this.showAttackTile);
+      this.selectTile(x, y, true);
+    }
   }
 
   applyFunctionToTile(pieceX, pieceY, pattern, hl, func)
@@ -181,35 +241,7 @@ class Board
     {
       for(let y = 0; y < BOARD_WIDTH; y++)
       {
-        let drawX = x * tileWidth + xOffset;
-        let drawY = y * tileHeight + yOffset;
-
-
-        // Alternate between the 2 colors when drawing
-        if((x + y) % 2 == 0)
-          ctx.fillStyle = '#12110F';
-        else
-          ctx.fillStyle = '#DEA26C';
-
-        ctx.beginPath();
-        ctx.fillRect(drawX, drawY, tileWidth, tileHeight);
-        this.getPiece(x, y).draw(xOffset, yOffset, ctx);
-
-        if(this.isHighlighted(x, y))
-        {
-          ctx.fillStyle = "rgba(255, 255, 255, 0.4)";
-          ctx.fillRect(drawX, drawY, tileWidth, tileHeight);
-        }
-        if(this.isSelected(x, y))
-        {
-          ctx.fillStyle = "rgba(0, 100, 255, 0.3)";
-          ctx.fillRect(drawX, drawY, tileWidth, tileHeight);
-        }
-        if(this.isAttackShown(x, y))
-        {
-          ctx.fillStyle = "rgba(255, 0, 0, 0.3)";
-          ctx.fillRect(drawX, drawY, tileWidth, tileHeight);
-        }
+        this.board[x][y].draw(xOffset, yOffset, ctx);
       }
     }
   }

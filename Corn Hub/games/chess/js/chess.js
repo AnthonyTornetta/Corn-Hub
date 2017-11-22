@@ -40,7 +40,7 @@ function resize()
 
   // A great scaling algorithm!
   tileWidth = 0.0001 * ((width + height) / 2) * TILE_WIDTH_ORIG * BOARD_WIDTH;
-  tileHeight = tileWidth;
+  tileHeight = 0.0001 * ((width + height) / 2) * TILE_HEIGHT_ORIG * BOARD_HEIGHT;
 
   xOffset = width / 2 - (tileWidth * BOARD_WIDTH) / 2;
   yOffset = height / 2 - (tileHeight * BOARD_HEIGHT) / 2;
@@ -58,8 +58,27 @@ function clickEvt(x, y)
   // Floor it first because of -1 < x < 0 returning 0 if you just outright convert to decimal
   x = ~~Math.floor(x);
   y = ~~Math.floor(y);
+  let didSomething = false;
+  if(board.hasSelectedPiece())
+  {
+    if(board.inAttackRange(x, y))
+    {
+      if(board.selectedPieceAttack(x, y))
+      {
+        didSomething = true;
+      }
+    }
+    else if(board.inMoveRange(x, y))
+    {
+      if(board.selectedPieceMove(x, y))
+      {
+        didSomething = true;
+      }
+    }
+  }
 
-  board.togglePiece(x, y);
+  if(!didSomething)
+    board.togglePiece(x, y);
 }
 
 function initListeners()

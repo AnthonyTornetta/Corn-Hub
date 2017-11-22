@@ -28,3 +28,9 @@ WHITE_PAWN.src   = 'sprites/white-pawn.png';
 
 const BLACK_PAWN = new Image();
 BLACK_PAWN.src   = 'sprites/black-pawn.png';
+
+const WHITE_KNIGHT = new Image();
+WHITE_KNIGHT.src   = 'sprites/white-knight.png';
+
+const BLACK_KNIGHT = new Image();
+BLACK_KNIGHT.src   = 'sprites/black-knight.png';

@@ -321,12 +321,12 @@ input:checked + .slider:before
                                url('../fonts/banana.woff') format('woff');
 }
 
-/* Uncomment when you want to change the bground image for something special
+/* Uncomment when you want to change the bground image for something special*/
 p, h1, h2, h3, h4, h5, h6, a, .holiday, .checkiday
 {
-    color                   : rgba(255, 145, 0, 1);
+    color                   : #fff;
 }
-
+/*
 .main, .wrapper, body
 {
     background              : transparent;
@@ -334,7 +334,7 @@ p, h1, h2, h3, h4, h5, h6, a, .holiday, .checkiday
 
 html
 {
-    background              : url('../images/spoopy.jpg') no-repeat center center fixed;
+    background              : url('../images/thanksgiving.jpg') no-repeat center center fixed;
     -webkit-background-size : cover;
     -moz-background-size    : cover;
     -o-background-size      : cover;
