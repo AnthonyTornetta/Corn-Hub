@@ -2,14 +2,28 @@ class Piece
 {
   constructor(startX, startY, team)
   {
+    let noXY = false;
+    if(!arguments.length)
+    {
+      team = startX;
+      noXY = true;
+    }
+
     if(new.target === Piece)
       this.team = TEAM_NONE;
     else
       this.team = team;
 
-    this.x = startX;
-    this.y = startY;
-
+    if(!noXY)
+    {
+      this.x = startX;
+      this.y = startY;
+    }
+    else
+    {
+      this.x = 0;
+      this.y = y;
+    }
   }
 
   draw(xOffset, yOffset, ctx)

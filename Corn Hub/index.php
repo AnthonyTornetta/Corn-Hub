@@ -29,7 +29,7 @@ require('account.php'); // TODO: Make this
 			<div class="main">
 				<div class="col-sm-9">
 					<h1 id="title">Corn Hub</h1>
-					<p>Happy Thanksgiving! - <span id="countdown"></span> <a href="info.php" title="Extra Cool Things">[...]</a></p>
+					<p><span id="countdown"></span> <a href="info.php" title="Extra Cool Things">[...]</a></p>
 					<!-- Where it all began -->
 					<div class="main-img-list">
 						<ul>

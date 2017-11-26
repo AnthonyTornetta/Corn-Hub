@@ -34,3 +34,9 @@ WHITE_KNIGHT.src   = 'sprites/white-knight.png';
 
 const BLACK_KNIGHT = new Image();
 BLACK_KNIGHT.src   = 'sprites/black-knight.png';
+
+const WHITE_BISHOP = new Image();
+WHITE_BISHOP.src   = 'sprites/white-bishop.png';
+
+const BLACK_BISHOP = new Image();
+BLACK_BISHOP.src   = 'sprites/black-bishop.png';

@@ -20,8 +20,6 @@ class Board
         this.board[x][y] = new Tile(x, y, new Piece(x, y));
       }
     }
-
-    this.board[3][4].piece = new Knight(3, 4, TEAM_BLACK);
   }
 
   highlightTile(x, y, hl, obj)
@@ -29,10 +27,7 @@ class Board
     if(obj === undefined)
       obj = this;
     if(!obj.within(x, y))
-    {
-      console.log(`${x}, ${y} not within!`);
       return;
-    }
 
     obj.board[x][y].highlighted = hl;
   }
@@ -58,6 +53,8 @@ class Board
     if(obj === undefined)
       obj = this;
     if(!obj.within(x, y))
+      return;
+    if(obj.getTeam(x, y) == TEAM_NONE)
       return;
     obj.board[x][y].attackShown = at;
   }
@@ -104,6 +101,13 @@ class Board
     return this.board[x][y].piece;
   }
 
+  setPiece(x, y, piece)
+  {
+    this.board[x][y].piece = piece;
+    piece.x = x;
+    piece.y = y;
+  }
+
   getTeam(x, y)
   {
     return this.getPiece(x, y).team;
@@ -119,6 +123,8 @@ class Board
 
   inMoveRange(x, y)
   {
+    if(!this.within(x, y))
+      return false;
     return this.board[x][y].highlighted;
   }
 
@@ -158,6 +164,9 @@ class Board
 
   inAttackRange(x, y)
   {
+    if(!this.within(x, y))
+      return false;
+
     return this.board[x][y].attackShown;
   }
 
@@ -166,7 +175,19 @@ class Board
     if(!this.within(x, y))
       return false;
 
+    if(this.getPiece(x, y) instanceof Piece)
+    {
+      //return false;
+    }
 
+    this.board[x][y].piece = this.getPiece(this.selectedPiece.x, this.selectedPiece.y);
+    this.board[x][y].piece.x = x;
+    this.board[x][y].piece.y = y;
+    this.board[this.selectedPiece.x][this.selectedPiece.y].piece = new Piece(this.selectedPiece.x, this.selectedPiece.y);
+    this.clearAllAttacks();
+    this.clearAllHighlights();
+    this.selectTile(this.selectedPiece.x, this.selectedPiece.y, false);
+    return true;
   }
 
   togglePiece(x, y)
