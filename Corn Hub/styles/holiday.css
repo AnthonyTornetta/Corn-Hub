@@ -1,0 +1,31 @@
+/* Uncomment when you want to change the bground image for something special*/
+p, h1, h2, h3, h4, h5, h6, a, .holiday, .checkiday
+{
+  color : #fff !important;
+}
+
+.nav
+{
+  /*background-color: rgba(0, 68, 136, 0.7) !important;*/
+  background-color: rgba(255, 255, 255, 0.2) !important;
+}
+
+.nav ul, .nav ul li, .nav ul li a
+{
+  background-color: transparent !important;
+}
+/*
+.main, .wrapper, body
+{
+    background : transparent;
+}
+
+html
+{
+    background              : url('../images/thanksgiving.jpg') no-repeat center center fixed;
+    -webkit-background-size : cover;
+    -moz-background-size    : cover;
+    -o-background-size      : cover;
+    background-size         : cover;
+}
+/**/
