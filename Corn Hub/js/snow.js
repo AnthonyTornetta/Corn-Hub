@@ -20,7 +20,7 @@ var browserWidth;
 var browserHeight;
 
 // Specify the number of snowflakes you want visible* (Not over 200 unless you want to lag to death)
-var numberOfSnowflakes = 100; // *100 is a pretty good number
+var numberOfSnowflakes;
 
 // Flag to reset the position of the snowflakes
 var resetPosition = false;
@@ -28,6 +28,11 @@ var resetPosition = false;
 // Setup function (sets everything up)
 function setup()
 {
+  // Get the browser's size
+  browserWidth = document.documentElement.clientWidth;
+  browserHeight = document.documentElement.clientHeight;
+
+  numberOfSnowflakes = (browserWidth + browserHeight) / 70; // So I don't lag those sad and pathetic school computers
   generateSnowflakes();
   window.addEventListener("resize", setResetFlag, false);
 }
@@ -106,9 +111,6 @@ function generateSnowflakes()
   // Access the snowflake element's parent container
   var snowflakeContainer = originalSnowflake.parentNode;
 
-  // Get the browser's size
-  browserWidth = document.documentElement.clientWidth;
-  browserHeight = document.documentElement.clientHeight;
 
   // Create each individual snowflake
   for (var i = 0; i < numberOfSnowflakes; i++)
@@ -150,7 +152,7 @@ function moveSnowflakes()
     browserWidth = document.documentElement.clientWidth;
     browserHeight = document.documentElement.clientHeight;
 
-    for (var i = 0; i < snowflakes.length; i++)
+    for (let i = 0; i < numberOfSnowflakes; i++)
     {
       var snowflake = snowflakes[i];
 
