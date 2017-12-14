@@ -39,7 +39,6 @@ require('account.php'); // TODO: Make this
 							<li id="main-list-img" title="Turnitin"><a href="http://www.turnitin.com/" target="_blank"><img src="images/turnitin.jpg" alt="turnitin"></a></li>
 							<li id="main-list-img" title="1:1 Student Hub"><a href="http://stud-sccm.hsonetone.clsd.net/CMApplicationCatalog/#/SoftwareLibrary/ApplistPageView.xaml" target="_blank"><img src="images/compooter.png" alt="1:1 Software"></a></li>
 							<li id="main-list-img" title="HS Library"><a href="http://journaling.clsd.net/hs_library/" target="_blank"><img src="images/libwhite.png" alt="CCHS Library"></a></li>
-							<li id="main-list-img" title="Mastery Connect"><a href="https://www.masteryconnect.com/" target="_blank"><img src="images/masteryB.jpg" alt="Mastery Connect Green"></a></li>
 							<li id="main-list-img" title="Mastery Connect Bubble Sheet"><a href="https://app.masteryconnect.com/bubblesheet/" target="_blank"><img src="images/masteryS.png" alt="MasteryConnect"></a></li>
 							<li id="main-list-img" title="Moodle"><a href="https://moodle.clsd.k12.pa.us/" target="_blank"><img src="images/moodle.png" alt="The moodle noodle"></a></li>
 							<li id="main-list-img" title="USA Test Prep"><a href="http://www.usatestprep.com/member-login" target="_blank"><img src="images/usatp.png" alt="USA Test Prep"></a>
