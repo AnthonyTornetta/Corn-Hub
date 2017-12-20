@@ -1,9 +1,5 @@
 /*
- * Roses are red
- * Violets are purple
- * #004488 is blue
- * #fff is white
- * Whoops I forgot to rhyme
+ * TODO: Re-format the stylesheet
  */
 *
 {
@@ -36,27 +32,27 @@ body
 /* Gatta make them elements look super slick. */
 h1
 {
-    text-align              : center;
-    border-bottom           : thick;
-    border-bottom           : #fff;
-    border-bottom           : solid;
-    font-size               : 50px;
-    transition              : all 0.5s ease-in-out;
+  text-align              : center;
+  border-bottom           : thick;
+  border-bottom           : #fff;
+  border-bottom           : solid;
+  font-size               : 50px;
+  transition              : all 0.5s ease-in-out;
 }
 
 h2
 {
-    margin-left             : 20px;
-    color                   : #058;
-    font-size               : 30px;
-    margin-bottom           : 20px;
+  margin-left             : 20px;
+  color                   : #058;
+  font-size               : 30px;
+  margin-bottom           : 20px;
 }
 
 h3
 {
-    margin-left             : 10px;
-    color                   : #058;
-    font-size               : 24px;
+  margin-left             : 10px;
+  color                   : #058;
+  font-size               : 24px;
 }
 
 h4 { margin-left: 10px; font-size: 30px; }
@@ -95,70 +91,70 @@ ul { margin-left: 20px; list-style-type: none; }
 
 .wrapper
 {
-    font-family: 'Banana', Century Gothic, sans-serif;
-    height                  : 100%;
-    margin                  : 0px auto;
-    overflow                : auto;
-    -moz-box-sizing         : border-box;
-    -webkit-box-sizing      : border-box;
-    box-sizing              : border-box;
+  font-family: 'Banana', Century Gothic, sans-serif;
+  height                  : 100%;
+  margin                  : 0px auto;
+  overflow                : auto;
+  -moz-box-sizing         : border-box;
+  -webkit-box-sizing      : border-box;
+  box-sizing              : border-box;
 }
 
 
 
 .box-left
 {
-    position                : absolute;
-    margin-top              : 5%;
-    margin-left             : 12%;
-    width                   : 25%;
-    text-align              : center;
-    height                  : 60%;
-    box-shadow              : 0 5px 15px rgba(0, 0, 0, 0.3);
+  position                : absolute;
+  margin-top              : 5%;
+  margin-left             : 12%;
+  width                   : 25%;
+  text-align              : center;
+  height                  : 60%;
+  box-shadow              : 0 5px 15px rgba(0, 0, 0, 0.3);
 }
 
 .box-mid
 {
-    position                : absolute;
-    margin-top              : 5%;
-    margin-left             : 37.5%;
-    width                   : 25%;
-    text-align              : center;
-    height                  : 60%;
-    box-shadow              : 0 5px 15px rgba(0, 0, 0, 0.3);
+  position                : absolute;
+  margin-top              : 5%;
+  margin-left             : 37.5%;
+  width                   : 25%;
+  text-align              : center;
+  height                  : 60%;
+  box-shadow              : 0 5px 15px rgba(0, 0, 0, 0.3);
 }
 
 .box-right
 {
-    position                : absolute;
-    margin-top              : 5%;
-    margin-left             : 63%;
-    /* 12 25 .5 25 .5 25 12 <-- Look at these super snazzy mathulations! */
-    text-align              : center;
-    width                   : 25%;
-    height                  : 60%;
-    box-shadow              : 0 5px 15px rgba(0, 0, 0, 0.3);
+  position                : absolute;
+  margin-top              : 5%;
+  margin-left             : 63%;
+  /* 12 25 .5 25 .5 25 12 <-- Look at these super snazzy mathulations! */
+  text-align              : center;
+  width                   : 25%;
+  height                  : 60%;
+  box-shadow              : 0 5px 15px rgba(0, 0, 0, 0.3);
 }
 
 .gear img
 {
-    position                : fixed;
+  position                : fixed;
 	bottom                  : 0;
-    right                   : 0;
-    z-index                 : 99;
-    width                   : 64px;
-    height                  : 64px;
-    cursor                  : pointer;
-    -moz-transition         : all 2s ease-in-out;
-    -webkit-transition      : all 2s ease-in-out;
-    transition              : all 2s ease-in-out;
+  right                   : 0;
+  z-index                 : 99;
+  width                   : 64px;
+  height                  : 64px;
+  cursor                  : pointer;
+  -moz-transition         : all 2s ease-in-out;
+  -webkit-transition      : all 2s ease-in-out;
+  transition              : all 2s ease-in-out;
 }
 
 .gear-pressed
 {
-    -ms-transform           : rotate(-360deg); /* IE 9 */
-    -webkit-transform       : rotate(-360deg); /* Chrome, Safari, Opera */
-    transform               : rotate(-360deg);
+  -ms-transform           : rotate(-360deg); /* IE 9 */
+  -webkit-transform       : rotate(-360deg); /* Chrome, Safari, Opera */
+  transform               : rotate(-360deg);
 }
 
 /* For holidays! (The stupid ones at the bottom) */
@@ -166,29 +162,29 @@ ul { margin-left: 20px; list-style-type: none; }
 
 .typed-cursor
 {
-    opacity: 1;
-    -webkit-animation       : blink 0.7s infinite;
-    -moz-animation          : blink 0.7s infinite;
-    animation               : blink 0.7s infinite;
+  opacity: 1;
+  -webkit-animation       : blink 0.7s infinite;
+  -moz-animation          : blink 0.7s infinite;
+  animation               : blink 0.7s infinite;
 }
 
 .box-shadow-all
 {
-    box-shadow              : 0 5px 15px rgba(0, 0, 0, 0.3);
+  box-shadow              : 0 5px 15px rgba(0, 0, 0, 0.3);
 }
 
 hr
 {
-    border                  : thin;
-    border-color            : #048;
-    border-style            : solid;
+  border                  : thin;
+  border-color            : #048;
+  border-style            : solid;
 }
 
 .switch {
-    position                : relative;
-    display                 : inline-block;
-    width                   : 60px;
-    height                  : 34px;
+  position                : relative;
+  display                 : inline-block;
+  width                   : 60px;
+  height                  : 34px;
 }
 
 .switch input { display:none; }
@@ -246,71 +242,51 @@ input:checked + .slider:before
 	border-radius             : 50%;
 }
 
-.neon
-{
-	color: black;
-	transition: all 1.5s ease-in-out;
-	font-family: Futura, Trebuchet MS, Arial, sans-serif;
-	cursor: hidden;
-}
-
-.neon:hover
-{
-	color                   : #fff;
-	text-shadow             : 0 0 5px #fff,
-	                          0 0 10px #fff,
-            							  0 0 20px #048,
-            							  0 0 30px #048,
-            							  0 0 40px #048,
-            							  0 0 55px #048,
-            							  0 0 75px #048;
-}
-
 /* Holiday stuff */
 #snowflakeContainer
 {
-    position                : absolute;
-    left                    : 0px;
-    top                     : 0px;
+  position                : absolute;
+  left                    : 0px;
+  top                     : 0px;
 }
 
 .snowflake
 {
-    position                : fixed;
-    font-family             : Cambria, Georgia, serif;
-    font-size               : 14px;
+  position                : fixed;
+  font-family             : Cambria, Georgia, serif;
+  font-size               : 14px;
 
-    padding-left            : 15px;
-    line-height             : 24px;
+  padding-left            : 15px;
+  line-height             : 24px;
 
-    color                   : #fff;
-    background-color        : transparent;
+  color                   : #fff;
+  background-color        : transparent;
 
-    user-select             : none;
-    cursor                  : default;
+  user-select             : none;
+  cursor                  : default;
 
-    z-index                 : 999;
+  z-index                 : 999;
 }
 
 /* SUPER EPIC SNOW! (from https://codepen.io/NickyCDK/pen/AIonk) */
 #snow
 {
-    background: none;
-    font-family: Androgyne;
-    background-image        : url('http://www.wearewebstars.dk/codepen/img/s1.png'),
-	                            url('http://www.wearewebstars.dk/codepen/img//s2.png'),
-							                url('http://www.wearewebstars.dk/codepen/img//s3.png');
+  background: none;
+  font-family: Androgyne;
+  background-image        : url('http://www.wearewebstars.dk/codepen/img/s1.png'),
+	                          url('http://www.wearewebstars.dk/codepen/img//s2.png'),
+						                url('http://www.wearewebstars.dk/codepen/img//s3.png');
 
 	width                   : 100%;
-    height                  : 100%;
+  height                  : 100%;
 	position                : absolute;
 	top                     : 0;
-    left                    : 0;
-    z-index                 : 0;
-    -webkit-animation       : snow 20s linear infinite;
-    -moz-animation          : snow 20s linear infinite;
-    -ms-animation           : snow 20s linear infinite;
-    animation               : snow 20s linear infinite;
+  left                    : 0;
+  z-index                 : 0;
+  -webkit-animation       : snow 20s linear infinite;
+  -moz-animation          : snow 20s linear infinite;
+  -ms-animation           : snow 20s linear infinite;
+  animation               : snow 20s linear infinite;
 }
 
 /* Fonts */
