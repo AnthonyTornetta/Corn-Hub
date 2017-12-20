@@ -1,9 +1,9 @@
 $('ready', () =>
 {
 	var container = document.getElementById("news");
-	var source = "new-scientist";
-	var API = 'ba7c0aede1d140d7b36a2cccd893e665';
-	var url = `https://newsapi.org/v1/articles?source=${source}&sortBy=top&apiKey=${API}`;
+	var source = "wired";
+	const API = 'ba7c0aede1d140d7b36a2cccd893e665';
+	var url = `https://newsapi.org/v2/top-headlines?sources=${source}&apiKey=${API}`;
 	var request = new XMLHttpRequest();
 	request.open("GET", url);
 
@@ -11,6 +11,7 @@ $('ready', () =>
 	{
 		container.innerHTML = '';
 	  var data = JSON.parse(request.responseText);
+
 	  for(i = 0; i < data.articles.length; i++)
 	  {
 	    publish(data.articles[i].title, data.articles[i].author, data.articles[i].url, data.articles[i].description);
