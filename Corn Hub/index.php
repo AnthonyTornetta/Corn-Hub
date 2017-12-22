@@ -59,6 +59,9 @@ require('account.php'); // TODO: Make this
 							<li id="main-list-img" title="Ed Puzzle"><a href="https://edpuzzle.com/" target="_blank"><img src="images/edpuzzle.png" alt="Ed Puzzle"></a></li>
 							<li id="main-list-img" title="Skewlogy"><a href="https://clsd.schoology.com/login" target="_blank"><img src="images/skewlogy.png" alt="Skewlogy"></a></li>
 							<li id="main-list-img" title="Gmail"><a href="https://mail.google.com/mail/u/0/" target="_blank"><img src="images/gmail.png" alt="Gmail"></a></li>
+							<li id="main-list-img" title="Khan Academy"><a href="https://www.khanacademy.org/" target="_blank"><img src="images/khan.jpg" alt="Khan Academy"></a></li>
+							<li id="main-list-img" title="DuoLingo"><a href="https://www.duolingo.com/" target="_blank"><img src="images/duolingo.png" alt="DuoLingo"></a></li>
+							<li id="main-list-img" title="Flipping Physics"><a href="https://www.flippingphysics.com/" target="_blank"><img src="images/physics.png" alt="Flipping Physics"></a></li>
 						</ul>
 					</div>
 
