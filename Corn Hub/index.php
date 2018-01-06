@@ -17,7 +17,6 @@ require('account.php'); // TODO: Make this
 
 		<script type="text/javascript" src="js/holiday.js"></script>  <!-- For displaying the holidays -->
 		<!--<script type="text/javascript" src="js/bitcoin.js"></script>-->
-		<script type="text/javascript" src="js/xmas.js"></script>
 	</head>
 
 	<body>
@@ -29,7 +28,7 @@ require('account.php'); // TODO: Make this
 			<div class="main">
 				<div class="col-sm-9">
 					<h1 id="title">Corn Hub</h1>
-					<p><span id="countdown"></span> <a href="info.php" title="Extra Cool Things">[...]</a></p>
+					<p>#GiveByteClubADatabase <a href="info.php" title="Extra Cool Things">[...]</a></p>
 					<!-- Where it all began -->
 					<div class="main-img-list">
 						<ul>
