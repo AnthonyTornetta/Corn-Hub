@@ -3,4 +3,4 @@
 php_value display_errors 1
 # DO NOT REMOVE OR MODIFY THIS LINE AND THE LINES ABOVE HTID:2914619:
 
-ErrorDocument 404 /404.php
+ErrorDocument 404 /storage/ssd2/446/3229446/public_html/404.php

@@ -1,154 +1,135 @@
 $(function()
 {
-  var url, weatherData
+  var currentWeatherUrl, forecastUrl, weatherData,
       lat, lon,
       city, country,
       windDir, humid,
       pressure, clouds;
 
   const API_KEY = '05a68069ca925ee5c7863e687d0d57d5';
-  //url = 'https://api.openweathermap.org/data/2.5/weather?lat='+lat+'&lon='+lon+'&units=metric&appid=' + API_KEY;
 
-  // Display current city on load, or at least city of your IP address provider
-  currentCity();
+  loadWeather();
 
-  // Main function for city search
-  searchCity();
-
-  // Display current city
-  // It's gonna display a city of your IP address provider
-  // Although it may be wrong, but then you can just type in your city :)
-  // I replaced geolocation w/ this because it doesn't pester the user every time for permissions and works in the edge browser without perms
-  function currentCity()
+  function loadWeather()
   {
-    $.getJSON('https://ipinfo.io', function(data)
+    console.log('called');
+    $.getJSON("https://ipinfo.io", function(data)
     {
+      console.log(data);
       lat = data.loc.split(',')[0];
       lon = data.loc.split(',')[1];
-      url = `https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&units=customary&appid=${API_KEY}`;
-      updateWeather(url);
+      currentWeatherUrl = `https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&units=metric&appid=${API_KEY}`;
+      forecastUrl = `https://api.openweathermap.org/data/2.5/forecast?lat=${lat}&lon=${lon}&units=metric&appid=${API_KEY}`
+      updateCurrentWeather(currentWeatherUrl);
+      updateForecastWeather(forecastUrl);
     }, 'jsonp');
   }
 
-  // Gets city based on  input
-  function yourCity()
-  {
-    var city = $('#input-city').val();
-		city = 'Lebanon';
-
-	  if(city.toLowerCase() == 'cedar crest')
-		  city = 'Lebanon';
-
-    // If input is invalid, it shows the school's weather
-    if (!city)
-      city='Lebanon';
-
-    url = `https://api.openweathermap.org/data/2.5/weather?q=${city}&units=customary&appid=${API_KEY}`;
-    updateWeather(url);
-  }
-
   // Main function for updating weather based on url which is generated based on city or current place
-  function updateWeather(url)
+  function updateCurrentWeather(url)
   {
     // WeatherData will hold all requested data(typically object or array) in JSON format
     $.getJSON(url, function(weatherData)
     {
-      // I uploaded icons in a way that their name ends with appropriate weather condition from API documentation
-      // Each weather condition has it's own short name, for example condition Clear sky has icon name 01d
-      var icon = 'https://openweathermap.org/img/w/' + weatherData.weather[0].icon + '.png';
+      const KPH_TO_MPH = 0.621371;
 
+      var precipitationContainer = document.getElementById('current-precipitation');
+      var locationContainer = document.getElementById('current-location');
+      var windContainer = document.getElementById('current-wind');
+      var currentTemp = document.getElementById('current-temp');
+      var tempRange = document.getElementById('current-temp-range');
+      var humidity = document.getElementById('current-humidity');
 
+      precipitationContainer.innerHTML = `${firstLetterUpper(weatherData.weather[0].description)}`;
+      humidity.innerHTML = `${weatherData.main.humidity}% Humidity`;
+      tempRange.innerHTML = `${Math.round(cToF(weatherData.main.temp_min))}°F - ${Math.round(cToF(weatherData.main.temp_max))}°F`;
+      currentTemp.innerHTML = `${Math.round((cToF(weatherData.main.temp)) * 10) / 10}°F`;
+      locationContainer.innerHTML = `${weatherData.name}, ${weatherData.sys.country}`;
+      windContainer.innerHTML = `${Math.round(weatherData.wind.speed * KPH_TO_MPH * 10) / 10}mph wind`;
     });
   }
 
-  function addWeatherBox()
+  function updateForecastWeather(url)
   {
-    
-  }
-
-  // Every click on unit button increases counter and calls this function which converts data
-  // If the counter is odd number units are customary, else metric
-  function updateUnits(weatherData)
-  {
-      temp = weatherData.main.temp;
-      windSpeed = weatherData.wind.speed*3.6;
-
-      if(counter % 2 == 1) {
-          // Unary + operator, converts operand to a number if it already isn't, this will also ditch any unnecessary zeros
-          temp = +(temp * (9/5) + 32).toFixed(1) + '°F';
-          windSpeed = +(windSpeed * 0.62137119223733).toFixed(2)+'mph'; // A fancy google formula
-          $('#change').val('°C');
-      }
-      else
-      {
-        temp = +temp.toFixed(1) + '°C';
-        windSpeed = +windSpeed.toFixed(2) + 'kph';
-        $('#change').val('°F');
-      }
-
-      $('.temp').html(temp);
-
-      // Sometimes there isn't info about wind direction, if that happens I put N as a direction
-      if(windDir)
-        $('.wind').html(windDir + ' ' + windSpeed);
-      else
-        $('.wind').html('N ' + windSpeed);
-  }
-
-  // Function for updating weather data on every API call and updating units on every click
-  function unitTrigger(data)
-  {
-    updateUnits(data);
-    $('#change').off('click').on('click',function(){
-        counter++;
-        updateUnits(data);
-    });
-  }
-
-  // Turn degreess into wind direction name, StackOverflow thank you
-  function degToCompass(num)
-  {
-      // Divide angle by 22.5 because 360/16 = 22.5deg per direction change
-      // Add 0.5 so that when we divide the value we can break the 'tie' between the direction change threshold
-      // 'tie' means, for example if its 11.25 degress we don't know if it's 'N' or 'NNE', because it's on the threshold
-      var val = Math.floor((num / 22.5) + 0.5);
-
-      // 16 directions which are going clockwise starting from North
-      var arr = ['N', 'NNE', 'NE', 'ENE', 'E', 'ESE', 'SE', 'SSE', 'S', 'SSW', 'SW', 'WSW', 'W', 'WNW', 'NW', 'NNW'];
-
-      // Return the value from array at the index of (mod 16)
-      return arr[(val % 16)];
-  }
-
-  // Monitors if the enter was pressed while typing in input field, if it's pressed, fire up click event
-  function onEnterSearch()
-  {
-    $('#input-city').keyup(function(event)
+    let prevDay = "";
+    // WeatherData will hold all requested data(typically object or array) in JSON format
+    $.getJSON(url, function(weatherData)
     {
-      if (event.keyCode == 13)
+      const KPH_TO_MPH = 0.621371;
+
+      let days = weatherData.list;
+      let counter = 0;
+      for(let i = 0; i < days.length; i++)
       {
-          $('#submit').click();
+        // Parse the time/date string into a readable format
+        let timeFull = days[i].dt_txt.split(" ")[1];
+        let dateFull = days[i].dt_txt.split(" ")[0];
+        let hr = Number(timeFull.split(":")[0]);
+        let ampm = "AM";
+
+        // Turn the military time into 12 hr am/pm time
+        if(Number(hr) / 12 >= 1)
+        {
+          ampm = "PM";
+          hr = Number(hr) - 12;
+        }
+
+        if(hr == 0)
+          hr = 12; // Because time is stupid.
+
+
+        let weekday = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'][new Date(dateFull).getDay()];
+        let time = `${hr}:00 ${ampm}`;
+        let tempMin = Math.round(cToF(days[i].main.temp_min));
+        let tempMax = Math.round(cToF(days[i].main.temp_max));
+        let humidity = days[i].main.humidity;
+        let description = firstLetterUpper(days[i].weather[0].description);
+        let wind = Math.round(days[i].wind.speed * KPH_TO_MPH * 10) / 10;
+        counter = addWeatherBox(weekday, prevDay, time, tempMin, tempMax, humidity, description, wind, counter);
+        prevDay = weekday;
       }
     });
   }
 
-  // Searches for a city's weather data
-  function searchCity()
+  function addWeatherBox(day, prevDay, time, tempMin, tempMax, humidity, description, wind, counter)
   {
-    onEnterSearch();
-
-    $('#submit').off('click').on('click',function()
+    if(prevDay != day)
     {
-      $('.container-fluid').fadeOut(200);
-      $('.spinner').show();
-      yourCity();
-      $('#input-city').val('').blur();
-    });
+      document.getElementById('weather-forecast-list').insertAdjacentHTML('beforeend', `
+      <li class="day-separator">
+        <div></div>
+        <div></div>
+        <div>${day}</div>
+        <div></div>
+        <div></div>
+      </li>
+      `);
+      counter = 1;
+    }
+
+    let elemClass = counter == 0 ? "even" : "odd";
+    document.getElementById('weather-forecast-list').insertAdjacentHTML('beforeend', `
+    <li class="${elemClass}">
+      <div class="time">${time}</div>
+      <div class="temperature-range">${tempMin}°F - ${tempMax}°F</div>
+      <div class="precipitation">${description}</div>
+      <div class="humidity">${humidity}%</div>
+      <div class="wind-speed">${wind}mph</div>
+    </li>
+    `);
+
+    return (counter + 1) % 2;
+  }
+
+  // Converts celcius to fahrenheit
+  function cToF(c)
+  {
+    return c * 1.8 + 32;
   }
 
   // Weather description comes with first letter lowercase, I like it uppercase, so that's this
   function firstLetterUpper(string)
   {
-    return string.charAt(0).toUpperCase() + string.slice(1);
+    return string.charAt(0).toUpperCase() + string.substring(1);
   }
 });

@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 	<head>
-		<?php global $title; $title = 'Cool thing #1'; require('headinfo.php'); ?>
+		<?php global $title; $title = 'Cool thing #1'; require('/storage/ssd2/446/3229446/public_html/headinfo.php'); ?>
 		<style>
 			*
 			{
@@ -23,11 +23,11 @@
 			}
 		</style>
 	</head>
-	
+
 	<body>
 		<div class="canvas">
 			<canvas id="main-canvas"></canvas>
 		</div>
-		<script type="text/javascript" src="js/canvas.js"></script>
+		<script type="text/javascript" src="/js/canvas.js"></script>
 	</body>
 </html>

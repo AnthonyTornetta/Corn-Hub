@@ -1,23 +1,19 @@
 <!-- Good luck, young traveler
  -->
 
-<?php
-require('account.php');
-?>
-
 <!DOCTYPE html>
 <html>
 	<head>
-		<?php global $title; $title = 'APUSH'; require('headinfo.php'); ?>
+		<?php global $title; $title = 'APUSH'; require('/storage/ssd2/446/3229446/public_html/headinfo.php'); ?>
 
-		<link rel="stylesheet" media="all" href="styles/main-page.css">
+		<link rel="stylesheet" media="all" href="/styles/main-page.css">
 	</head>
 
 	<body>
-		<?php include('holiday.php') ?>
+		<?php include('/storage/ssd2/446/3229446/public_html/holiday.php') ?>
 
 		<div class="wrapper">
-			<?php include('nav.php'); ?>
+			<?php include('/storage/ssd2/446/3229446/public_html/nav.php'); ?>
 
 			<div class="main">
         <h1 id="title">Corn Hub - APUSH</h1>
@@ -26,11 +22,11 @@ require('account.php');
         <p><a href="https://quizlet.com/243017626/period-4-review-flash-cards/" title="Thanks Rachel" target="_blank">Period 4 Quizlet</a></p>
 				<p><a href="https://quizlet.com/256616875/period-6-review-flash-cards/" title="Thanks Rachel" target="_blank">Period 6 Quizlet</a></p>
 				<h2>Unit Study Guides</h2>
-				<p><a href="apush/notesheets/unit4-study.docx" download title="Thanks Daniel">Unit 4 Study Guide</a></p>
-				<p><a href="apush/notesheets/unit6-study.docx" download title="Thanks Daniel">Unit 6 Study Guide</a></p>
+				<p><a href="/apush/notesheets/unit4-study.docx" download title="Thanks Daniel">Unit 4 Study Guide</a></p>
+				<p><a href="/apush/notesheets/unit6-study.docx" download title="Thanks Daniel">Unit 6 Study Guide</a></p>
 				<h2>Risser Ramma Ball Summaries</h2>
-				<p><a href="apush/rrball/rrball-per4.docx" download title="Thanks Daniel">Risser Ramma Ball Period 4</a></p>
-				<p><a href="apush/rrball/rrball-per6.docx" download title="Thanks Troy">Risser Ramma Ball Period 6</a></p>
+				<p><a href="/apush/rrball/rrball-per4.docx" download title="Thanks Daniel">Risser Ramma Ball Period 4</a></p>
+				<p><a href="/apush/rrball/rrball-per6.docx" download title="Thanks Troy">Risser Ramma Ball Period 6</a></p>
 			</div>
 		</div>
 	</body>

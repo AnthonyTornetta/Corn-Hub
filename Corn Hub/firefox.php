@@ -2,7 +2,7 @@
 <!DOCTYPE html>
 <html>
 	<head>
-		<?php global $title; $title = 'Fix Firefox'; require('headinfo.php'); ?>
+		<?php global $title; $title = 'Fix Firefox'; require('/storage/ssd2/446/3229446/public_html/headinfo.php'); ?>
 	</head>
 
 	<body>

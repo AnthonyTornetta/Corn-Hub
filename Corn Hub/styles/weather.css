@@ -1,123 +1,107 @@
-html, body {
-    height: 100%;
-}
-body {
-    color: #fff;
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-attachment: fixed;
-    background-position: right center;
-    min-height: 100%;
-    font-family: 'Banana', Century Gothic, sans-serif;
-}
-.container-fluid {
-    display: none;
-    font-size: 1.2em;
-    height: 100%;
-    padding-top:10px;
-	color: #048;
-	font-family: 'Banana', Century Gothic, sans-serif;
-}
-.row {
-    text-shadow: 0 0 4px #cecece;
-    margin-top: 70px;
-	font-family: 'Banana', Century Gothic, sans-serif;
-}
-.img-rad {
-    border-radius: 50%;
-    background: #aaa;
-    background: rgba(255, 255, 255, 0.5);
-    padding: 10px;
-}
-.compass {
-    -ms-transform: rotate(0deg);
-    -webkit-transform: rotate(0deg);
-    transform: rotate(0deg);
-    
-    -webkit-transition: transform 3s ease-in-out;
-    transition: transform 3s ease-in-out;
-    max-width: 30%;
-    min-width: 50px;
+#weather-holder
+{
+  height: 100%;
+  width: 80%;
+  margin-left: 10%;
 }
 
-.city {
+@media screen and (max-width:885px)
+{
+  #weather-holder
+  {
     width: 100%;
-    font-size: 1.5em;
-    text-shadow: 0 0 2px #cecece;
-	font-family: 'Banana', Century Gothic, sans-serif;
+    margin-left: 0;
+  }
 }
 
-.temp {
-    font-size: 2em;
-	font-family: 'Banana', Century Gothic, sans-serif;
-}
-.tdiv{
-    padding-top:30px; 
-}
-
-#input-city {
-    width: 30%;
-    min-width: 160px;
-    height: 30px;
-    padding-left: 10px;
-    border: none;
-    border-radius: 25px;
-    box-shadow: 0 0 2px #cecece;
-    font-size:16px;
-    color:#000;
-	font-family: 'Banana', Century Gothic, sans-serif;
-}
-#input-city:focus, input[type="submit"] {
-    box-shadow: 0 0 6px #cecece;
-    outline: none;
-	font-family: 'Banana', Century Gothic, sans-serif;
-}
-.btn {
-    border-radius: 25px;
-}
-
-.spinner {
-    position: absolute;
-    text-align: center;
-    top:40%;
-    z-index:100;
-    
-    -webkit-animation: spin 1s linear infinite;
-    animation: spin 1s linear infinite;
-}
-
-
-/* For my sexy highlighting colors */
-::-moz-selection 
+.col-5
 {
-    color: #e5e5e5 !important;
-    background: #048 !important;
-	opacity: 0.5;
+  display: grid;
+  grid-template-columns: repeat(5, minmax(20%, 200px));
+  grid-auto-rows: minmax(100px, auto);
+  grid-column-gap: 0%;
+  grid-row-gap: 0%;
 }
 
-::selection 
+.col-3
 {
-    color: #e5e5e5 !important;
-    background: #048 !important;
-	opacity: 0.5;
+  display: grid;
+  grid-template-columns: repeat(3, minmax(33%, 200px));
+  grid-auto-rows: minmax(100px, auto);
+  grid-column-gap: 0%;
+  grid-row-gap: 0%;
 }
 
-@font-face
+#weather-forecast-list
 {
-	font-family: 'Banana';
-	src:	url('../fonts/banana.woff2') format('woff2'),
-			url('../fonts/banana.woff') format('woff');
+  font-size: 3em;
+  margin:0;
+  padding:0;
 }
 
-@-webkit-keyframes spin { 
-    100% { -webkit-transform: rotate(360deg); transform: rotate(360deg); } 
-}
-@keyframes spin { 
-    100% { -webkit-transform: rotate(360deg); transform:rotate(360deg); } 
+#weather-forecast-list li
+{
+  display: grid;
+  grid-template-columns: repeat(5, 20.0%);
+  grid-auto-rows: minmax(1.9em, auto);
+  grid-column-gap: 0%;
+  grid-row-gap: 0%;
 }
 
-@media screen and (min-width:1200px) {
-    .container-fluid {
-        font-size: 1.6em;
-    }
+#current
+{
+  margin-bottom: 5%;
+  width: 60%;
+  margin-left: 20%;
+  height: 15%;
+  min-height: 9em;
+}
+
+#weather-forecast-list li
+{
+  font-size: 0.6em;
+}
+
+#current-temp
+{
+  text-align: center;
+  font-size: 3.5em;
+}
+
+#current-location, #current-precipitation, #current-wind, #current-humidity, #current-temp-range
+{
+  height: 50%;
+  font-size: 2.5em;
+}
+
+.time, .temperature-range
+{
+
+}
+.precipitation
+{
+  text-align: center;
+}
+.humidity, .wind-speed
+{
+  text-align: right;
+}
+
+.odd
+{
+  background-color: #DFDFDF;
+}
+
+.day-separator
+{
+  border-top: solid;
+  border-top-color: #D2691E;
+  border-top-style: thin;
+  text-align: center;
+  color: #D2691E;
+}
+
+.day-separator div
+{
+  font-size: 1.3em;
 }

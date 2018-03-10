@@ -4,26 +4,20 @@
 	Hello fellow nerd :)
  -->
 
-<?php
-require('account.php'); // TODO: Make this
-?>
-
 <!DOCTYPE html>
 <html>
 	<head>
-		<?php global $title; $title = ''; require('headinfo.php'); ?>
+		<?php global $title; $title = ''; require('/storage/ssd2/446/3229446/public_html/headinfo.php'); ?>
 
-		<link rel="stylesheet" media="all" href="styles/main-page.css">
-
-		<script type="text/javascript" src="js/holiday.js"></script>  <!-- For displaying the holidays -->
-		<!--<script type="text/javascript" src="js/bitcoin.js"></script>-->
+		<link rel="stylesheet" media="all" href="/styles/main-page.css">
+		<script type="text/javascript" src="/js/holiday.js"></script>  <!-- For displaying the holidays -->
 	</head>
 
 	<body>
-		<?php include('holiday.php') ?>
+		<?php include('/storage/ssd2/446/3229446/public_html/holiday.php') ?>
 
 		<div class="wrapper">
-			<?php include('nav.php'); ?>
+			<?php include('/storage/ssd2/446/3229446/public_html/nav.php'); ?>
 
 			<div class="main">
 				<div class="col-sm-9">
@@ -84,10 +78,8 @@ require('account.php'); // TODO: Make this
 					<ul>
 						<li><h3 class="premium" onclick="alert('Pay Cornchip $5');"><b>Get Corn Hub Premium</b></h3></li>
 						<li><a href="firefox.php"><b>Firefox not working? Click here!</b></h3></li>
-						<li><a href="http://www.englishbanana.com/games/" target="_blank">English Banana</a></li>
 						<li><a href="http://www.coolmath-games.com/" target="_blank">Coolmath</a></li> <!-- Ol' Faithful -->
 						<li><a href="http://www.omfgdogs.com/" target="_blank">Doggo</a></li> <!-- So... many... doggos... -->
-						<li><a href="bsod.php">Fake BSOD</a></li> <!-- :> -->
 						<li><a href="canvas.php">Cool Thing #1</a></li>
 						<li><a href="canvas2.php">Cool Thing #2</a></li>
 						<li><a href="settings.php">Settings [WIP]</a></li>

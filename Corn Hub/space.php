@@ -1,9 +1,9 @@
 <!DOCTYPE html>
 <html>
 	<head>
-		<?php global $title; $title = 'Space Simulator'; require('headinfo.php'); ?>
-		<script src="js/spacesim.js"></script>
-		
+		<?php global $title; $title = 'Space Simulator'; require('/storage/ssd2/446/3229446/public_html/headinfo.php'); ?>
+		<script src="/js/spacesim.js"></script>
+
 		<style>
 			* /* Simple Reset */
 			{
@@ -14,7 +14,7 @@
 			}
 		</style>
 	</head>
-	
+
 	<body onload="init()">
 		<canvas id="canvas"></canvas>
 	</body>

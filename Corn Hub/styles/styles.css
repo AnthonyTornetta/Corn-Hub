@@ -76,7 +76,7 @@ ul { margin-left: 20px; list-style-type: none; }
   -moz-background-size      : cover;
   -o-background-size        : cover;
   background-size           : cover;
-  /* So the margins and padding don't make tulinehe page longer */
+  /* So the margins and padding don't make the page longer */
   -moz-box-sizing           : border-box;
   -webkit-box-sizing        : border-box;
   box-sizing                : border-box;

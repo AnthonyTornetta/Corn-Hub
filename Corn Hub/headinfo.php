@@ -1,18 +1,11 @@
 <!-- Global site tag (gtag.js) - Google Analytics -->
 
 <?php
-
 if(!isset($title))
 {
 	global $title;
 	$title = '';
 }
-if(!isset($relDir))
-{
-	global $relDir;
-	$relDir = '';
-}
-
 ?>
 
 <script async src="https://www.googletagmanager.com/gtag/js?id=UA-108028641-1"></script>
@@ -46,4 +39,4 @@ if(!isset($relDir))
 
 <script type="text/javascript" src="/js/cookies.js"></script>
 <script type="text/javascript" src="/js/smooth.js"></script>
-<script type="text/javascript" src="/js/settings.js"></script> <!-- WIP -->
+<script type="text/javascript" src="/js/av-away.js"></script>

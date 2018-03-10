@@ -52,7 +52,7 @@
     }
 }
 
-@media screen and (min-width:750px) and (max-width: 1156px)
+@media screen and (min-width:885px) and (max-width: 1156px)
 {
     .main
     {
@@ -60,7 +60,7 @@
     }
 }
 
-@media screen and (min-width:350px) and (max-width: 750px)
+@media screen and (min-width:350px) and (max-width: 885px)
 {
     .main
     {
