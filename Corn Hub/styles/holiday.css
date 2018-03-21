@@ -1,4 +1,4 @@
-/* Uncomment when you want to change the bground image for something special*/
+/* Uncomment when you want to change the bground image for something special
 p, h1, h2, h3, h4, h5, h6, a, .holiday, .checkiday
 {
   color : #fff !important;
@@ -6,7 +6,6 @@ p, h1, h2, h3, h4, h5, h6, a, .holiday, .checkiday
 
 .nav
 {
-  /*background-color: rgba(0, 68, 136, 0.7) !important;*/
   background-color: rgba(255, 255, 255, 0.2) !important;
 }
 
@@ -28,3 +27,4 @@ html
     -o-background-size      : cover;
     background-size         : cover;
 }
+*/
