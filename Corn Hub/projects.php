@@ -2,14 +2,14 @@
 <!DOCTYPE html>
 <html>
 	<head>
-		<?php global $title; $title = 'Stupid Stuff'; require('/storage/ssd2/446/3229446/public_html/headinfo.php'); ?>
+		<?php global $title; $title = 'Stupid Stuff'; require($_SERVER['DOCUMENT_ROOT'].'/headinfo.php'); ?>
 	</head>
 
 	<body>
-      <?php include('/storage/ssd2/446/3229446/public_html/holiday.php'); ?>
+    <?php include($_SERVER['DOCUMENT_ROOT'].'/holiday.php'); ?>
 
 		<div class="wrapper">
-			<?php require('/storage/ssd2/446/3229446/public_html/nav.php'); ?>
+			<?php require($_SERVER['DOCUMENT_ROOT'].'/nav.php'); ?>
 
 			<div class="main">
         <h1 id="title">Corn Hub - Stupid Things I Think Are Cool</h1>

@@ -4,16 +4,16 @@
 <!DOCTYPE html>
 <html>
 	<head>
-		<?php global $title; $title = 'APUSH'; require('/storage/ssd2/446/3229446/public_html/headinfo.php'); ?>
+		<?php global $title; $title = 'APUSH'; require($_SERVER['DOCUMENT_ROOT'].'/headinfo.php'); ?>
 
-		<link rel="stylesheet" media="all" href="/styles/main-page.css">
+		<link rel="stylesheet" media="all" href="/styles/main-page.css" />
 	</head>
 
 	<body>
-		<?php include('/storage/ssd2/446/3229446/public_html/holiday.php') ?>
+		<?php include($_SERVER['DOCUMENT_ROOT'].'/holiday.php') ?>
 
 		<div class="wrapper">
-			<?php include('/storage/ssd2/446/3229446/public_html/nav.php'); ?>
+			<?php include($_SERVER['DOCUMENT_ROOT'].'/nav.php'); ?>
 
 			<div class="main">
         <h1 id="title">Corn Hub - APUSH</h1>

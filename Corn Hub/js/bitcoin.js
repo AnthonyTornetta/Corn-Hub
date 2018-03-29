@@ -1,6 +1,6 @@
 $(function()
 {
-  var url = "https://api.coindesk.com/v1/bpi/currentprice.json";
+  let url = "https://api.coindesk.com/v1/bpi/currentprice.json";
 
 	updateBitcoin(url);
 
@@ -10,7 +10,7 @@ $(function()
     // bitcoinData will hold all requested data(typically object or array) in JSON format
     $.getJSON(url, function(bitcoinData)
     {
-	      var container = document.getElementById('bitcoin');
+	      let container = document.getElementById('bitcoin');
 			  container.innerHTML = bitcoinData.bpi.USD.rate;
     });
   }

@@ -1,6 +1,6 @@
 <html>
     <head>
-		<?php global $title; $title = 'Matrix'; require('/storage/ssd2/446/3229446/public_html/headinfo.php'); ?>
+		<?php global $title; $title = 'Matrix'; require($_SERVER['DOCUMENT_ROOT'].'/headinfo.php'); ?>
         <style>
             *{ margin: 0; padding: 0; }
             html, body { overflow:hidden; }

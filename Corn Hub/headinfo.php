@@ -1,4 +1,18 @@
-<!-- Global site tag (gtag.js) - Google Analytics -->
+<!--
+ - Information every Corn Hub page should have attatched to it.
+ - Optional title variable to have set as the tab name - otherwise is simply 'Corn Hub'
+ - Make sure to include this in the head tag
+ -
+ - Includes:
+ -  * Title tag
+ -  * Google Analytics
+ -  * Jquery 1.12.4
+ -  * Bootstrap css/js 3.3.7
+ -  * Favicon
+ -  * Main Style Sheet
+ -  * Cookies.js
+ -  * Smooth.js
+ -->
 
 <?php
 if(!isset($title))
@@ -30,13 +44,11 @@ if(!isset($title))
 	}
 ?>
 
-<link rel="icon" href="/images/favicon.jpg">
+<link rel="icon" href="/images/favicon.jpg"/>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>   <!-- Jquery -->
 <link rel="stylesheet" media="all" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"> <!-- Bootstrap -->
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script> <!-- Bootstrap -->
-<link rel="stylesheet" media="all" href="/styles/styles.css">
-<link rel="icon" href="/images/favicon.jpg">
+<link rel="stylesheet" media="all" href="/styles/styles.css"/>
 
 <script type="text/javascript" src="/js/cookies.js"></script>
 <script type="text/javascript" src="/js/smooth.js"></script>
-<script type="text/javascript" src="/js/av-away.js"></script>

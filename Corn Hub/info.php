@@ -1,15 +1,15 @@
 <!DOCTYPE html>
 <html>
 	<head>
-		<?php global $title; $title = 'Extra Useful Information'; require('/storage/ssd2/446/3229446/public_html/headinfo.php'); ?>
+		<?php global $title; $title = 'Extra Useful Information'; require($_SERVER['DOCUMENT_ROOT'].'/headinfo.php'); ?>
 		<script type="text/javascript" src="/js/bitcoin.js"></script>
 	</head>
 
 	<body>
-    <?php include('/storage/ssd2/446/3229446/public_html/holiday.php'); ?>
+    <?php include($_SERVER['DOCUMENT_ROOT'].'/holiday.php'); ?>
 
 		<div class="wrapper">
-			<?php require('nav.php'); ?>
+			<?php require($_SERVER['DOCUMENT_ROOT'].'nav.php'); ?>
 
       <!-- APIs: https://www.reddit.com/r/webdev/comments/3wrswc/what_are_some_fun_apis_to_play_with/ -->
 			<div class="main">

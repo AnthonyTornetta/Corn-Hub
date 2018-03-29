@@ -1,6 +1,8 @@
-// Gets rid of that annoying advert in the bottom right.
-// This has a really dumb name so ad-blockers don't block this script from running
-// Kinda ironic
+/**
+ * Gets rid of that annoying advert in the bottom right.
+ * This has a really dumb name so ad-blockers don't block this script from running
+ * Very ironic
+ */
 
 $(document).ready(function()
 {

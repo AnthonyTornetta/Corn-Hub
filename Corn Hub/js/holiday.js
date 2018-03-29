@@ -1,4 +1,4 @@
-var url = "https://www.checkiday.com/api.php?d=";
+let url = "https://www.checkiday.com/api.php?d=";
 $(function()
 {
 	updateHolidays(url);
@@ -9,7 +9,7 @@ $(function()
     // WeatherData will hold all requested data(typically object or array) in JSON format
 		$.getJSON(url, function(holidayData)
 		{
-			var container = document.getElementById('checkiday');
+			let container = document.getElementById('checkiday');
 
 			container.innerHTML = '<ul class="checkiday" id="checkiday-list"></ul>';
 			for(let i = 0; i < holidayData.length; i++)

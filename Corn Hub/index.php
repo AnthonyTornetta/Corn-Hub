@@ -7,22 +7,22 @@
 <!DOCTYPE html>
 <html>
 	<head>
-		<?php global $title; $title = ''; require('/storage/ssd2/446/3229446/public_html/headinfo.php'); ?>
+		<?php global $title; $title = ''; require($_SERVER['DOCUMENT_ROOT'].'/headinfo.php'); ?>
 
-		<link rel="stylesheet" media="all" href="/styles/main-page.css">
+		<link rel="stylesheet" media="all" href="/styles/main-page.css"/>
 		<script type="text/javascript" src="/js/holiday.js"></script>  <!-- For displaying the holidays -->
 	</head>
 
 	<body>
-		<?php include('/storage/ssd2/446/3229446/public_html/holiday.php') ?>
+		<?php include($_SERVER['DOCUMENT_ROOT'].'/holiday.php') ?>
 
 		<div class="wrapper">
-			<?php include('/storage/ssd2/446/3229446/public_html/nav.php'); ?>
+			<?php include($_SERVER['DOCUMENT_ROOT'].'/nav.php'); ?>
 
 			<div class="main">
 				<div class="col-sm-9">
 					<h1 id="title">Corn Hub</h1>
-					<p><a href="Rasputin.mp3" download>Rasputin Song For Gym Thing</a> <a href="info.php" title="Extra Cool Things">[...]</a></p>
+					<p>#GiveByteClubADatabase</a> <a href="info.php" title="Extra Cool Things">[...]</a></p>
 					<!-- Where it all began -->
 					<div class="main-img-list">
 						<ul>
@@ -78,8 +78,8 @@
 					<ul>
 						<li><h3 class="premium" onclick="alert('Pay Cornchip $5');"><b>Get Corn Hub Premium</b></h3></li>
 						<li><a href="firefox.php"><b>Firefox not working? Click here!</b></h3></li>
-						<li><a href="http://www.coolmath-games.com/" target="_blank">Coolmath</a></li> <!-- Ol' Faithful -->
-						<li><a href="http://www.omfgdogs.com/" target="_blank">Doggo</a></li> <!-- So... many... doggos... -->
+						<li><a href="http://www.coolmath-games.com/" target="_blank">Coolmath</a></li>
+						<li><a href="http://www.omfgdogs.com/" target="_blank">Doggo</a></li>
 						<li><a href="canvas.php">Cool Thing #1</a></li>
 						<li><a href="canvas2.php">Cool Thing #2</a></li>
 						<li><a href="settings.php">Settings [WIP]</a></li>

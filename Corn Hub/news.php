@@ -2,17 +2,17 @@
 <!DOCTYPE html>
 <html>
 	<head>
-		<?php global $title; $title = 'News'; require('/storage/ssd2/446/3229446/public_html/headinfo.php'); ?>
+		<?php global $title; $title = 'News'; require($_SERVER['DOCUMENT_ROOT'].'/headinfo.php'); ?>
 		<link rel="stylesheet" media="all" href="/styles/news.css">
 
 		<script src="/js/news.js"></script>
 	</head>
 
 	<body>
-    <?php include('/storage/ssd2/446/3229446/public_html/holiday.php'); ?>
+    <?php include($_SERVER['DOCUMENT_ROOT'].'/holiday.php'); ?>
 
 		<div class="wrapper">
-			<?php require('/storage/ssd2/446/3229446/public_html/nav.php'); ?>
+			<?php require($_SERVER['DOCUMENT_ROOT'].'/nav.php'); ?>
 			<div class="main">
 				<h1 id="title">Corn Hub - News</h1>
 				<p>Less depressing news!</p>

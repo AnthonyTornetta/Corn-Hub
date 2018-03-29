@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 	<head>
-		<?php global $title; $title = 'Cool thing #2'; require('/storage/ssd2/446/3229446/public_html/headinfo.php'); ?>
+		<?php global $title; $title = 'Cool thing #2'; require($_SERVER['DOCUMENT_ROOT'].'/headinfo.php'); ?>
 		<style>
 			*
 			{

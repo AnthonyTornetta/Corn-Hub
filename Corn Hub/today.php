@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 	<head>
-		<?php global $title; $title = 'This Day in History'; require('/storage/ssd2/446/3229446/public_html/headinfo.php'); ?>
+		<?php global $title; $title = 'This Day in History'; require($_SERVER['DOCUMENT_ROOT'].'/headinfo.php'); ?>
 
 	  <script type="text/javascript" src="/js/today.js"></script> <!-- Today Info -->
 
@@ -18,10 +18,10 @@
 	</head>
 
 	<body>
-		<?php include('/storage/ssd2/446/3229446/public_html/holiday.php'); ?>
+		<?php include($_SERVER['DOCUMENT_ROOT'].'/holiday.php'); ?>
 
 		<div class="wrapper">
-			<?php require('/storage/ssd2/446/3229446/public_html/nav.php'); ?>
+			<?php require($_SERVER['DOCUMENT_ROOT'].'/nav.php'); ?>
 
 			<div class="main" id="main">
 				<h1 id="title">Corn Hub - This Day in History</h1>

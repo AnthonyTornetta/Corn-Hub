@@ -18,7 +18,6 @@ $(function()
     // Data will hold all requested data(typically object or array) in JSON format
     $.getJSON(url, function(data)
     {
-
 	    var wallOfText = data.parse.text['*'];
       wallOfText = replaceAll(wallOfText, '/wiki', 'https://www.wikipedia.org/wiki')
       wallOfText = replaceAll(wallOfText, '<a', '<a target="_blank"');

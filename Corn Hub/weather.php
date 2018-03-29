@@ -1,13 +1,13 @@
 <!DOCTYPE html>
 <html>
   <head>
-  	<?php global $title; $title = 'Weather'; require('/storage/ssd2/446/3229446/public_html/headinfo.php'); ?>
+  	<?php global $title; $title = 'Weather'; require($_SERVER['DOCUMENT_ROOT'].'/headinfo.php'); ?>
 
   	<script src="/js/weather.js"></script>
   	<link rel="stylesheet" media="all" href="/styles/weather.css">
   </head>
   <body>
-    <?php require('/storage/ssd2/446/3229446/public_html/nav.php'); ?>
+    <?php require($_SERVER['DOCUMENT_ROOT'].'/nav.php'); ?>
     <div class="main">
       <div id="weather-holder">
       <h1 id="title">Corn Hub - Weather</h1>
