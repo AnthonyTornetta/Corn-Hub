@@ -1,6 +1,6 @@
 <!-- Developed by Cornchip -->
 <!--
-    Developed while listening to: https://www.youtube.com/watch?v=fr6KVNt-1Ek
+  Developed while listening to: https://www.youtube.com/watch?v=fr6KVNt-1Ek
 	Hello fellow nerd :)
  -->
 

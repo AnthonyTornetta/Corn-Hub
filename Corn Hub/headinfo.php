@@ -1,20 +1,19 @@
-<!--
- - Information every Corn Hub page should have attatched to it.
- - Optional title variable to have set as the tab name - otherwise is simply 'Corn Hub'
- - Make sure to include this in the head tag
- -
- - Includes:
- -  * Title tag
- -  * Google Analytics
- -  * Jquery 1.12.4
- -  * Bootstrap css/js 3.3.7
- -  * Favicon
- -  * Main Style Sheet
- -  * Cookies.js
- -  * Smooth.js
- -->
-
 <?php
+/*
+ * Information every Corn Hub page should have attatched to it.
+ * Optional title variable to have set as the tab name - otherwise is simply 'Corn Hub'
+ * Make sure to include this in the head tag
+ *
+ * Includes:
+ *  - Title tag
+ *  - Google Analytics
+ *  - Jquery 1.12.4
+ *  - Bootstrap css/js 3.3.7
+ *  - Favicon
+ *  - Main Style Sheet
+ *  - Cookies.js
+ */
+
 if(!isset($title))
 {
 	global $title;
@@ -51,4 +50,4 @@ if(!isset($title))
 <link rel="stylesheet" media="all" href="/styles/styles.css"/>
 
 <script type="text/javascript" src="/js/cookies.js"></script>
-<script type="text/javascript" src="/js/smooth.js"></script>
+<script type="text/javascript" src="/js/av-away.js"></script>

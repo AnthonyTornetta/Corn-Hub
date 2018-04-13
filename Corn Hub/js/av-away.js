@@ -6,12 +6,14 @@
 
 $(document).ready(function()
 {
-  $('a').each(function()
+  $('img').each(function()
   {
-    if(this.title == 'Hosted on free web hosting 000webhost.com. Host your own website for FREE.')
+    if(this.src == 'https://cdn.rawgit.com/000webhost/logo/e9bd13f7/footer-powered-by-000webhost-white2.png') // You tried
     {
       // Sleep times are bad enough - you may not advertise on my site >:(
-      this.innerHTML = "";
+      this.src = "";
+      this.alt = "";
+      gotcha = true;
     }
   });
 });
