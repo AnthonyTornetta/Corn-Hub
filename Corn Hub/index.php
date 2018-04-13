@@ -77,12 +77,12 @@
 					<h3>Nice Things</h3>
 					<ul>
 						<li><h3 class="premium" onclick="alert('Pay Cornchip $5');"><b>Get Corn Hub Premium</b></h3></li>
-						<li><a href="firefox.php"><b>Firefox not working? Click here!</b></h3></li>
+						<li><a href="https://www.youtube.com/watch?v=SV1juxVlpic&index=1&list=PLnJD3VR5X1lmAgpn8FOolQpDxAEKl2482" target="_blank">My Awesome Jazz Playlist</a>
 						<li><a href="http://www.coolmath-games.com/" target="_blank">Coolmath</a></li>
 						<li><a href="http://www.omfgdogs.com/" target="_blank">Doggo</a></li>
-						<li><a href="canvas.php">Cool Thing #1</a></li>
-						<li><a href="canvas2.php">Cool Thing #2</a></li>
-						<li><a href="settings.php">Settings [WIP]</a></li>
+						<li><a href="/canvas.php">Cool Thing #1</a></li>
+						<li><a href="/canvas2.php">Cool Thing #2</a></li>
+						<li><a href="/settings.php">Settings [WIP]</a></li>
 					</ul>
 				</div>
 			</div>
