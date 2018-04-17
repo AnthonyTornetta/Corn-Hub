@@ -25,7 +25,7 @@
 
 			<div class="main" id="main">
 				<h1 id="title">Corn Hub - This Day in History</h1>
-				<p>The more you know</p>
+				<p>The more you know.</p>
 				<div class="col-3">
 					<div>
 						<div id="ticker">

@@ -14,7 +14,7 @@
 
 			<div class="main">
 				<h1>404 Err0r</h1>
-				<h2>Don't worry! This just means you can't type! Click <a href="<?php echo $_SERVER['DOCUMENT_ROOT']?>">here</a> to get back to the main page.</h2>
+				<h2>Don't worry! This just means you can't type! Click <a href="/">here</a> to get back to the main page.</h2>
 				<p>Or if you clicked on a link and got this page, I can't type and you should let me know.</p>
 			</div>
 		</div>

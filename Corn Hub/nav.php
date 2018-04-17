@@ -10,5 +10,6 @@
 		<li><a href="/sean.php">Sean</a></li>
 		<li><a href="/today.php">TDIH</a></li>
 		<li><a href="/apush.php">APUSH</a></li>
+		<li><a href="/calendar.php">Calendar</a></li>
 	</ul>
 </div>

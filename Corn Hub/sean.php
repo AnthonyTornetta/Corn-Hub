@@ -13,7 +13,7 @@
 
 			<div class="main">
 				<h1 id="title">Corn Hub - Sean</h1>
-				<p>A lovely video of Sean Varner in his Dance Pants</a></p>
+				<p>A lovely video of Sean Varner in his Dance Pants.</p>
 				<iframe width="100%" height="100%" src="https://www.youtube.com/embed/8Hqndi6POgc?rel=0&amp;controls=0&amp;showinfo=0" frameborder="0" allowfullscreen></iframe>
 			</div>
 		</div>

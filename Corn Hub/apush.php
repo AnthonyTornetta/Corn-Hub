@@ -17,7 +17,7 @@
 
 			<div class="main">
         <h1 id="title">Corn Hub - APUSH</h1>
-        <p style="cursor: pointer;" title="JUDICIAL REVIEW!" onclick="let item = document.getElementById('title'); item.innerHTML = 'Corn Hub - JUDICIAL REVIEW'; item.classList.add('rainbow-text');">Marbury vs Madison</p>
+        <p style="cursor: pointer;" title="JUDICIAL REVIEW!" onclick="let item = document.getElementById('title'); item.innerHTML = 'Corn Hub - JUDICIAL REVIEW'; item.classList.add('rainbow-text');">Marbury vs Madison?</p>
         <h2>Quizlets</h2>
         <p><a href="https://quizlet.com/243017626/period-4-review-flash-cards/" title="Thanks Rachel" target="_blank">Period 4 Quizlet</a></p>
 				<p><a href="https://quizlet.com/256616875/period-6-review-flash-cards/" title="Thanks Rachel" target="_blank">Period 6 Quizlet</a></p>

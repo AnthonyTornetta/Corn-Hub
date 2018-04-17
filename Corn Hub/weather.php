@@ -11,7 +11,7 @@
     <div class="main">
       <div id="weather-holder">
       <h1 id="title">Corn Hub - Weather</h1>
-      <p>*Results may vary</p>
+      <p>*Results may vary.</p>
         <div id="current">
           <div class="col-3">
             <div style="text-align: left;">
