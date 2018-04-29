@@ -49,5 +49,6 @@ if(!isset($title))
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script> <!-- Bootstrap -->
 <link rel="stylesheet" media="all" href="/styles/styles.css"/>
 
-<script type="text/javascript" src="/js/cookies.js"></script>
+<script type="text/javascript" src="https://www.gstatic.com/firebasejs/4.13.0/firebase.js"></script>
+<script type="text/javascript" src="/js/account-manager.js"></script>
 <script type="text/javascript" src="/js/av-away.js"></script>

@@ -13,7 +13,6 @@ $(document).ready(function()
       // Sleep times are bad enough - you may not advertise on my site >:(
       this.src = "";
       this.alt = "";
-      gotcha = true;
     }
   });
 });

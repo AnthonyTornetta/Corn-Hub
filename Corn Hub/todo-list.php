@@ -1,8 +1,9 @@
 <!DOCTYPE html>
 <html>
 	<head>
-		<?php global $title; $title = 'Extra Useful Information'; require($_SERVER['DOCUMENT_ROOT'].'/headinfo.php'); ?>
-		<script type="text/javascript" src="/js/bitcoin.js"></script>
+		<?php global $title; $title = 'Todo List'; require($_SERVER['DOCUMENT_ROOT'].'/headinfo.php'); ?>
+    <script src="https://www.gstatic.com/firebasejs/4.13.0/firebase.js"></script>
+    <script src="/js/todo-list.js"></script>
 	</head>
 
 	<body>
@@ -11,7 +12,6 @@
 		<div class="wrapper">
 			<?php require($_SERVER['DOCUMENT_ROOT'].'/nav.php'); ?>
 
-      <!-- APIs: https://www.reddit.com/r/webdev/comments/3wrswc/what_are_some_fun_apis_to_play_with/ -->
 			<div class="main">
 				<h1 id="title">Extra Useful Information!</h1>
 				<h3>Bitcoin Exchange Rate: <strong>$<span id="bitcoin"></span></strong></h3>

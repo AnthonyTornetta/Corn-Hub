@@ -1,85 +1,115 @@
 .nav
 {
-  background-color  : #048;
-  text-align        : center;
-  font-size         : 25px;
-  position          : fixed;
-  z-index           : 9;
-  color             : #fff;
-  width             : 100%;
-  top               : 0px;
+  background-color: #048;
+  font-size: 25px;
+  position: sticky;
+  z-index: 9;
+  color: #fff;
+  width: 100%;
+  top: 0px;
 }
 
 .nav ul
 {
-  list-style-type   : none;
-  display           : inline;
+  list-style-type: none;
+  display: inline;
+  width : 100%;
 }
 
 .nav ul li
 {
-  display           : inline;
-  margin-right      : 8px;
-  margin-left       : 8px;
-  cursor            : pointer;
+  display: inline-block;
+  margin-right: 8px;
+  margin-left: 8px;
+  cursor: pointer;
+  vertical-align: middle;
 }
 
 .nav ul li a
 {
-  text-decoration   : none;
-  margin-right      : 5px;
-  margin-left       : 5px;
+  text-decoration: none;
+  margin-right: 5px;
+  margin-left: 5px;
 }
 
 .nav a:hover
 {
-  color             : #e5e5e5;
+  color: #e5e5e5;
 }
 
-.nav ul li a
+.nav a
 {
-  color             : #fff;
+  color: #fff;
+}
+
+.nav .toggle
+{
+  width: 100%;
+  padding-right: 20px;
+  background: #048;
+  text-align: right;
+  box-sizing: border-box;
+  color: #fff;
+  font-size: 30px;
+  display: none;
+}
+
+#account-area
+{
+  float: right;
+  margin-right: 5vw;
+}
+
+#account-area li
+{
+  width: 100%;
+  height: 100%;
+}
+
+#links
+{
+  float: left;
+  margin-left: 5vw;
+}
+
+#account-icon img
+{
+  width: 40px;
+  height: 40px;
 }
 
 /* Responsive things because of the way I designed the nav bar */
 
 /* Media screens make me want to die. */
-@media screen and (min-width:1156px)
+@media screen and (max-width:1200px)
 {
-    .main
-    {
-        padding-top: 24px;
-    }
-}
+  .nav .toggle
+  {
+    display: block;
+  }
+  .nav ul:not(.active)
+  {
+    display: none;
+  }
+  .nav ul li
+  {
+    width: 100%;
+    display: block;
+    text-align: center;
 
-@media screen and (min-width:885px) and (max-width: 1156px)
-{
-    .main
-    {
-        padding-top: 40px;
-    }
-}
-
-@media screen and (min-width:350px) and (max-width: 885px)
-{
-    .main
-    {
-        padding-top: 65px;
-    }
-}
-
-@media screen and (min-width:350px) and (max-width: 532px)
-{
-    .main
-    {
-        padding-top: 120px;
-    }
-}
-
-@media screen and (min-width:0px) and (max-width: 350px)
-{
-    .main
-    {
-        padding-top: 160px;
-    }
+    margin-bottom: 10px
+  }
+  #links
+  {
+    float: none;
+    margin-left: 5vw;
+  }
+  #account-area
+  {
+    float: none;
+  }
+  .toggle
+  {
+    text-align: center;
+  }
 }
