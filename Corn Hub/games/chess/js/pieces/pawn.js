@@ -27,8 +27,8 @@ class Pawn extends Piece
   {
     if(!this.didMove)
     {
-      return ["X",
-              "X",
+      return ["A",
+              "A",
               "#"];
     }
     else

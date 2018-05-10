@@ -24,21 +24,21 @@ class Bishop extends Piece
 
   movePattern()
   {
-    return ["OOOOOOOX",
-            "OOOOOOOX",
-            "OOOOOOOX",
-            "OOOOOOOX",
-            "OOOOOOOX",
-            "OOOOOOOX",
-            "OOOOOOOX",
-            "XXXXXXX#XXXXXXX",
-            "OOOOOOOX",
-            "OOOOOOOX",
-            "OOOOOOOX",
-            "OOOOOOOX",
-            "OOOOOOOX",
-            "OOOOOOOX",
-            "OOOOOOOX"];
+    return ["OOOOOOOA",
+            "OOOOOOOA",
+            "OOOOOOOA",
+            "OOOOOOOA",
+            "OOOOOOOA",
+            "OOOOOOOA",
+            "OOOOOOOA",
+            "BBBBBBB#CCCCCCC",
+            "OOOOOOOD",
+            "OOOOOOOD",
+            "OOOOOOOD",
+            "OOOOOOOD",
+            "OOOOOOOD",
+            "OOOOOOOD",
+            "OOOOOOOD"];
   }
   attackPattern()
   {

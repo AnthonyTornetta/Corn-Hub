@@ -28,7 +28,56 @@ $(() =>
     $('#password').val('');
     console.log(getUser());
   });
+
+  $('#register-form').submit(async (e) =>
+  {
+    e.preventDefault();
+    let emailInput = $('#reg-email').val();
+    let profileImageUrl = $('reg-url').val();
+    let username = $('reg-username').val().trim();
+    let passwordInput = $('#reg-password').val();
+
+    let res = validateUsername(username);
+    if(res === null)
+    {
+      alert(res);
+    }
+    else
+    {
+      await register(emailInput, passwordInput);
+    }
+
+
+
+    $('#password').val('');
+    console.log(getUser());
+  });
 });
+
+function validateUsername(un)
+{
+    let error;
+    let illegalChars = /\W/; // allow letters, numbers, and underscores
+
+    if (un == "")
+    {
+      error = "You didn't enter a username.\n";
+      return false;
+    }
+    else if ((un.length < 5) || (un.length > 15))
+    {
+      error = "The username is the wrong length.\n";
+  		return false;
+    }
+    else if (illegalChars.test(fld.value))
+    {
+      error = "The username contains illegal characters.\n";
+  		return false;
+    }
+    else
+      return null; // Null means no error
+    return error;
+}
 
 async function register(email, pword)
 {
@@ -45,7 +94,10 @@ async function login(email, pword)
 {
   await firebase.auth().setPersistence(firebase.auth.Auth.Persistence.LOCAL).then(() =>
   {
-    firebase.auth().signInWithEmailAndPassword(email, pword).catch((error) =>
+    firebase.auth().signInWithEmailAndPassword(email, pword).then(() =>
+    {
+      openSection('#account-info-btn', 'account-info');
+    }).catch((error) =>
     {
       handleError(error);
     });

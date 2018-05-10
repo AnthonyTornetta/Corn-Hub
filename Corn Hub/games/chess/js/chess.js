@@ -15,7 +15,7 @@ function init()
 
   board.setPiece(0, 0, new Bishop(0, 0, TEAM_BLACK));
   board.setPiece(1, 0, new Knight(0, 0, TEAM_BLACK));
-  board.setPiece(2, 0, new )
+
 
   initListeners();
 

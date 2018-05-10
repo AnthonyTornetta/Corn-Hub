@@ -14,6 +14,7 @@
 
 			<div class="main">
 				<h1 id="title">Corn Hub - Calendar</h1>
+				<h3>This is not currently functional, but will soon be :)</h3>
 				<p>For getting school events, but with Corn Hub.</p>
 				<div class="calendar">
 					<div class="month">
@@ -38,7 +39,7 @@
 							Saturday
 						</li>
 					</ul>
-					
+
 					<ul id="days">
 
 					</ul>

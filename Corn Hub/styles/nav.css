@@ -112,4 +112,8 @@
   {
     text-align: center;
   }
+  .nav ul li
+  {
+    margin: auto;
+  }
 }
