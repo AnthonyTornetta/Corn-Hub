@@ -1,7 +1,25 @@
 let dateEnd;
+let doWeeks;
+let doFormatting;
 
-function setTime(d)
+function setTime(d, w, f)
 {
+  if(w === undefined)
+  {
+    if(f !== undefined)
+    {
+      doFormatting = f;
+    }
+    else
+    {
+      doFormatting = true;
+    }
+    doWeeks = true;
+  }
+  else
+    doWeeks = w;
+
+
   dateEnd = d;
   tickIt();
   setInterval(tickIt, 1000);
@@ -27,16 +45,34 @@ function tickIt()
   minutesms=ms % (60*1000);
   sec = Math.floor((minutesms)/(1000));
 
-  weeksC.innerHTML = Math.floor(days / 7);
-  daysC.innerHTML = days % 7;
+  if(sec < 0 || days < 0 || hours < 0 || minutes < 0)
+  {
+    days = 0;
+    hours = 0;
+    minutes = 0;
+    sec = 0;
+  }
 
-  // Make sure your eyes don't burn out while you look at it
-  if (hours   < 10)
-    hours = "0" + hours;
-  if (minutes < 10)
-    minutes = "0" + minutes;
-  if (sec < 10)
-    sec = "0" + sec;
+  if(doWeeks)
+  {
+    weeksC.innerHTML = Math.floor(days / 7);
+    daysC.innerHTML = days % 7;
+  }
+  else
+  {
+    daysC.innerHTML = days
+  }
+
+  if(doFormatting)
+  {
+    // Make sure your eyes don't burn out while you look at it
+    if (hours < 10)
+      hours = "0" + hours;
+    if (minutes < 10)
+      minutes = "0" + minutes;
+    if (sec < 10)
+      sec = "0" + sec;
+  }
 
   hoursC.innerHTML = hours;
   minsC.innerHTML = minutes;
