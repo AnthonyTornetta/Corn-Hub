@@ -23,7 +23,7 @@ async function loadCalendar(start, end)
   await $.ajax(
   {
       type: "POST",
-      url: "https://www.clsd.k12.pa.us/site/UserControls/Calendar/CalendarController.aspx/GetEvents",
+      url: "https://cors-anywhere.herokuapp.com/https://www.clsd.k12.pa.us/site/UserControls/Calendar/CalendarController.aspx/GetEvents",
       data: "{ModuleInstanceID: 1, " +
                   "StartDate: '" + (parseInt(start.getMonth()) + 1) + "/" + start.getDate() + "/" + start.getFullYear() +  "', " +
                   "EndDate: '" + (parseInt(end.getMonth()) + 1) + "/" + end.getDate() + "/" + end.getFullYear() + "'}",

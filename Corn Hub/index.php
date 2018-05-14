@@ -14,7 +14,7 @@
 		<script type="text/javascript" src="/js/timer.js"></script>
 	</head>
 
-	<body onload="setTime(new Date('May 11, 2018 8:00:00'), false, false)">
+	<body onload="setTime(new Date('May 15, 2018 8:00:00'), false, false)">
 		<?php include($_SERVER['DOCUMENT_ROOT'].'/holiday.php') ?>
 
 		<div class="wrapper">

@@ -33,21 +33,42 @@ $(() =>
   {
     e.preventDefault();
     let emailInput = $('#reg-email').val();
-    let profileImageUrl = $('reg-url').val();
-    let username = $('reg-username').val().trim();
+    let username = $('#reg-username').val().trim();
     let passwordInput = $('#reg-password').val();
 
+    console.log($('#password-confirm').val());
+    console.log(passwordInput);
+    if($('#password-confirm').val() !== passwordInput)
+    {
+      alert('Passwords don\'t match!');
+      return;
+    }
+
     let res = validateUsername(username);
-    if(res === null)
+
+    if(res !== null)
     {
       alert(res);
     }
     else
     {
-      await register(emailInput, passwordInput);
+      register(emailInput, passwordInput).then(() =>
+      {
+        getUser().updateProfile({
+          displayName: username
+        }).then(function()
+        {
+          alert('Account Creation Successful!');
+        }).catch(function(err)
+        {
+          console.log(err);
+          alert(err);
+        });
+      }).catch((err) =>
+      {
+        alert(err);
+      });
     }
-
-
 
     $('#password').val('');
     console.log(getUser());
@@ -60,34 +81,29 @@ function validateUsername(un)
     let illegalChars = /\W/; // allow letters, numbers, and underscores
 
     if (un == "")
-    {
       error = "You didn't enter a username.\n";
-      return false;
-    }
     else if ((un.length < 5) || (un.length > 15))
-    {
-      error = "The username is the wrong length.\n";
-  		return false;
-    }
-    else if (illegalChars.test(fld.value))
-    {
+      error = "The username must have a length of more than 5 and less than 15.\n";
+    else if (illegalChars.test(un.value))
       error = "The username contains illegal characters.\n";
-  		return false;
-    }
     else
       return null; // Null means no error
     return error;
 }
 
-async function register(email, pword)
+function register(email, pword)
 {
-  await firebase.auth().createUserWithEmailAndPassword(email, pword).then(() =>
+  return new Promise((resolve, reject) =>
   {
-    login(email, pword);
-  }).catch((error) =>
-  {
-    handleError(error);
-  });
+    firebase.auth().createUserWithEmailAndPassword(email, pword).then(() =>
+    {
+      login(email, pword);
+      resolve('Success');
+    }).catch((error) =>
+    {
+      reject(error);
+    });
+  })
 }
 
 async function login(email, pword)
