@@ -14,7 +14,7 @@
 		<script type="text/javascript" src="/js/timer.js"></script>
 	</head>
 
-	<body onload="setTime(new Date('May 15, 2018 8:00:00'), false, false)">
+	<body onload="setTime(new Date('May 15, 2018 12:00:00'), false, false)">
 		<?php include($_SERVER['DOCUMENT_ROOT'].'/holiday.php') ?>
 
 		<div class="wrapper">
@@ -23,7 +23,7 @@
 			<div class="main">
 				<div class="col-sm-9">
 					<h1 id="title">Corn Hub</h1>
-					<p><span id="days">-</span> Days, <span id="hours">-</span> hours, <span id="mins">-</span> minutes, and <span id="secs">-</span> seconds until the APUSH AP exam!</a> <a href="info.php" title="Extra Cool Things">[...]</a></p>
+					<p><span id="days">-</span> Days, <span id="hours">-</span> hours, <span id="mins">-</span> minutes, and <span id="secs">-</span> seconds until the AP Compsci exam!</a> <a href="info.php" title="Extra Cool Things">[...]</a></p>
 					<!-- Where it all began -->
 					<div class="main-img-list">
 						<ul>
