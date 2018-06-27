@@ -1,0 +1,35 @@
+<!-- o/ -->
+
+<!DOCTYPE html>
+<html>
+	<head>
+		<template src="/templates/header.html" vars="title='Events'" />
+		<link rel="stylesheet" media="all" href="/css/events.css"/>
+    <script src="/js/events.js"></script>
+	</head>
+
+	<body onload="fillCalendar('dates');">
+		<template src="/templates/holiday.html" />
+
+		<div class="wrapper">
+			<template src="/templates/nav.html" />
+
+			<div class="main">
+				<h1 id="title">Corn Hub - Events</h1>
+				<p>For getting school events, but with Corn Hub.</p>
+        <noscript>
+          <h3>This page only works with javascript enabled in your browser :(</h3>
+        </noscript>
+				<div class="calendar">
+					<!-- Both Filled out w/ JS magically (∩｀-´)⊃━☆ﾟ.*･｡ﾟﾟ.*･｡ﾟ -->
+
+					<!-- Filled w/ arrows controlling the month and the month and year they take place -->
+					<h3 id="month-n-stuff">Loading School Events...</h3>
+
+					<!-- Filled with the events & dates they take place -->
+					<div id="days"></div>
+				</div>
+			</div>
+		</div>
+	</body>
+</html>

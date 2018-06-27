@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <template src="/templates/header.html" vars="title='null'" />
+
+    <script type="text/javascript" src="/js/holiday.js"></script>  <!-- For displaying the holidays -->
+		<script type="text/javascript" src="/js/timer.js"></script>
+    <link rel="stylesheet" media="all" href="/css/main-page.css" />
+  </head>
+
+  <body>
+    <template src="/templates/holiday.html" />
+
+    <div class="wrapper">
+      <template src="/templates/nav.html" />
+      <div class="main">
+        <div class="main-page">
+          <h1 id="title">Corn Hub</h1>
+          <p>Made using the new C-HTML language & compiled into normal HTML.</p>
+          <template src="/templates/main-page/img-list.html" />
+          <div class="center">
+            <h3>Today's Holidays</h3>
+            <div id="checkiday" class="checkiday">
+              <div id="checkiday-footer">
+                Loading holidays...
+              </div>
+            </div>
+          </div>
+
+          <br>
+          <div style="text-align: center;">
+            <p style="font-size: 14px;">Powered By <a href="https://www.checkiday.com/" target="_blank">Checkiday.com</a>.</p>
+          </div>
+        </div>
+        <div class="right-sidebar">
+          <h3>Nice Things</h3>
+          <ul>
+            <li><h3 class="premium" onclick="alert('Pay Cornchip $5');"><b>Get Corn Hub Premium</b></h3></li>
+            <li><a href="https://www.youtube.com/watch?v=SV1juxVlpic&index=1&list=PLnJD3VR5X1lmAgpn8FOolQpDxAEKl2482" target="_blank">My Awesome Jazz Playlist</a>
+            <li><a href="http://www.coolmath-games.com/" target="_blank">Coolmath</a></li>
+            <li><a href="http://www.omfgdogs.com/" target="_blank">Doggo</a></li>
+            <li><a href="/canvas.html">Cool Thing #1</a></li>
+            <li><a href="/canvas2.html">Cool Thing #2</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

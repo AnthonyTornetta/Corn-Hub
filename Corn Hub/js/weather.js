@@ -1,11 +1,13 @@
 $(function()
 {
-  var lat, lon,
+  let lat, lon,
       city, country,
       windDir, humid,
       pressure, clouds;
 
   const API_KEY = 'b0d48880090d49e9dcc76306507a83b6';
+
+  let curDay = 0;
 
   loadWeather();
 
@@ -14,15 +16,15 @@ $(function()
     $.ajax(
     {
       method: 'GET',
-      url: 'https://ipinfo.io',
-      dataType: 'jsonp',
+      url: 'http://www.geoplugin.net/json.gp',
+      dataType: 'json',
       data: {
         format: 'json'
       },
       success: (data) =>
       {
-        lat = data.loc.split(',')[0];
-        lon = data.loc.split(',')[1];
+        lat = data.geoplugin_latitude;
+        lon = data.geoplugin_longitude;
 
         let url = `https://api.darksky.net/forecast/${API_KEY}/${lat},${lon}`;
 
@@ -37,36 +39,11 @@ $(function()
           success: (res) =>
           {
             console.log(url);
-            updateWeather(res);
+            updateForecastWeather(res);
           }
         });
       }
     });
-  }
-
-
-  // Main function for updating weather based on url which is generated based on city or current place
-  function updateWeather(weatherData)
-  {
-    var summaryContainer = document.getElementById('current-precipitation');
-    var locationContainer = document.getElementById('current-location');
-    var windContainer = document.getElementById('current-wind');
-    var currentTemp = document.getElementById('current-temp');
-    var precipitation = document.getElementById('current-temp-range');
-    var humidity = document.getElementById('current-humidity');
-
-    console.log(weatherData);
-    summaryContainer.innerHTML = `${weatherData.currently.summary}`;
-    humidity.innerHTML = `${weatherData.currently.humidity * 100}% Humidity`;
-    if(weatherData.currently.precipType !== undefined)
-      precipitation.innerHTML = `${weatherData.currently.precipType}"} ${~~(weatherData.currently.precipProbability * 100)}% Chance`;
-    else
-      precipitation.innerHTML = `No Precipitation`;
-    currentTemp.innerHTML = `${Math.round((weatherData.currently.temperature) * 10) / 10}°F`;
-    //locationContainer.innerHTML = `${weatherData.name}, ${weatherData.sys.country}`; // TODO: Replace
-    windContainer.innerHTML = `${Math.round(weatherData.currently.windSpeed * 10) / 10}mph wind`;
-
-    updateForecastWeather(weatherData);
   }
 
   function updateForecastWeather(weatherData)
@@ -87,35 +64,83 @@ $(function()
       let humidity = `${~~(hrs[i].humidity * 100)}`;
       let description = hrs[i].summary;
       let wind = Math.round(hrs[i].windSpeed * 10) / 10;
-      counter = addWeatherBox(weekday, prevDay, timeStr, temp, humidity, description, wind, counter);
+      counter = addWeatherBox(weatherData, weekday, prevDay, timeStr, temp, humidity, description, wind, counter);
       prevDay = weekday;
     }
   }
 
-  function addWeatherBox(day, prevDay, time, temp, humidity, description, wind, counter)
+  function addWeatherBox(weatherData, day, prevDay, time, temp, humidity, description, wind, counter)
   {
     if(prevDay != day)
     {
+      let thatDay = weatherData.daily.data[curDay];
+
+      let percipBox = thatDay.precipType !== undefined ? `${firstLetterUpper(thatDay.precipType)}: ${~~(100 * thatDay.precipProbability)}%` : 'Clear: 100%';
+
       document.getElementById('weather-forecast-list').insertAdjacentHTML('beforeend', `
       <li class="day-separator">
-        <div></div>
-        <div></div>
-        <div>${day}</div>
-        <div></div>
-        <div></div>
+        <div class="seperator">
+          <div class="seperator-weather seperator-item">
+            <div class="seperator-precipitation seperator-sub-item seperator-top">${percipBox}</div>
+            <div class="seperator-humidity seperator-sub-item">Humidity: ${~~(100 * thatDay.humidity)}%</div>
+          </div>
+
+          <div class="seperator-weather seperator-item">
+            <div class="seperator-day seperator-sub-item seperator-top">${day}</div>
+            <div class="seperator-temp-range seperator-sub-item">${~~Math.round(thatDay.temperatureLow)}&#176;F - ${~~Math.round(thatDay.temperatureHigh)}&#176;F</div>
+          </div>
+
+          <div class="seperator-weather seperator-item">
+            <div class="seperator-description seperator-sub-item seperator-top">${thatDay.summary}</div>
+            <div class="seperator-wind seperator-sub-item">Wind: ${thatDay.windSpeed}mph</div>
+          </div>
+        </div>
+      </li>
+
+      <li class="forecast-list">
+        <div class="forecast-container">
+          <div class="time-desc weather-item">Time</div>
+          <div class="temperature-range-desc weather-item">Range</div>
+          <div class="humidity-desc weather-item">Description</div>
+          <div class="precipitation-desc weather-item">Humidity</div>
+          <div class="wind-speed-desc weather-item">Wind Speed</div>
+        </div>
       </li>
       `);
       counter = 1;
+      curDay++;
+      /*
+
+      <div id="current">
+        <div class="current-weather">
+          <div id="current-precipitation"></div>
+          <div id="current-humidity"></div>
+        </div>
+
+        <div class="current-weather">
+          <div id="current-temp">Loading Weather</div>
+          <div id="current-temp-range"></div>
+        </div>
+
+        <div class="current-weather">
+          <div id="current-wind"></div>
+          <div id="current-location"></div>
+        </div>
+      </div>
+
+       */
     }
 
     let elemClass = counter == 0 ? "even" : "odd";
     document.getElementById('weather-forecast-list').insertAdjacentHTML('beforeend', `
-    <li class="${elemClass}">
-      <div class="time">${time}</div>
-      <div class="temperature-range">${temp}°F</div>
-      <div class="precipitation">${description}</div>
-      <div class="humidity">${humidity}%</div>
-      <div class="wind-speed">${wind}mph</div>
+    <li class="${elemClass} forecast-list">
+      <div class="forecast-container">
+        <div class="time weather-item">${time}</div>
+        <div class="temperature-range weather-item">${temp}°F</div>
+        <div class="precipitation weather-item">${description}</div>
+        <div class="humidity weather-item">${humidity}%</div>
+        <div class="wind-speed weather-item">${wind}mph</div>
+      </div>
     </li>
     `);
 

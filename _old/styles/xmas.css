@@ -1,0 +1,92 @@
+html, body
+{
+    background-image: url(../images/xmas.jpg);
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+}
+
+.main{
+  background: transparent;
+  padding-left:10px;
+  padding-right:10px;
+  height:100%;
+}
+
+.nav ul{
+  background-color:#004488;
+}
+
+.nav ul li{
+  background-color:#004488;
+}
+
+a {
+  color:#cecece;
+}
+
+.nav a{
+  color:#E5E5E5;
+  background-color:#004488;
+}
+
+.nav a:hover{
+  color:#CECECE;
+}
+
+.main a:hover{
+  color:#cecece;
+}
+
+h1{
+  color:#E5E5E5;
+  border-bottom:thick;
+  border-bottom:#E5E5E5;
+  border-bottom:solid;
+}
+
+h3{
+  color:#e5e5e5;
+}
+
+p{
+  color: #E5E5E5;
+}
+
+.footer
+{
+  /*border-top: thin solid #048;*/
+  border-top: thin solid #E5E5E5;
+  background-color:#CECECE;
+}
+
+.footer p
+{
+  background-color:#CECECE;
+}
+
+::-moz-selection { /* Code for Firefox */
+	color: #048 !important;
+	background: #e5e5e5 !important;
+	opacity: 0.5;
+}
+
+::selection {
+	color: #048 !important;
+	background: #e5e5e5 !important;
+	opacity: 0.5;
+}
+
+::-moz-selection .snowflake { /* Code for Firefox */
+	background-color: rgba(0, 0, 0, 0.0) !important;
+}
+
+::selection .snowflake {
+	background-color: rgba(0, 0, 0, 0.0) !important;
+}
+
+.holiday .checkiday
+{
+	color: #e5e5e5;
+}

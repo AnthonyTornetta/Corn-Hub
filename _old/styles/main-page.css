@@ -1,0 +1,25 @@
+/* The main image list */
+.main-img-list ul { text-align: center; }
+
+.main-img-list ul li {display: inline-block; margin: 10px; }
+
+.main-img-list ul li img
+{
+    border-radius     : 5px;
+    transition        : box-shadow 0.3s ease-in-out;
+    transition        : all 0.3s ease-in-out;
+    width             : 64px;
+    height            : 64px;
+}
+
+.main-img-list ul li img:hover
+{
+    -webkit-transform : scale(1.25, 1.25);
+    transform         : scale(1.25, 1.25);
+    box-shadow        : 0 5px 15px rgba(0, 0, 0, 0.3);
+}
+
+.checkiday, .checkiday li
+{
+  list-style-type: none;
+}

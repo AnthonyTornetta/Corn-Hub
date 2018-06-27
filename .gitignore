@@ -1,2 +1,3 @@
-account-manager.js
-*.secret
+processor-config.yml
+compile.bat
+chtml.jar
