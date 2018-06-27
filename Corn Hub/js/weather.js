@@ -16,15 +16,15 @@ $(function()
     $.ajax(
     {
       method: 'GET',
-      url: 'http://www.geoplugin.net/json.gp',
+      url: 'https://geoip.nekudo.com/api',
       dataType: 'json',
       data: {
         format: 'json'
       },
       success: (data) =>
       {
-        lat = data.geoplugin_latitude;
-        lon = data.geoplugin_longitude;
+        lat = data.location.latitude;
+        lon = data.location.longitude;
 
         let url = `https://api.darksky.net/forecast/${API_KEY}/${lat},${lon}`;
 
