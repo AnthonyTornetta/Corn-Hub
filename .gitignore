@@ -1,3 +1,4 @@
 processor-config.yml
 compile.bat
-chtml.jar
+config.yml
+program-manager.jar
