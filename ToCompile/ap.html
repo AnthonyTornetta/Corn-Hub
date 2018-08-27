@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <template src="/templates/header.html" vars="title='AP Classes'" />
+
+    <style>
+      .ap-class-list
+      {
+        height: 100%;
+        display: flex;
+        flex-wrap: wrap;
+      }
+
+      .ap-class
+      {
+        flex: 1 0 22%;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="wrapper">
+			<template src="/templates/nav.html" />
+
+			<div class="main">
+        <div style="width: 100%; height: 100%;">
+          <h1 id="title">Corn Hub - AP Classes</h1>
+          <p>Click <a href="/ap-jokes.html">here</a> for instant regret!</p>
+				  <div class="ap-class-list">
+            <div class="ap-class">
+              <h2 title="APUSH">AP US History</h2>
+              <p id='marbury' style="cursor: pointer;" title="JUDICIAL REVIEW!" onclick="var item = document.getElementById('marbury'); item.innerHTML = 'Corn Hub - JUDICIAL REVIEW'; item.classList.add('rainbow-text');">Marbury vs Madison?</p>
+      				<h3>Quizlets</h3>
+      				<p><a href="https://quizlet.com/243017626/period-4-review-flash-cards/" title="Thanks Rachel" target="_blank">Period 4 Quizlet</a></p>
+      				<p><a href="https://quizlet.com/256616875/period-5-review-flash-cards/" title="Thanks Rachel" target="_blank">Period 5 Quizlet</a></p>
+      				<p><a href="https://quizlet.com/256616875/period-6-review-flash-cards/" title="Thanks Rachel" target="_blank">Period 6 Quizlet</a></p>
+      				<p><a href="https://quizlet.com/256616875/period-8-review-flash-cards/" title="Thanks Rachel" target="_blank">Period 8 Quizlet</a></p>
+      				<p><a href="https://quizlet.com/256616875/period-10-review-flash-cards/" title="Thanks Rachel" target="_blank">Period 10 Quizlet</a></p>
+      				<h3>Unit Study Guides</h3>
+      				<p><a href="/apush/notesheets/unit4-study.docx" download title="Thanks Daniel">Unit 4 Study Guide</a></p>
+      				<p><a href="/apush/notesheets/unit6-study.docx" download title="Thanks Daniel">Unit 6 Study Guide</a></p>
+      				<p><a href="/apush/notesheets/unit7-study.docx" download title="Thanks Daniel">Unit 7 Study Guide</a></p>
+      				<p><a href="/apush/notesheets/unit8-study.docx" download title="Thanks Daniel">Unit 8 Study Guide</a></p>
+      				<p><a href="/apush/notesheets/unit9-study.docx" download title="Thanks Daniel">Unit 9 Study Guide</a></p>
+      				<p><a href="/apush/notesheets/unit10-study.docx" download title="Thanks Daniel">Unit 10 Study Guide</a></p>
+      				<h3>Risser Ramma Ball Summaries</h3>
+      				<p><a href="/apush/rrball/rrball-per4.docx" download title="Thanks Daniel">Risser Ramma Ball Period 4</a></p>
+      				<p><a href="/apush/rrball/rrball-per6.docx" download title="Thanks Troy">Risser Ramma Ball Period 6</a></p>
+            </div>
+            <div class="ap-class">
+              <h2 title="APHuG">AP Human Geography</h2>
+              <p title="The Mongols."><a href="https://www.youtube.com/watch?v=PqcVro-3f4I" target="_blank" style="text-decoration: none;">Unless you are...</a></p>
+      				<h3>Quizlets</h3>
+      				<p><a href="https://quizlet.com/243017626/period-4-review-flash-cards/" title="Thanks Hannah" target="_blank">World Maps Quizlet</a></p>
+      				<h3>Unit Study Guides</h3>
+      				<p>This is rather empty at the moment...</p>
+            </div>
+            <div class="ap-class">
+              <h2 title="APP">AP Physics</h2>
+              <section id="horrible-joke" title="Thanks Rachel">
+                <p>
+                  Click <a href="/ap-jokes.html">here</a> for instant regret!
+                </p>
+              </section>
+      				<h3>Quizlets</h3>
+      				<p>This place is baren...</p>
+      				<h3>Unit Study Guides</h3>
+      				<p>This is rather empty at the moment...</p>
+            </div>
+          </div>
+        </div>
+			</div>
+		</div>
+  </body>
+</html>

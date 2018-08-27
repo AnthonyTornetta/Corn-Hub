@@ -18,8 +18,7 @@ async function loadCalendar(start, end)
     start.setDate(1);
   }
 
-  // Definitely not stolen from the school's website after searching through 8000 lines of code for it. Nope.
-  // Side note: it took me a really long time to find where they pulled the events from.
+  // It took me a really long time to find where they pulled the events from.
   await $.ajax(
   {
       type: "POST",
