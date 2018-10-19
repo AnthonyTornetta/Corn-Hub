@@ -15,8 +15,9 @@ $(function()
   {
     $.ajax(
     {
+      //http://gd.geobytes.com/GetCityDetails?callback
       method: 'GET',
-      url: 'https://geoip.nekudo.com/api',
+      url: 'https://ipapi.com/api/',
       dataType: 'json',
       data: {
         format: 'json'
@@ -109,26 +110,6 @@ $(function()
       `);
       counter = 1;
       curDay++;
-      /*
-
-      <div id="current">
-        <div class="current-weather">
-          <div id="current-precipitation"></div>
-          <div id="current-humidity"></div>
-        </div>
-
-        <div class="current-weather">
-          <div id="current-temp">Loading Weather</div>
-          <div id="current-temp-range"></div>
-        </div>
-
-        <div class="current-weather">
-          <div id="current-wind"></div>
-          <div id="current-location"></div>
-        </div>
-      </div>
-
-       */
     }
 
     let elemClass = counter == 0 ? "even" : "odd";
