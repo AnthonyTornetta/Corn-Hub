@@ -6,6 +6,7 @@ $(function()
       pressure, clouds;
 
   const API_KEY = 'b0d48880090d49e9dcc76306507a83b6';
+  const IP_LOCATION_API_KEY = '3f9e042c05985f52c258d964c0e77df9';
 
   let curDay = 0;
 
@@ -13,38 +14,42 @@ $(function()
 
   function loadWeather()
   {
-    $.ajax(
+    $.getJSON("https://jsonip.com?callback=?", data =>
     {
-      //http://gd.geobytes.com/GetCityDetails?callback
-      method: 'GET',
-      url: 'https://ipapi.com/api/',
-      dataType: 'json',
-      data: {
-        format: 'json'
-      },
       success: (data) =>
+      $.ajax(
       {
-        lat = data.location.latitude;
-        lon = data.location.longitude;
-
-        let url = `https://api.darksky.net/forecast/${API_KEY}/${lat},${lon}`;
-
-        $.ajax(
+        method: 'GET',
+        url: `https://ipapi.com/api/${data.ip}?access_key=${IP_LOCATION_API_KEY}`,
+        dataType: 'json',
+        data: {
+          format: 'json'
+        },
+        success: (data) =>
         {
-          method: 'GET',
-          url: url,
-          dataType: 'jsonp', //change the datatype to 'jsonp' works in most cases
-          data: {
-            format: "json"
-          },
-          success: (res) =>
+          lat = data.latitude;
+          lon = data.longitude;
+
+          let url = `https://api.darksky.net/forecast/${API_KEY}/${lat},${lon}`;
+
+          $.ajax(
           {
-            console.log(url);
-            updateForecastWeather(res);
-          }
-        });
-      }
+            method: 'GET',
+            url: url,
+            dataType: 'jsonp', //change the datatype to 'jsonp' works in most cases
+            data: {
+              format: "json"
+            },
+            success: (res) =>
+            {
+              console.log(url);
+              updateForecastWeather(res);
+            }
+          });
+        }
+      });
     });
+
   }
 
   function updateForecastWeather(weatherData)
