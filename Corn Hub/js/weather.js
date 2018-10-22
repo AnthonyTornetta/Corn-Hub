@@ -16,7 +16,6 @@ $(function()
   {
     $.getJSON("https://jsonip.com?callback=?", data =>
     {
-      success: (data) =>
       $.ajax(
       {
         method: 'GET',
