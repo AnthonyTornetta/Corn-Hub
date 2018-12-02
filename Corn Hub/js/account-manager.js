@@ -112,6 +112,7 @@ var accountManager =
     {
       e();
     });
+    accountManager._username = undefined;
   }
 };
 
