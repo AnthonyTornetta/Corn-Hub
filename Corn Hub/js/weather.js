@@ -19,7 +19,7 @@ $(function()
       $.ajax(
       {
         method: 'GET',
-        url: `https://ipapi.com/api/${data.ip}?access_key=${IP_LOCATION_API_KEY}`,
+        url: `https://cors-anywhere.herokuapp.com/https://ipapi.com/api/${data.ip}?access_key=${IP_LOCATION_API_KEY}`,
         dataType: 'json',
         data: {
           format: 'json'
