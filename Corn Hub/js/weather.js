@@ -14,41 +14,35 @@ $(function()
 
   function loadWeather()
   {
-    $.getJSON("https://jsonip.com?callback=?", data =>
+    if (navigator.geolocation)
     {
-      $.ajax(
+      navigator.geolocation.getCurrentPosition((position) =>
       {
-        method: 'GET',
-        url: `https://cors-anywhere.herokuapp.com/https://ipapi.com/api/${data.ip}?access_key=${IP_LOCATION_API_KEY}`,
-        dataType: 'json',
-        data: {
-          format: 'json'
-        },
-        success: (data) =>
+        lat = position.coords.latitude;
+        lon = position.coords.longitude;
+
+        let url = `https://api.darksky.net/forecast/${API_KEY}/${lat},${lon}`;
+
+        $.ajax(
         {
-          lat = data.latitude;
-          lon = data.longitude;
-
-          let url = `https://api.darksky.net/forecast/${API_KEY}/${lat},${lon}`;
-
-          $.ajax(
+          method: 'GET',
+          url: url,
+          dataType: 'jsonp', //change the datatype to 'jsonp' works in most cases
+          data: {
+            format: "json"
+          },
+          success: (res) =>
           {
-            method: 'GET',
-            url: url,
-            dataType: 'jsonp', //change the datatype to 'jsonp' works in most cases
-            data: {
-              format: "json"
-            },
-            success: (res) =>
-            {
-              console.log(url);
-              updateForecastWeather(res);
-            }
-          });
-        }
+            console.log(url);
+            updateForecastWeather(res);
+          }
+        });
       });
-    });
-
+    }
+    else
+    {
+      alert('Stop using a stupid browser.');
+    }
   }
 
   function updateForecastWeather(weatherData)
