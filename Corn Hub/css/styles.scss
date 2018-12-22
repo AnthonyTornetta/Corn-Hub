@@ -7,11 +7,20 @@
   border: none;
 }
 
-html, body, .wrapper, .main { width: 100%; height: 100%; }
+html
+{
+  width: 100%;
+  min-height: 100%;
+}
+
+html, body, .wrapper, .main { display: flex; flex-direction: column; }
+
+body, .wrapper, .main { flex: 1; }
 
 body
 {
   font-family: 'Banana', sans-serif;
+  flex: 0 0 1;
 }
 
 h1, h2, h3, h4, h5, h6, p, span, pre, a, li
