@@ -27,7 +27,7 @@ var accountManager =
   {
     return new Promise(function(resolve, reject)
     {
-      $.post(`http://127.0.0.1/api/users?username=${username}&password=${password}&email=${email}&action=register`, function(data)
+      $.post(`https://cornchipss.com/api/users?username=${username}&password=${password}&email=${email}&action=register`, function(data)
       {
         if(data.error)
           reject(data.error);
@@ -50,7 +50,7 @@ var accountManager =
     {
       if(!password)
       {
-        $.post(`http://127.0.0.1/api/users?uuid=${unameOrUUID}&action=login`, function(data)
+        $.post(`https://cornchipss.com/api/users?uuid=${unameOrUUID}&action=login`, function(data)
         {
           if(data.error)
           {
@@ -70,7 +70,7 @@ var accountManager =
       }
       else
       {
-        $.post(`http://127.0.0.1/api/users?username=${unameOrUUID}&password=${password}&action=login`, function(data)
+        $.post(`https://cornchipss.com/api/users?username=${unameOrUUID}&password=${password}&action=login`, function(data)
         {
           if(data.error)
             reject(data.error);
@@ -121,6 +121,4 @@ var accountManager =
   let uuid = cookieUtilities.getCookie('uuid');
   if(uuid)
     accountManager.login(uuid);
-
-  console.log('I know it\'s temping, but please don\'t spam account registrations. That will really make me mad and make me set a limit for everyone.  Don\'t be that guy.');
 })();
