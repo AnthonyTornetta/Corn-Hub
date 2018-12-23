@@ -24,6 +24,8 @@ $(function()
         document.getElementById('register-password').value = '';
         document.getElementById('register-password2').value = '';
         document.getElementById('register-email').value = '';
+
+        alert('Registered as ' + uname + '!');
       })
       .catch(function(err)
       {
@@ -47,6 +49,7 @@ $(function()
       {
         document.getElementById('login-username').value = '';
         document.getElementById('login-password').value = '';
+        alert('Logged in as ' + uname + '!');
       })
     .catch(
       function(ex)

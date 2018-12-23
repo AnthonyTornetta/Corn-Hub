@@ -89,6 +89,9 @@
 								<input class="submit" type="submit" value="Login"/>
 							</form>
 						</div>
+						<div style="flex: 1">
+							<button class="submit" onclick="accountManager.logout(); alert('Logged out!');">Logout</button>
+						</div>
 						<div style="flex: 8">
 							<h2>Register</h2>
 							<form method="post" id="form-register">
@@ -102,9 +105,6 @@
 								<input class="input" type="email" autocomplete="email" name="email" id="register-email" required />
 								<input class="submit" type="submit" value="Register"/>
 							</form>
-						</div>
-						<div style="flex: 1">
-							<button class="submit" onclick="accountManager.logout()">Logout</button>
 						</div>
 					</div>
 				</div>

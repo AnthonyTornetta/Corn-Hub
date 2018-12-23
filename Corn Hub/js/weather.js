@@ -33,7 +33,6 @@ $(function()
           },
           success: (res) =>
           {
-            console.log(url);
             updateForecastWeather(res);
           }
         });
@@ -47,6 +46,8 @@ $(function()
 
   function updateForecastWeather(weatherData)
   {
+    document.getElementById('weather-forecast-list').innerHTML = '';
+
     let prevDay = "";
 
     let hrs = weatherData.hourly.data;
