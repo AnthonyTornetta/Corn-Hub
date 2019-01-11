@@ -1,1 +1,40 @@
-.col-3{display:flex;justify-content:space-between;flex-wrap:wrap;flex-direction:row}.col-3 .category{flex-basis:30%;-webkit-box-shadow:1px 0px 11px 3px rgba(0,0,0,0.28);-moz-box-shadow:1px 0px 11px 3px rgba(0,0,0,0.28);box-shadow:1px 0px 11px 3px rgba(0,0,0,0.28);min-width:250px;min-height:200px;margin:1em}.col-3 .category ul li{list-style-type:none;margin:0.2em;font-size:1.3em}@media screen and (max-width: 1440px){.category{flex:1}}
+/*COMPILE*/
+.col-3 {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+}
+
+.col-3 .category {
+  -ms-flex-preferred-size: 30%;
+      flex-basis: 30%;
+  -webkit-box-shadow: 1px 0px 11px 3px rgba(0, 0, 0, 0.28);
+  box-shadow: 1px 0px 11px 3px rgba(0, 0, 0, 0.28);
+  min-width: 250px;
+  min-height: 200px;
+  margin: 1em;
+}
+
+.col-3 .category ul li {
+  list-style-type: none;
+  margin: 0.2em;
+  font-size: 1.3em;
+}
+
+@media screen and (max-width: 1440px) {
+  .category {
+    -webkit-box-flex: 1;
+        -ms-flex: 1;
+            flex: 1;
+  }
+}
+/*# sourceMappingURL=tdih.css.map */
