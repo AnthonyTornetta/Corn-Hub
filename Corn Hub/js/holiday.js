@@ -12,14 +12,14 @@ $(() =>
 	function addHoliday(month, day, name)
 	{
 		let holidayIndex = month * 100 + day;
-		if(customHolidays[holidayIndex])
+		if(!customHolidays[holidayIndex])
 			customHolidays[holidayIndex] = [];
 		
 		customHolidays[holidayIndex].push(name);
 	}
-
-	addHoliday(0, 14, "Testing Holiday :D");
-	addHoliday(0, 13, "ur dumb");
+	
+	// Month starts at 0 index, date at 1 index because JS is smart
+	addHoliday(5, 30, "National search engine that plants trees day");
 
 	function appendHoliday(holiday)
 	{
