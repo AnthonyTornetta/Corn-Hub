@@ -1,0 +1,90 @@
+/*COMPILE*/
+
+#current
+{
+  display: flex;
+  text-align: center;
+}
+
+.current-weather
+{
+  flex: 1;
+  align-items: center;
+  flex-direction: column;
+}
+
+.odd
+{
+  background-color: #dedede;
+}
+
+#weather-forecast-list
+{
+  width: 100%;
+
+  li
+  {
+    list-style-type: none;
+    display: inline-block;
+    width: 100%;
+
+    padding: 14px 0;
+
+    min-width: 60px;
+    min-height: 20px;
+
+    .seperator
+    {
+      display: flex;
+      flex-direction: row;
+
+      .seperator-weather
+      {
+        display: flex;
+        flex-direction: column;
+        flex: 1;
+        align-items: stretch;
+
+        .seperator-sub-item
+        {
+          flex: 1;
+          font-size: 1.4em;
+
+          color: #048;
+        }
+
+        .seperator-description
+        {
+          font-size: 1.6em;
+        }
+
+        .seperator-day
+        {
+          font-size: 2.2em;
+        }
+      }
+    }
+
+    .forecast-container
+    {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+
+      .weather-item
+      {
+        flex: 1;
+        text-align: center;
+
+        font-size: 1.2em;
+
+        color: #048;
+      }
+    }
+  }
+
+  .day-separator
+  {
+    text-align: center;
+  }
+}
