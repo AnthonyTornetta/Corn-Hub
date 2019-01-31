@@ -1,7 +1,8 @@
+<!-- Something actually useful? -->
 <!DOCTYPE html>
 <html>
 	<head>
-		
+        
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 <!--
   /$$$$$$                                      /$$   /$$           /$$
@@ -24,7 +25,7 @@
 </script>
 
 
-	<title>Corn Hub : Account</title>
+	<title>Corn Hub : Speed Read</title>
 
 
 
@@ -37,12 +38,13 @@
 
 <script type="text/javascript" src="https://www.gstatic.com/firebasejs/4.13.0/firebase.js"></script>
 <script type="text/javascript" src="/js/account-manager.js"></script> <!-- Interacting with Corn Hub accounts has never been easier! -->
-		<link rel="stylesheet" media="all" href="/css/account-page.css" />
-		<script src="/js/account-page.js"></script>
+        
+        <script src="/js/read.js"></script>
 	</head>
 
-	<body>
-    
+	<!-- <body onload="read('wordsHere', 'Once upon a time there was a small sheepish boy.', 3000)"> -->
+	<body onload="initReader()">	
+		
 
 		<div class="wrapper">
 			
@@ -68,43 +70,21 @@
 		</span>
 	</ul>
 </nav>
-			<div class="main" style="display: flex; flex-direction: column;">
-        <h1 id="title">Corn Hub - Accounts</h1>
-        <p>What the world always wanted.</p>
-				<div class="account-section">
-					<div class="account-info-section">
-						<h2 id="username">Login or Register :D</h2>
-					</div>
-					<div class="login-register-section">
-						<div style="flex: 4;">
-							<h2>Login</h2>
-							<form method="post" id="form-login">
-								<label class="text-label">Username</label>
-								<input class="input" type="text" autocomplete="username" name="username" id="login-username" required />
-								<label class="text-label">Password</label>
-								<input class="input" style="width: 100%;" type="password" autocomplete="off" name="password" id="login-password" required />
-								<input class="submit" type="submit" value="Login"/>
-							</form>
-						</div>
-						<div style="flex: 1">
-							<button class="submit" onclick="accountManager.logout(); alert('Logged out!');">Logout</button>
-						</div>
-						<div style="flex: 8">
-							<h2>Register</h2>
-							<form method="post" id="form-register">
-								<label class="text-label">Username</label>
-								<input class="input" type="text" autocomplete="username" name="username" id="register-username" required />
-								<label class="text-label">Password</label>
-								<input class="input" type="password" autocomplete="off" name="password" id="register-password" required />
-								<label class="text-label">Retype Password</label>
-								<input class="input" type="password" autocomplete="off" name="password2" id="register-password2" required />
-								<label class="text-label">Email</label>
-								<input class="input" type="email" autocomplete="email" name="email" id="register-email" required />
-								<input class="submit" type="submit" value="Register"/>
-							</form>
-						</div>
-					</div>
+			<div class="main">
+				<h1 id="title">Corn Hub - Speed Read</h1>
+                <p>A way to read stuff super fast (500 words per minute).</p>
+                
+                <div style="flex: 1; display: flex; justify-self: center; align-self: center;">
+                    <span id="wordsHere" style="font-size: 6em; color: #333;">Read Here</span>
 				</div>
+				
+				<hr />
+
+				<form id="read-form">
+					<label style="width: 100%; color: #048;">Text to speed read:</label>
+					<textarea style="width:100%; font-family: 'Banana'; min-height: 100px;" id="speedread" name="speedread" placeholder="Speed reading is not useful for long passages, as you will forget most if it. However, if you only have a minute then it can't hurt."></textarea>
+					<input style="padding: 12px 16px;" type="submit" />
+				</form>
 			</div>
 		</div>
 	</body>
