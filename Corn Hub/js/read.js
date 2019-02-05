@@ -39,9 +39,9 @@ function initReader()
             alert('Fill in the text box below of what to speed read!');
         else
         {
-            let wmp = Number(prompt('How many words per minute do you want?', '500'));
+            let wpm = Number(prompt('How many words per minute do you want?', '500'));
             
-            if(wmp === NaN)
+            if(wpm === NaN)
                 alert('That has to be a number');
 
             read('wordsHere', '10 9 8 7 6 5 4 3 2 1', 0, false, wpm);
