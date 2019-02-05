@@ -1,4 +1,4 @@
-function read(id, text, timeout, sayDone)
+function read(id, text, timeout, sayDone, wpm)
 {
     setTimeout(() =>
     {
@@ -21,10 +21,9 @@ function read(id, text, timeout, sayDone)
             {
                 thing.innerHTML = splitUp[i];
 
-                console.log('did a thing');
                 i++;
             }
-        }, (60 * 1000) / 500.0); // About 500 words per minute is what the brain can process
+        }, (60.0 * 1000) / wpm); // About wpm words per minute is what the brain can process
     }, timeout ? timeout : 0);
 }
 
@@ -40,8 +39,13 @@ function initReader()
             alert('Fill in the text box below of what to speed read!');
         else
         {
-            read('wordsHere', '10 9 8 7 6 5 4 3 2 1', 0, false);
-            read('wordsHere', text, 1200, true);
+            let wmp = Number(prompt('How many words per minute do you want?', '500'));
+            
+            if(wmp === NaN)
+                alert('That has to be a number');
+
+            read('wordsHere', '10 9 8 7 6 5 4 3 2 1', 0, false, wpm);
+            read('wordsHere', text, 1200, true, wpm);
         }
 
         return false;
