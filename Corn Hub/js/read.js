@@ -43,9 +43,11 @@ function initReader()
             
             if(wpm === NaN)
                 alert('That has to be a number');
-
-            read('wordsHere', '10 9 8 7 6 5 4 3 2 1', 0, false, wpm);
-            read('wordsHere', text, 1200, true, wpm);
+            else
+            {
+                read('wordsHere', '10 9 8 7 6 5 4 3 2 1', 0, false, wpm);
+                read('wordsHere', text, 1200, true, wpm);
+            }
         }
 
         return false;
