@@ -4,7 +4,7 @@ function read(id, text, timeout, sayDone, wpm)
     {
         let thing = document.getElementById(id);
 
-        let splitUp = text.split(' ');
+        let splitUp = text.replace(/\n/g, " ").split(' ');
 
         let i = 0;
 
