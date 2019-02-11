@@ -8,19 +8,27 @@
 
   let fontSize = 10;
 
-  window.onresize = () => doStuff();
-
   function doStuff()
   {
     // Making the canvas full screen
     c.height = window.innerHeight;
     c.width = window.innerWidth;
+
+    window.onresize = function()
+    {
+      c.width = window.innerWidth;
+      c.height = window.innerHeight;
+    }
     
+    let columns = c.width/fontSize; //number of columns for the rain
     // An array of drops - one per column
     let drops = [];
 
     // 1 = y coordinate of the drop(same for every drop)
-    drops.fill(1);
+    for(let i = 0; i < columns; i++)
+    {
+      drops[i] = 1;
+    }
 
     //drawing the characters
     function draw()
@@ -53,6 +61,8 @@
         drops[i]++;
       }
     }
+
+    window.onresize = () => doStuff();
 
     draw();
   }
