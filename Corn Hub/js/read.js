@@ -1,4 +1,4 @@
-function read(id, text, timeout, sayDone, wpm)
+function read(id, text, timeout, sayDone, wpm, callback)
 {
     setTimeout(() =>
     {
@@ -16,6 +16,8 @@ function read(id, text, timeout, sayDone, wpm)
 
                 if(sayDone)
                     thing.innerHTML = 'Done!';
+
+                callback();
             }
             else
             {
@@ -45,8 +47,8 @@ function initReader()
                 alert('That has to be a number');
             else
             {
-                read('wordsHere', '10 9 8 7 6 5 4 3 2 1', 0, false, wpm);
-                read('wordsHere', text, wpm / 60 * 10, true, wpm);
+                read('wordsHere', '10 9 8 7 6 5 4 3 2 1', 0, false, wpm, 
+                () => read('wordsHere', text, wpm / 60 * 10, true, wpm));
             }
         }
 
