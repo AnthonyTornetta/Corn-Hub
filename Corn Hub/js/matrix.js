@@ -1,4 +1,4 @@
-(() =>
+window.onload = () =>
 {
   let textToFall = "SierraGunnells";
   textToFall = textToFall.split("");
@@ -66,6 +66,4 @@
 
     draw();
   }
-
-  window.onload = () => doStuff();
-})();
+};
