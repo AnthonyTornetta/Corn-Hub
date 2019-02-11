@@ -1,76 +1,61 @@
-window.onload = () =>
+(() =>
 {
-  var c = document.getElementById("c");
-  var ctx = c.getContext("2d");
-
-  // Making the canvas full screen
-  c.height = window.innerHeight;
-  c.width = window.innerWidth;
-
-  textToFall = "SierraGunnells";
-  // "Once upon a midnight dreary while I pondered weak and weary over many a quaint and curious volume of forgotten lore while I nodded nearly napping suddenly there came a tapping as of someone gently rapping rapping at my chamber door tis some visitor I muttered tapping at my chamber door only this and nothing more"//田由甲申甴电甶男甸甹町画甼甽甾甿畀畁畂畃畄畅畆畇畈畉畊畋界畍畎畏畐畑; SierraGunnells
-  // Converting the string into an array of single characters
+  let textToFall = "SierraGunnells";
   textToFall = textToFall.split("");
 
-  var font_size = 10;
-  var columns = c.width/font_size; //number of columns for the rain
-  // An array of drops - one per column
-  var drops = [];
+  let c = document.getElementById("c");
+  let ctx = c.getContext("2d");
 
-  // 1 = y coordinate of the drop(same for every drop)
-  for(var x = 0; x < columns; x++)
+  let fontSize = 10;
+
+  window.onresize = () => doStuff();
+
+  function doStuff()
   {
-    drops[x] = 1;
-  }
+    // Making the canvas full screen
+    c.height = window.innerHeight;
+    c.width = window.innerWidth;
+    
+    // An array of drops - one per column
+    let drops = [];
 
-  //drawing the characters
-  function draw()
-  {
-    requestAnimationFrame(draw);
+    // 1 = y coordinate of the drop(same for every drop)
+    drops.fill(1);
 
-    //Black BG for the canvas
-    //translucent BG to show trail
-    ctx.fillStyle = "rgba(0, 0, 0, 0.05)"; //Lovin that opacity
-    ctx.fillRect(0, 0, c.width, c.height);
-
-    ctx.fillStyle = "#0F0"; //green text (#0F0)
-    ctx.font = font_size + "px arial"; //Pixel size of the font arial
-    //looping over drops
-    for(var i = 0; i < drops.length; i++)
+    //drawing the characters
+    function draw()
     {
-      // A random textToFall character to print
+      requestAnimationFrame(draw);
 
-      var text = textToFall[Math.floor(Math.random()*textToFall.length)];
+      //Black BG for the canvas
+      //translucent BG to show trail
+      ctx.fillStyle = "rgba(0, 0, 0, 0.05)"; //Lovin that opacity
+      ctx.fillRect(0, 0, c.width, c.height);
 
-      // If you want it in order uncomment this.
-      /*
-      var orig = i;
-      while(i > textToFall.length)
+      ctx.fillStyle = "#0F0"; //green text (#0F0)
+      ctx.font = fontSize + "px arial"; //Pixel size of the font arial
+
+      for(let i = 0; i < drops.length; i++)
       {
-        i -= textToFall.length;
-      }
+        // A random textToFall character to print
 
-      var text = textToFall[i];
-      if(text == null)
-      {
-        text = textToFall[0];
-      }
-      i = orig;
-      */
+        let text = textToFall[Math.floor(Math.random()*textToFall.length)];
 
-      //x = i*font_size, y = value of drops[i]*font_size
-      ctx.fillText(text, i*font_size, drops[i]*font_size);
+        ctx.fillText(text, i * fontSize, drops[i] * fontSize);
 
-      //sending the drop back to the top randomly after it has crossed the screen
-      //adding a randomness to the reset to make the drops scattered on the Y axis
-      if(drops[i]*font_size > c.height && Math.random() > 0.985) //0.975
-      {
-        drops[i] = 0;
+        //sending the drop back to the top randomly after it has crossed the screen
+        //adding a randomness to the reset to make the drops scattered on the Y axis
+        if(drops[i]*fontSize > c.height && Math.random() > 0.985) //0.975
+        {
+          drops[i] = 0;
+        }
+        // Making the drop fall by adding 1 to the y
+        drops[i]++;
       }
-      // Making the drop fall by adding 1 to the y
-      drops[i]++;
     }
+
+    draw();
   }
 
-  draw();
-};
+  window.onload = () => doStuff();
+})();
