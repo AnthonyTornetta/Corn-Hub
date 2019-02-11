@@ -62,8 +62,10 @@ window.onload = () =>
       }
     }
 
-    window.onresize = () => doStuff();
-
     draw();
   }
+
+  doStuff();
+
+  window.onresize = () => doStuff();
 };
