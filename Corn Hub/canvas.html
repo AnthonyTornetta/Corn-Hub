@@ -24,7 +24,7 @@
 </script>
 
 
-	<title>Corn Hub : This Day in History</title>
+	<title>Corn Hub : Cool Thing #1</title>
 
 
 
@@ -37,66 +37,32 @@
 
 <script type="text/javascript" src="https://www.gstatic.com/firebasejs/4.13.0/firebase.js"></script>
 <script type="text/javascript" src="/js/account-manager.js"></script> <!-- Interacting with Corn Hub accounts has never been easier! -->
-
-	  <script type="text/javascript" src="/js/tdih.js"></script> <!-- Today Info -->
-
-		<link rel="stylesheet" media="all" href="/css/tdih.css" />
+		<style>
+			*
+			{
+				padding: 0;
+				margin: 0;
+				border: none;
+			}
+			html, body
+			{
+				width: 100%;
+				height: 100%;
+				background-color: #000;
+			}
+			.canvas
+			{
+				height: 100%;
+				width: 100%;
+				overflow:hidden;
+			}
+		</style>
 	</head>
 
-	<body>
-		
-
-		<div class="wrapper">
-			
-<link rel="stylesheet" media="all" href="/css/nav.css" />
-<script src="/js/nav.js"></script>
-
-<nav>
-	<ul>
-    <span id="toggle">
-      <li><a id="menu">&equiv;</a></li>
-    </span>
-		<span id="links">
-			<li><a href="/">Home</a></li>
-			<li><a href="/weather.html">Weather</a></li>
-			<li><a href="/matrix.html">Matrix</a></li>
-			<li><a href="/news.html">News</a></li>
-			<li><a href="/stuff.html">Stupid Stuff</a></li>
-			<li><a href="/sean.html">Sean</a></li>
-			<li><a href="/tdih.html">TDIH</a></li>
-			<li><a href="/ap.html">AP</a></li>
-			<li><a href="/read.html">Reader</a></li>
-      <li id="account-icon"><a href="/account.html">Account</a></li>
-		</span>
-	</ul>
-</nav>
-
-			<div class="main" id="main">
-				<h1 id="title">Corn Hub - This Day in History</h1>
-				<p>The more you know.</p>
-				<div class="col-3">
-					<div class="category">
-						<h3 style="text-align: center;">Events</h3>
-						<ul id="events">
-							<li>Loading Events...</li>
-						</ul>
-					</div>
-
-					<div class="category">
-						<h3 style="text-align: center;">Births</h3>
-						<ul id="births">
-							<li>Loading Births...</li>
-						</ul>
-					</div>
-
-					<div class="category">
-						<h3 style="text-align: center;">Deaths</h3>
-						<ul id="deaths">
-							<li>Loading Deaths...</li>
-						</ul>
-					</div>
-				</div>
-			</div>
+	<body style="overflow: hidden;">
+		<div class="canvas">
+			<canvas id="main-canvas"></canvas>
 		</div>
+		<script type="text/javascript" src="/js/canvas.js"></script>
 	</body>
 </html>
