@@ -1,22 +1,25 @@
 (() =>
 {
-    if(!getCookie('delay'))
+    if(!cookieUtilities.getCookie('delay'))
     {
-        $.ajax({cache: false, url: 'https://www.clsd.k12.pa.us/cms/Tools/OnScreenAlerts/UserControls/OnScreenAlertDialogListWrapper.aspx', success: (data) =>
+        $.ajax(
         {
-            const returnedData = res.data;
-            
-            if(returnedData)
+            cache: false, 
+            url: 'https://cors-anywhere.herokuapp.com/https://www.clsd.k12.pa.us/cms/Tools/OnScreenAlerts/UserControls/OnScreenAlertDialogListWrapper.aspx', 
+            success: (res) =>
             {
-                let dataStart = '<ul id="onscreenalertdialoglist" ><li id=1089 tabindex="0"><p>';
-                let dataEnd = '</p>';
+                if(res)
+                {
+                    let dataStart = '<ul id="onscreenalertdialoglist" ><li id=1089 tabindex="0"><p>';
+                    let dataEnd = '</p>';
 
-                let dataBegin = returnedData.substring(returnedData.indexOf(dataStart) + dataStart.length);
-                let data = dataBegin.substring(0, dataBegin.indexOf(dataEnd));
-                alert('(This is a test feature)\n' + data);
+                    let dataBegin = res.substring(res.indexOf(dataStart) + dataStart.length);
+                    let data = dataBegin.substring(0, dataBegin.indexOf(dataEnd));
+                    alert('(This is a test feature)\n' + data);
 
-                setCookie('delay', 'true', 0.5);
+                    cookieUtilities.setCookie('delay', 'true', 0.5);
+                }
             }
-        }});
+        });
     }
-});
+})();
