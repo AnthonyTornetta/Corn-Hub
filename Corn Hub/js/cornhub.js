@@ -78,20 +78,23 @@ var cornhub =
                 let dataBegin = res.substring(res.indexOf(dataStart) + dataStart.length);
                 let data = dataBegin.substring(0, dataBegin.indexOf(dataEnd));
 
-                let title = data.includes('two-hour') ? '2 Hour Delay' : 'Closing';
-                
-                if(cookieUtilities.getCookie(cookieName) !== data)
+                if(data && data.trim())
                 {
-                    cornhub.alerts.alert(title, data, () => 
+                    let title = data.includes('two-hour') ? '2 Hour Delay' : 'Closing';
+                    
+                    if(cookieUtilities.getCookie(cookieName) !== data)
                     {
-                        cookieUtilities.setCookie(cookieName, data, 1);
+                        cornhub.alerts.alert(title, data, () => 
+                        {
+                            cookieUtilities.setCookie(cookieName, data, 1);
 
+                            cornhub.alerts.miniAlert(title, data, () => cookieUtilities.setCookie(cookieName, data, 1));
+                        });
+                    }
+                    else
+                    {
                         cornhub.alerts.miniAlert(title, data, () => cookieUtilities.setCookie(cookieName, data, 1));
-                    });
-                }
-                else
-                {
-                    cornhub.alerts.miniAlert(title, data, () => cookieUtilities.setCookie(cookieName, data, 1));
+                    }
                 }
             }
         }
