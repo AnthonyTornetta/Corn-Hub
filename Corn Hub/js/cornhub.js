@@ -80,7 +80,7 @@ var cornhub =
 
                 if(data && data.trim())
                 {
-                    let title = data.includes('two-hour') ? '2 Hour Delay' : 'Closing';
+                    let title = (data.includes('two-hour') || data.includes('2-hr')) ? '2 Hour Delay' : 'Closing';
                     
                     if(cookieUtilities.getCookie(cookieName) !== data)
                     {
