@@ -72,8 +72,8 @@ var cornhub =
         {
             if(res)
             {
-                let dataStart = ' tabindex="0"><p>';
-                let dataEnd = '</p>';
+                let dataStart = ' tabindex="0">';
+                let dataEnd = '</li>';
 
                 let dataBegin = res.substring(res.indexOf(dataStart) + dataStart.length);
                 let data = dataBegin.substring(0, dataBegin.indexOf(dataEnd));
@@ -86,14 +86,14 @@ var cornhub =
                     {
                         cornhub.alerts.alert(title, data, () => 
                         {
-                            cookieUtilities.setCookie(cookieName, data, 1);
+                            cookieUtilities.setCookie(cookieName, data, 20);
 
-                            cornhub.alerts.miniAlert(title, data, () => cookieUtilities.setCookie(cookieName, data, 1));
+                            cornhub.alerts.miniAlert(title, data, () => cookieUtilities.setCookie(cookieName, data, 20));
                         });
                     }
                     else
                     {
-                        cornhub.alerts.miniAlert(title, data, () => cookieUtilities.setCookie(cookieName, data, 1));
+                        cornhub.alerts.miniAlert(title, data, () => cookieUtilities.setCookie(cookieName, data, 20));
                     }
                 }
             }
