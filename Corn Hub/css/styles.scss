@@ -93,8 +93,9 @@ ul
   .alert-content
   {
     align-self: center;
-    width: 300px;
+    width: 500px;
     height: auto;
+    max-height: 80%;
     background-color: white;
     padding: 50px;
     display: flex;

@@ -98,8 +98,9 @@ ul {
 .alert-box .alert-content {
   -ms-flex-item-align: center;
       align-self: center;
-  width: 300px;
+  width: 500px;
   height: auto;
+  max-height: 80%;
   background-color: white;
   padding: 50px;
   display: -webkit-box;
