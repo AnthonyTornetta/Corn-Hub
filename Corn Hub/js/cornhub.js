@@ -72,28 +72,31 @@ var cornhub =
         {
             if(res)
             {
-                let dataStart = ' tabindex="0">';
-                let dataEnd = '</li>';
+                let dataStart = ' tabindex="0"><p>';
+                let dataEnd = '</p>';
 
                 let dataBegin = res.substring(res.indexOf(dataStart) + dataStart.length);
                 let data = dataBegin.substring(0, dataBegin.indexOf(dataEnd));
 
                 if(data && data.trim())
                 {
-                    let title = (data.includes('two-hour') || data.includes('2-hr')) ? '2 Hour Delay' : 'Closing';
-                    
-                    if(cookieUtilities.getCookie(cookieName) !== data)
+                    if(!data.toLowerCase().includes('changes to the clsd calendar'))
                     {
-                        cornhub.alerts.alert(title, data, () => 
+                        let title = (data.includes('two-hour') || data.includes('2-hr')) ? '2 Hour Delay' : 'Closing';
+                        
+                        if(cookieUtilities.getCookie(cookieName) !== data)
                         {
-                            cookieUtilities.setCookie(cookieName, data, 20);
+                            cornhub.alerts.alert(title, data, () => 
+                            {
+                                cookieUtilities.setCookie(cookieName, data, 20);
 
+                                cornhub.alerts.miniAlert(title, data, () => cookieUtilities.setCookie(cookieName, data, 20));
+                            });
+                        }
+                        else
+                        {
                             cornhub.alerts.miniAlert(title, data, () => cookieUtilities.setCookie(cookieName, data, 20));
-                        });
-                    }
-                    else
-                    {
-                        cornhub.alerts.miniAlert(title, data, () => cookieUtilities.setCookie(cookieName, data, 20));
+                        }
                     }
                 }
             }
