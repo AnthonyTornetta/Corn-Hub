@@ -82,7 +82,7 @@ var cornhub =
                 {
                     if(!data.toLowerCase().includes('changes to the clsd calendar'))
                     {
-                        let title = (data.includes('two-hour') || data.includes('2-hr')) ? '2 Hour Delay' : 'Closing';
+                        let title = (data.includes('two-hour') || data.includes('2-hr')) ? '2 Hour Delay' : (data.includes('closed') || data.includes('closing') ? 'Closing' : 'Alert');
                         
                         if(cookieUtilities.getCookie(cookieName) !== data)
                         {
