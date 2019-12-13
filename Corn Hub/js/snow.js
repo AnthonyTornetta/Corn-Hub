@@ -43,6 +43,15 @@ cornhub.addOnload(() =>
     snow[i].add(snowflakeContainer);
   }
 
+  window.addEventListener('resize', () =>
+  {
+    snow.forEach(flake =>
+    {
+      flake.x = Math.random() * window.innerWidth;
+      flake.y = Math.random() * window.innerWidth;
+    });
+  });
+
   (function animate()
   {
     requestAnimationFrame(animate);
