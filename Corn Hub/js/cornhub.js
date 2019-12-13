@@ -1,5 +1,15 @@
+const onloadCallbacks = [];
+
 var cornhub =
 {
+    /**
+     * Adds a callback to be called when the DOM is fully loaded
+     * @param {Function} callback Callback to call when the DOM is fully loaded
+     */
+    addOnload: (callback) =>
+    {
+        onloadCallbacks.push(callback);
+    },
     utils: 
     {
         days: ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday']
@@ -103,3 +113,8 @@ var cornhub =
         }
     });
 })();
+
+window.addEventListener('DOMContentLoaded', (e) =>
+{
+    onloadCallbacks.forEach(c => c());
+});
