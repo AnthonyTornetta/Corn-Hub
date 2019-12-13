@@ -1,6 +1,6 @@
 var snowManager = 
 {
-  flakes: 200,
+  flakes: 100,
   ySpeedMin: 1,
   ySpeedMax: 4,
   snowReplenishRate: 0.2, // 0 = never replenishes, 1 = instantly replenishes
