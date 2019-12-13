@@ -1,0 +1,7 @@
+/* COMPILE */
+#canvas {
+  -webkit-box-flex: 1 !important;
+      -ms-flex: 1 !important;
+          flex: 1 !important;
+}
+/*# sourceMappingURL=tetris.css.map */

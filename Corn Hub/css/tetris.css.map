@@ -1,0 +1,9 @@
+{
+    "version": 3,
+    "mappings": "AAAA,aAAa;AACb,AAAA,OAAO,CACP;EACI,IAAI,EAAE,YAAY;CACrB",
+    "sources": [
+        "tetris.scss"
+    ],
+    "names": [],
+    "file": "tetris.css"
+}
