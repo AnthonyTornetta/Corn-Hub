@@ -4,6 +4,9 @@ var snowManager =
   ySpeedMin: 1,
   ySpeedMax: 4,
   snowReplenishRate: 0.2, // 0 = never replenishes, 1 = instantly replenishes
+  windDirection: (Math.random() - 0.5) * 5,
+  minScale: 0.4,
+  maxScale: 1,
 
   // dont touch these
   inFocus: true,
@@ -38,7 +41,10 @@ cornhub.addOnload(() =>
 
   for(let i = 0; i < snowManager.flakes; i++)
   {
-    snow.push(new SnowFlake(Math.random() * window.innerWidth, Math.random() * (snowManager.ySpeedMax - snowManager.ySpeedMin) + snowManager.ySpeedMin));
+    snow.push(new SnowFlake(
+        Math.random() * window.innerWidth, 
+        {x: snowManager.windDirection, y: cornhub.rdmBetween(snowManager.ySpeedMin, snowManager.ySpeedMax)}, 
+        cornhub.rdmBetween(snowManager.minScale, snowManager.maxScale)));
     snow[i].y = Math.random() * window.innerHeight;
     snow[i].add(snowflakeContainer);
   }
@@ -52,6 +58,7 @@ cornhub.addOnload(() =>
     });
   });
 
+  let frame = 0;
   (function animate()
   {
     requestAnimationFrame(animate);
@@ -60,7 +67,9 @@ cornhub.addOnload(() =>
     {
       snow.forEach(flake =>
       {
-        flake.translate(Math.random(), flake.moveSpeed);
+        flake.translate(frame);
+
+        if(flake)
 
         if(flake.y > window.innerHeight && Math.random() > (1 - snowManager.snowReplenishRate))
         {
@@ -71,6 +80,8 @@ cornhub.addOnload(() =>
         {
           flake.x = 0;
         }
+
+        frame++;
       });
     }
   })();
@@ -78,23 +89,25 @@ cornhub.addOnload(() =>
 
 class SnowFlake
 {
-  constructor(x, moveSpeed)
+  constructor(x, velocity, scale)
   {
     this.element = document.createElement('div');
     this.x = x;
     this.y = 0;
-    this.moveSpeed = moveSpeed;
+    this.scale = scale;
+    this.velocity = velocity;
 
     this.element.style.position = 'fixed';
-    this.element.style.transform = 'translate3d(0, 0, 0)'; // Lets GPU handle most of work moving this around
+    this.element.style.transform = 'translate3d(0, 0, 0);'; // Lets GPU handle most of work moving this around
+    this.element.style.transform += `scale3d(${this.scale}, ${this.scale}, ${this.scale})`
     this.element.innerHTML = '&bullet;';
     this.element.style.color = 'white';
   }
 
-  translate(x, y)
+  translate(frame)
   {
-    this.x += x;
-    this.y += y;
+    this.x += this.velocity.x * this.scale * Math.sin(frame / 10000 * this.scale);
+    this.y += this.velocity.y * this.scale;
   }
 
   set x(x) { this._x = x; this.element.style.left = x + 'px'; }
