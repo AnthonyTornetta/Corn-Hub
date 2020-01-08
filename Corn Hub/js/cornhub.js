@@ -103,7 +103,7 @@ var cornhub =
                     {
                         let title = (data.includes('two-hour') || data.includes('2-hr')) ? '2 Hour Delay' : 'Alert';
                         
-                        if(!data.includes(cookieUtilities.getCookie(cookieName)))
+                        if(!cookieUtilities.getCookie(cookieName) || !data.includes(cookieUtilities.getCookie(cookieName)))
                         {
                             cornhub.alerts.alert(title, data, () => 
                             {
