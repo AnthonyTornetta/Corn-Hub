@@ -1,4 +1,4 @@
-let url = "https://www.checkiday.com/api.php?d=";
+let url = "https://www.checkiday.com/api/3/?d=";
 $(() =>
 {
 	let customHolidays = {};
@@ -25,18 +25,18 @@ $(() =>
 	{
 		let ul = document.getElementById('checkiday-list');
 		let li = document.createElement('li');
-		li.appendChild(document.createTextNode(holiday));
+		li.appendChild(document.createTextNode(holiday.name));
 		ul.appendChild(li);
 	}
 
 	$.getJSON(url, function(holidayData)
 	{
 		let container = document.getElementById('checkiday');
-
+		
 		container.innerHTML = '<ul class="checkiday" id="checkiday-list"></ul>';
-		for(let i = 0; i < holidayData.length; i++)
+		for(let i = 0; i < holidayData.holidays.length; i++)
 		{
-			appendHoliday(holidayData[i]);
+			appendHoliday(holidayData.holidays[i]);
 		}
 
 		if(customHolidays[index(today)])

@@ -40,9 +40,13 @@ var cornhub =
             `
             <div id="${cornhub.alerts.alertId}" class="alert-box">
                 <div class="alert-content">
-                    <h2>${title}</h2>
-                    <p>${msg}</p>
-                    <button onclick='cornhub.alerts.close(${cornhub.alerts.alertId});'>OK</button>
+                    <div>
+                        <h2>${title}</h2>
+                        <p>${msg}</p>
+                    </div>
+                    <div>
+                        <button onclick='cornhub.alerts.close(${cornhub.alerts.alertId});'>OK</button>
+                    </div>
                 </div>
             </div>
             `);
@@ -65,7 +69,7 @@ var cornhub =
             document.getElementsByClassName('wrapper')[0].insertAdjacentHTML('beforeend', 
             `
             <div class="notify-icon">
-                <button onclick="cornhub.alerts.alert(${cornhub.alerts.alertId})" class="text">!</button>
+                <button onclick="cornhub.alerts.alert(${cornhub.alerts.alertId})" class="text"><span>!</span></button>
             </div>
             `);
             
@@ -82,13 +86,13 @@ var cornhub =
     $.ajax(
     {
         cache: false, 
-        url: 'https://cors-anywhere.herokuapp.com/https://www.clsd.k12.pa.us/cms/Tools/OnScreenAlerts/UserControls/OnScreenAlertDialogListWrapper.aspx', 
+        url: 'https://yacdn.org/proxy/https://www.clsd.k12.pa.us/cms/Tools/OnScreenAlerts/UserControls/OnScreenAlertDialogListWrapper.aspx', 
         success: (res) =>
         {
             if(res)
             {
                 let dataStart = ' tabindex="0"><p>';
-                let dataEnd = '</p>';
+                let dataEnd = '</p></li>';
 
                 let dataBegin = res.substring(res.indexOf(dataStart) + dataStart.length);
                 let data = dataBegin.substring(0, dataBegin.indexOf(dataEnd));
@@ -97,9 +101,9 @@ var cornhub =
                 {
                     if(!data.toLowerCase().includes('changes to the clsd calendar'))
                     {
-                        let title = (data.includes('two-hour') || data.includes('2-hr')) ? '2 Hour Delay' : (data.includes('closed') || data.includes('closing') ? 'Closing' : 'Alert');
+                        let title = (data.includes('two-hour') || data.includes('2-hr')) ? '2 Hour Delay' : 'Alert';
                         
-                        if(cookieUtilities.getCookie(cookieName) !== data)
+                        if(!cookieUtilities.getCookie(cookieName) || !data.includes(cookieUtilities.getCookie(cookieName)))
                         {
                             cornhub.alerts.alert(title, data, () => 
                             {
