@@ -1,0 +1,143 @@
+#content-container { width: 100%; }
+#login-container { width: 374px; margin: 0 auto; background: #fff; font-family: 'Open Sans', sans-serif }
+#login-container #s-user-login-form .loader { bottom: 30px; }
+#login-container #s-user-login-form label, #login-container #s-user-login-forgot-form label { color: transparent; height: 0; font: 0/0 a; text-shadow: none; position: absolute; }
+#login-container #s-user-login-form label.option, #login-container #s-user-login-forgot-form label.option { color: #aaa; font: 12px/1.4 'Open Sans', sans-serif; height: auto; position: static; }
+#login-container #s-user-login-form label .placeholder, #login-container #s-user-login-forgot-form label .placeholder { font: 16px/1.4 'Open Sans', sans-serif; color: #aaa; }
+#login-container .messages { margin-bottom: 15px; }
+#login-container .login-content { padding: 19px 30px 25px; background: #fff; margin-bottom: 2px; }
+#tracker { width: 100%; height: 55px; background: #eee; border-bottom: 1px solid #ddd; }
+#tracker-inner { width: 500px; margin: 0 auto; padding-top: 10px; }
+#tracker .tracker-icon { background: url(../images/tracker_sprite.png) no-repeat 0 -79px; float: left; width: 35px; height: 35px; }
+#tracker .tracker-icon.forgot-icon { background-position: -42px -79px; }
+#tracker h2 { padding: 3px 0 0 45px; }
+#tracker h2 .active { color: #333; }
+#s-user-login-form, #s-user-login-forgot-form { position: relative; margin-top: 10px; }
+#s-user-login-form .loader { display: none; background: url(../images/ajax-loader.gif) no-repeat; width: 50px; height: 15px; position: absolute; }
+#s-user-login-form .school-name { font-weight: bold; font-size: 14px; padding: 5px 0 10px; }
+#s-user-login-form .school-name .gray { font-weight: normal; }
+#s-user-login-form .submit-span-wrapper, #s-user-login-forgot-form .submit-span-wrapper {
+  position: relative;
+  background: #0677ba; /* river-blue */
+  display: inline-block;
+  border-radius: 2px;
+  border: #0677ba; /* river-blue */
+  min-width: 4rem;
+}
+
+#s-user-login-forgot-form .submit-span-wrapper input[type=submit]:hover,
+#s-user-login-forgot-form .submit-span-wrapper input[type=submit]:focus,
+#s-user-login-forgot-form .submit-span-wrapper input[type=submit]:active,
+#s-user-login-form .submit-span-wrapper input[type=submit]:hover,
+#s-user-login-form .submit-span-wrapper input[type=submit]:focus,
+#s-user-login-form .submit-span-wrapper input[type=submit]:active {
+  background: #0677ba; /* river-blue */
+  border-radius: 2px;
+  box-shadow: 0 0 0 2px #43c5f9 /* tropical-blue */ inset !important;
+  color: #d4f3ff; /* porcelain-blue */
+}
+
+#s-user-login-forgot-form input[type=submit],
+#s-user-login-form input[type=submit],
+#s-user-login-form span.cancel-btn {
+  font-size: 15px;
+}
+
+#header-container .top-nav { display: none; }
+.login-page #main-nav .supplementary { display: none; }
+.login-page #login-container h3 { display: block; float: left; margin-top: 0; width: 100%; }
+/* More specific selectors needed to override globals */
+.ac_results .school-name, .login-page .login #login-container, .sign-in-header, .submit-span-wrapper input[type=submit] { font-family: 'Open Sans', sans-serif; }
+.login-page .login #login-container input[type=text], input[type=password] { font-size: 15px; }
+.login-page .login #login-container a, .sso-login span { color: #0677ba /* river-blue */; }
+.login-page .login #login-container .forgot-header { display: none; }
+
+/* forgot password */
+.login-page .login-forgot #login-container .sign-in-header { display: none; }
+.login-page .login-forgot #login-container .forgot-header { display: block; font-family: 'Open Sans', sans-serif; }
+
+/* Browser specific fixes for location of .sso-login. See PE-59023 */
+#s-user-login-form .sso-login { margin-top: -15px; } /* default */
+#s-user-login-form .remote-auth-help ~ .sso-login { margin-top: 0; } /* this ensures "Forget your password" does not overlap with "SSO Login" text */
+@-moz-document url-prefix() { #s-user-login-form .sso-login { margin-top: 0; } } /* firefox specific */
+#s-user-login-form .sso-login:not(:root:root) { margin-top: 0; } /* safari specific */
+
+.login-page #login-container .login-content .messages { margin-top: 13px; margin-bottom: 20px; }
+#s-user-login-forgot-form #edit-name { width: 296px; }
+#s-user-login-forgot-form .form-required { display: none; }
+#remember-school-wrapper #remember-school { margin-right: 3px; }
+
+/** QR Code Login Option */
+.qr-code-signin-option {
+  background-color: rgb(249, 249, 248);
+  padding-top: 8px;
+}
+
+.qr-code-signin-option .qr-code-signin-or-block {
+  text-align: center;
+}
+
+.qr-code-signin-option .qr-code-signin-or-block .rule {
+  border-top: rgba(51, 51, 51, 0.15) solid 1px;
+  margin-top: -9px;
+  padding-top: 9px;
+  width: 100%;
+}
+
+.qr-code-signin-option .qr-code-signin-or-block span {
+  color: rgb(51, 51, 51);
+  background-color: rgb(249, 249, 248);
+  width: 8%;
+  display: inline-block;
+}
+
+.qr-code-signin-option .scan-link-cta {
+  margin-top: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 60px;
+}
+
+.qr-code-signin-option .scan-link-cta img {
+  object-fit: contain;
+  margin-right: 10px;
+}
+
+.qr-code-signin-option .scan-link-cta a {
+  outline: none !important; /* unset accessibility outline because we are using custom box-shadow */
+  text-decoration: none;
+  margin-left: 10px;
+  display: flex;
+  color: #0677ba /* river-blue */;
+  box-shadow: 0 0 0 1px #0677ba /* river-blue */ inset;
+  border-radius: 2px;
+  background-color: #fff;
+  height: 36px;
+  min-width: 135px;
+}
+
+.qr-code-signin-option .scan-link-cta a:hover:not(:active),
+.qr-code-signin-option .scan-link-cta a:focus:not(:active) {
+  box-shadow: 0 0 0 2px #43c5f9 /* tropical-blue */ inset;
+}
+.qr-code-signin-option .scan-link-cta .button:hover:not(:active) {
+  color: #024f7d; /* navy-blue */
+}
+
+.qr-code-signin-option .scan-link-cta a:active {
+  background-color: #d4f3ff; /* porcelain-blue */
+  box-shadow: 0 0 0 1px #0677ba /* river-blue */ inset;
+}
+
+.qr-code-signin-option .scan-link-cta .button {
+  font-size: 15px;
+  font-weight: bold;
+  text-align: center;
+  margin: auto;
+}
+
+/* This style is needed to center text in the button for IE11 */
+.qr-code-signin-option .scan-link-cta .button span {
+  line-height: 36px;
+}

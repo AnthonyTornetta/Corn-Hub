@@ -1,0 +1,216 @@
+/* rebranded pages */
+@font-face {
+  font-family: SourceSansProRegular;
+  src: url("/fonts/SourceSansPro/SourceSansPro-Regular.otf") format("opentype");
+}
+
+body {
+  background: #eee;
+  padding-top: 73px;
+}
+
+#copyright-and-links {
+  float: left;
+}
+
+#copyright-and-links .privacy-footer {
+  text-transform: uppercase;
+  font-weight: bold;
+}
+
+#page-footer,
+#footer {
+  background: #eee;
+  color: #556370;
+  font-family: 'Open Sans', sans-serif;
+  font-size: 13px;
+}
+
+#page-footer{
+  -wekbit-box-shadow: inset 0 1px 1px 0 rgba(0, 0, 0, 0.1);
+  -moz-box-shadow: inset 0 1px 1px 0 rgba(0, 0, 0, 0.1);
+  -ms-box-shadow: inset 0 1px 1px 0 rgba(0, 0, 0, 0.1);
+  -o-box-shadow: inset 0 1px 1px 0 rgba(0, 0, 0, 0.1);
+  box-shadow: inset 0 1px 1px 0 rgba(0, 0, 0, 0.1);
+}
+
+#footer,
+input[type=submit],
+span.cancel-btn,
+#header,
+#branding {
+  -wekbit-box-shadow: none;
+  -moz-box-shadow: none;
+  -ms-box-shadow: none;
+  -o-box-shadow: none;
+  box-shadow: none;
+}
+
+#page-footer a {
+  color: #556370;
+}
+#footer-inner a {
+  color: #99a3aa;
+}
+
+#header,
+#branding {
+  background: #0677ba; /* river-blue */
+  border-bottom: none;
+  height: 73px;
+}
+
+#main-content,
+.login-page #main-content {
+  padding: 50px 0 50px;
+}
+
+#logo {
+  margin-top: 5px;
+}
+
+#logo img {
+  margin-top: 14px;
+}
+
+/* filter generated using this tool: https://codepen.io/sosuke/pen/Pjoqqp */
+#logo:focus, #logo:active {
+  filter: brightness(0) saturate(100%) invert(86%) sepia(14%) saturate(858%) hue-rotate(183deg) brightness(107%) contrast(102%);
+}
+
+#logo span,
+.login-page #logo:hover span {
+  background-image: none;
+}
+
+#main-nav .supplementary {
+  border-left: none;
+  height: 100%;
+  top: 0;
+}
+#main-nav .supplementary li a {
+  font-family: 'SourceSansProRegular', Arial, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  margin: initial;
+  height: initial;
+  border-radius: initial;
+  font-size: 18px;
+}
+
+#main-nav #menu-login {
+  display: inline-block;
+  position: relative;
+  color: #fff;
+  height: 100%;
+  line-height: 73px;
+  text-align: center;
+  width: 90px;
+}
+
+#main-nav #menu-login:hover,
+#main-nav #menu-login:active {
+  background-color: #22303e;
+}
+
+#main-nav #menu-sign-up {
+  border-radius: 3px;
+  background: #758089;
+  -wekbit-box-shadow: 2px 0 0 #22303e;
+  -moz-box-shadow: 2px 0 0 #22303e;
+  -ms-box-shadow: 2px 0 0 #22303e;
+  -o-box-shadow:  2px 0 0 #22303e;
+  box-shadow: 0 2px 0 0 #22303e;
+  padding-left: 24px;
+  padding-right: 24px;
+  line-height: 48px;
+  height: 48px;
+  margin-top: 12px;
+}
+
+#main-nav #menu-sign-up:hover {
+  background: #556370;
+}
+
+#main-nav #menu-sign-up:active {
+  background: #22303e;
+  -wekbit-box-shadow: none;
+  -moz-box-shadow: none;
+  -ms-box-shadow: none;
+  -o-box-shadow: none;
+  box-shadow: none;
+}
+
+.registration-container,
+#login-container .login-content,
+.s-app-developer-request-form-page #main-content-wrapper {
+  border: none;
+  border-radius: 2px;
+  -wekbit-box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.15);
+  -moz-box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.15);
+  -ms-box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.15);
+  -o-box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.15);
+  box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.15);
+}
+
+.registration-container::-moz-focus-inner {
+  border:0;
+}
+
+.rebranded-page .registration-container::-moz-focus-inner {
+  border:0;
+}
+
+.submit-span-wrapper {
+  position: relative;
+  background: #5fb8d5;
+  display: inline-block;
+  border: 1px solid #4baecf;
+}
+
+input[type=submit],
+span.cancel-btn {
+  font-family: 'Open Sans', sans-serif;
+  background: none;
+  cursor: pointer;
+  font-size: 17px;
+  display: inline-block;
+  box-sizing: border-box;
+  height: 36px;
+  line-height: 36px;
+  overflow: visible;
+  padding: 0 14px;
+  white-space: nowrap;
+  margin: 0;
+  outline: 0 none;
+  border: none;
+}
+
+input[type=submit] {
+  color: #fff;
+  font-weight: bold;
+}
+
+span.cancel-btn {
+  color: #666;
+  font-weight: normal;
+}
+
+.s-app-developer-request-form-page #center-wrapper {
+  width: 80%;
+  margin: 0 auto;
+  padding: 10px 0 0 30px;
+}
+.s-app-developer-request-form-page #center-top {
+  border-bottom: none;
+}
+
+.s-app-developer-request-form-page .submit-buttons {
+  position: relative;
+  float: right;
+  margin-right: 30px;
+}
+
+.s-app-developer-request-form-page .submit-span-wrapper {
+  float: right;
+  margin-left: 20px;
+}
