@@ -41,9 +41,17 @@
     <script type="text/javascript" src="/js/holiday.js"></script>  <!-- For displaying the holidays -->
 		<script type="text/javascript" src="/js/timer.js"></script>
     <link rel="stylesheet" media="all" href="/css/main-page.css" />
+
+    <script>
+      function init()
+      {
+        document.getElementById('tagline').innerHTML = '<span id="weeks"></span>w <span id="days"></span>d <span id="hours"></span>h <span id="mins"></span>m <span id="secs"></span>s until the Final Countdown.';
+        setTime(new Date('5/28/2020 13:45:00'), true, true);
+      }
+    </script>
   </head>
 
-  <body>
+  <body onload="init();">
     
 
 
@@ -74,7 +82,7 @@
       <div class="main">
         <div class="main-page">
           <h1 id="title">Corn Hub</h1>
-          <p><span style="color: yellow">&#x1F451;</span><span style="color: red;">&#10084;</span></p> 
+          <p id="tagline">The Final Countdown</p> 
           
 <!-- Where it all began -->
 <div class="main-img-list">
