@@ -164,9 +164,12 @@ ul {
 .alert-box .alert-content {
   background-color: white;
   width: 40%;
-  margin: 0 30%;
+  margin: 5% 30%;
   min-height: 300px;
   padding: 20px;
+  max-height: 90vh;
+  height: 90vh;
+  overflow-y: scroll;
   -ms-flex-item-align: center;
       align-self: center;
   justify-self: center;
@@ -207,6 +210,7 @@ ul {
   background-color: transparent;
   color: #048;
   font-size: 1.2em;
+  margin-bottom: 5%;
   -webkit-transition: background-color 0.5s;
   transition: background-color 0.5s;
   outline: #048 solid thin;

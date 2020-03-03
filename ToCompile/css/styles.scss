@@ -185,6 +185,7 @@ ul
   left: 0;
   width: 100vw;
   height: 100vh;
+
   background-color: rgba(0, 0, 0, 0.2);
 
   box-sizing: border-box;
@@ -195,9 +196,13 @@ ul
   {
     background-color: white;
     width: 40%;
-    margin: 0 30%;
+    margin: 5% 30%;
     min-height: 300px;
     padding: 20px;
+
+    max-height: 90vh;
+    height: 90vh;
+    overflow-y: scroll;
 
     align-self: center;
     justify-self: center;
@@ -228,11 +233,12 @@ ul
 
         font-size: 1.2em;
 
+        margin-bottom: 5%;
+
         transition: background-color 0.5s;
 
         outline: #048 solid thin;
         cursor: pointer;
-
 
         &:hover
         {

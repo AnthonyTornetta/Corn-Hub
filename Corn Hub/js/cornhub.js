@@ -80,9 +80,6 @@ var cornhub =
 
 (() =>
 {
-    // Delays/Closings
-    let cookieName = 'delay-' + cornhub.utils.days[new Date().getDay()];
-
     $.ajax(
     {
         cache: false, 
@@ -101,6 +98,9 @@ var cornhub =
                 {
                     if(!data.toLowerCase().includes('changes to the clsd calendar'))
                     {
+                        // CCHS Alerts
+                        let cookieName = 'alert-cookie';
+
                         let title = (data.includes('two-hour') || data.includes('2-hr')) ? '2 Hour Delay' : 'Alert';
                         
                         if(!cookieUtilities.getCookie(cookieName) || !data.includes(cookieUtilities.getCookie(cookieName)))
