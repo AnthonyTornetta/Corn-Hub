@@ -2,7 +2,7 @@
 To view Corn Hub ~~go to https://www.cornchipss.com :)~~
 **Update 2021**: In order to view Corn Hub, you are going to have to setup a local server pointing to the Corn Hub directory.
 
-#Compilation
+# Compilation
 This is written using HTML compiled by the C-HTML compiler found here: https://github.com/AnthonyTornetta/CustomHTML
 
 The compiler configuration is:
